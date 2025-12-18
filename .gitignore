@@ -1,2 +1,6 @@
+# Directories
 __pycache__
 venv
+
+# Files
+*_ui.py
