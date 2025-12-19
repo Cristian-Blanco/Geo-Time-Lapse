@@ -7,3 +7,5 @@ class WizardState:
     project_id: str = ""
     authenticated: bool = False
     mode: Optional[MODE] = None
+    
+    verified: bool = False

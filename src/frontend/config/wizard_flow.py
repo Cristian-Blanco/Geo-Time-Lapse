@@ -43,3 +43,5 @@ WIZARD_BLUEPRINT = {
         },
     },
 }
+
+ENABLE_ADVANCED_MODE = False

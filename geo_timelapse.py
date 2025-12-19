@@ -8,6 +8,7 @@ PLUGIN_DIR = setup_runtime()
 
 from .geo_timelapse_dialog import GeoTimeLapseDialog
 import os.path
+import sys
 
 class GeoTimeLapse:
     """QGIS Plugin Implementation."""
@@ -166,6 +167,7 @@ class GeoTimeLapse:
         #     self.
         # PLUGIN_DIR = setup_runtime()
         # first_start = False
+        self._dev_purge_modules(("frontend",))
         self.dlg = GeoTimeLapseDialog()
 
         # show the dialog
@@ -177,3 +179,8 @@ class GeoTimeLapse:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
+
+    def _dev_purge_modules(self, prefixes=("frontend", "backend")):
+        for name in list(sys.modules.keys()):
+            if any(name == p or name.startswith(p + ".") for p in prefixes):
+                sys.modules.pop(name, None)
