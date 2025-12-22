@@ -1,0 +1,43 @@
+from .types import *
+
+THEME = {
+    # ------ Background colors --------
+    BACKGROUND_WHITE: "#FBF9FC",
+    BACKGROUND_DISABLED: "rgba(255,255,255, 0.6)",
+
+    BACKGROUND_BUTTON_PREVIOUS: "#E9E8EB",
+    BACKGROUND_BUTTON_DISABLED: "#B0B4BA",
+    BACKGROUND_BUTTON_HOVER: "#587528",
+    BACKGROUND_BUTTON_PREVIOUS_HOVER: "#e7e7e7",
+
+    COLOR_SEPARATOR_LINE: "#e8eaed",
+
+    # ------ Text Colors ------
+    COLOR_TEXT_PRIMARY: "#222732",
+    COLOR_TEXT_SECONDARY: "#23262F",
+    COLOR_TEXT_MUTED: "#959697",
+    COLOR_TEXT_WHITE: "#ffffff",
+    COLOR_TEXT_DISABLED_WHITE: "#f6f8f4",
+
+    # ------ Brand Colors (QGIS Guide) --------
+    COLOR_PRIMARY: "#497D29",
+    COLOR_DARK: "#589632",
+    COLOR_LIGHT: "#93b023",
+    COLOR_ACCENT_ORANGE: "#EE7913",
+
+    COLOR_BORDER_PRIMARY: "#3A6321",
+    COLOR_BORDER_DISABLED: "#a7b992",
+
+    # ------ Typography --------
+    FONT_SIZE_TITLE: "18px",
+    FONT_SIZE_MEDIUM: "12px",
+    FONT_SIZE_BASE: "11px",
+    FONT_SIZE_SMALL: "10px",
+
+    FONT_WEIGHT_SEMIBOLD: "500",
+    FONT_WEIGHT_NORMAL: "400",
+
+    BORDER_RADIUS_PAGINATION_BUTTON: "8px",
+    BORDER_RADIUS_CARD: "10px",
+    BORDER_RADIUS_GENERAL: "6px"
+}

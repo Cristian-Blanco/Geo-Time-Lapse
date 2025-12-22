@@ -1,63 +1,202 @@
 <ui version="4.0">
  <class>WizardMode</class>
  <widget class="QWidget" name="WizardMode">
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="pageLayout">
    <property name="leftMargin"><number>12</number></property>
    <property name="topMargin"><number>12</number></property>
    <property name="rightMargin"><number>12</number></property>
    <property name="bottomMargin"><number>12</number></property>
    <property name="spacing"><number>10</number></property>
 
+     <!-- Hidden radios (compat / state) -->
+    <item>
+        <widget class="QWidget" name="hidden_radios">
+            <property name="visible"><bool>false</bool></property>
+            <layout class="QHBoxLayout" name="hiddenRadiosLayout">
+                <property name="leftMargin"><number>0</number></property>
+                <property name="topMargin"><number>0</number></property>
+                <property name="rightMargin"><number>0</number></property>
+                <property name="bottomMargin"><number>0</number></property>
+
+                <item>
+                    <widget class="QRadioButton" name="radio_basic">
+                        <property name="text"><string>Básico</string></property>
+                    </widget>
+                </item>
+
+                <item>
+                    <widget class="QRadioButton" name="radio_advanced">
+                        <property name="text"><string>Avanzado</string></property>
+                    </widget>
+                </item>
+
+            </layout>
+        </widget>
+    </item>
+
+   <!-- Cards row -->
    <item>
-    <widget class="QLabel" name="lbl_title">
-     <property name="text"><string>Elige tu modo de configuración</string></property>
-     <property name="font">
-      <font><pointsize>14</pointsize><bold>true</bold></font>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="cardsRow">
+     <property name="spacing"><number>14</number></property>
+
+     <!-- BASIC CARD -->
+     <item>
+      <widget class="QFrame" name="card_basic">
+       <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+       <layout class="QVBoxLayout" name="cardBasicLayout">
+        <property name="leftMargin"><number>16</number></property>
+        <property name="topMargin"><number>16</number></property>
+        <property name="rightMargin"><number>16</number></property>
+        <property name="bottomMargin"><number>16</number></property>
+        <property name="spacing"><number>10</number></property>
+
+        <item>
+         <layout class="QHBoxLayout" name="basicHead">
+          <property name="spacing"><number>10</number></property>
+
+          <item>
+           <widget class="QLabel" name="lbl_basic_title">
+            <property name="text"><string>Básico</string></property>
+           </widget>
+          </item>
+
+          <item>
+           <spacer name="sp_basic_head">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+
+        <!-- =========== card content center =========== -->
+        <item>
+            <layout class="QVBoxLayout" name="basicBodyLayout">
+                <property name="spacing"><number>10</number></property>
+
+                <!-- up spacer -->
+                <item>
+                <spacer name="sp_basic_top">
+                    <property name="orientation"><enum>Qt::Vertical</enum></property>
+                    <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+                </spacer>
+                </item>
+
+                <!-- icon -->
+                <item>
+                <widget class="QLabel" name="img_basic">
+                    <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignVCenter</set></property>
+                    <property name="scaledContents"><bool>false</bool></property>
+                    <property name="text"><string></string></property>
+                </widget>
+                </item>
+
+                <!-- desc -->
+                <item>
+                <widget class="QLabel" name="lbl_basic_desc">
+                    <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignTop</set></property>
+                    <property name="wordWrap"><bool>true</bool></property>
+                    <property name="text"><string>Ideal para usuarios principiantes en GIS.</string></property>
+                </widget>
+                </item>
+
+                <!-- down spacer -->
+                <item>
+                <spacer name="sp_basic_bottom">
+                    <property name="orientation"><enum>Qt::Vertical</enum></property>
+                    <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+                </spacer>
+                </item>
+            </layout>
+        </item>
+
+
+       </layout>
+      </widget>
+     </item>
+
+     <!-- ADVANCED CARD -->
+     <item>
+      <widget class="QFrame" name="card_advanced">
+       <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+       <layout class="QVBoxLayout" name="cardAdvancedLayout">
+        <property name="leftMargin"><number>16</number></property>
+        <property name="topMargin"><number>16</number></property>
+        <property name="rightMargin"><number>16</number></property>
+        <property name="bottomMargin"><number>16</number></property>
+        <property name="spacing"><number>10</number></property>
+
+        <item>
+         <layout class="QHBoxLayout" name="advHead">
+          <property name="spacing"><number>10</number></property>
+
+          <item>
+           <widget class="QLabel" name="lbl_adv_title">
+            <property name="text"><string>Avanzado</string></property>
+           </widget>
+          </item>
+
+          <item>
+           <spacer name="sp_adv_head">
+            <property name="orientation"><enum>Qt::Horizontal</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+
+        <!-- =========== card content center =========== -->
+        <item>
+            <layout class="QVBoxLayout" name="advBodyLayout">
+                <property name="spacing"><number>10</number></property>
+
+                <!-- up spacer -->
+                <item>
+                <spacer name="sp_adv_top">
+                    <property name="orientation"><enum>Qt::Vertical</enum></property>
+                    <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+                </spacer>
+                </item>
+
+                <!-- icon -->
+                <item>
+                    <widget class="QLabel" name="img_advanced">
+                        <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignVCenter</set></property>
+                        <property name="scaledContents"><bool>false</bool></property>
+                        <property name="text"><string></string></property>
+                    </widget>
+                </item>
+
+                <!-- desc -->
+                <item>
+                <widget class="QLabel" name="lbl_adv_desc">
+                    <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignTop</set></property>
+                    <property name="wordWrap"><bool>true</bool></property>
+                    <property name="text"><string>En construcción</string></property>
+                </widget>
+                </item>
+
+                <!-- down spacer -->
+                <item>
+                <spacer name="sp_adv_bottom">
+                    <property name="orientation"><enum>Qt::Vertical</enum></property>
+                    <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+                </spacer>
+                </item>
+            </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+
+    </layout>
    </item>
 
+   <!-- Spacer to push down -->
    <item>
-    <widget class="QGroupBox" name="group_mode">
-     <property name="title"><string>Modo</string></property>
-     <layout class="QVBoxLayout" name="groupLayout">
-      <property name="leftMargin"><number>12</number></property>
-      <property name="topMargin"><number>12</number></property>
-      <property name="rightMargin"><number>12</number></property>
-      <property name="bottomMargin"><number>12</number></property>
-      <property name="spacing"><number>8</number></property>
-
-      <item>
-       <widget class="QRadioButton" name="radio_basic">
-        <property name="text"><string>Básico</string></property>
-       </widget>
-      </item>
-
-      <item>
-       <widget class="QRadioButton" name="radio_advanced">
-        <property name="text"><string>Avanzado</string></property>
-       </widget>
-      </item>
-
-     </layout>
-    </widget>
-   </item>
-
-   <item>
-    <widget class="QLabel" name="lbl_hint">
-     <property name="text">
-      <string>Tip: Básico = rápido. Avanzado = más control.</string>
-     </property>
-     <property name="wordWrap"><bool>true</bool></property>
-    </widget>
-   </item>
-
-   <item>
-    <spacer name="verticalSpacer">
+    <spacer name="sp_page_bottom">
      <property name="orientation"><enum>Qt::Vertical</enum></property>
-     <property name="sizeHint" stdset="0">
-      <size><width>20</width><height>40</height></size>
-     </property>
+     <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
     </spacer>
    </item>
 

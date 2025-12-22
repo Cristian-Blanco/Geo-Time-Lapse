@@ -1,0 +1,33 @@
+/* ======================= mode Wizard ======================= */
+
+/* ---------- Cards base ---------- */
+QFrame#card_basic, QFrame#card_advanced {
+  border: 1px solid {{COLOR_SEPARATOR_LINE}};
+  border-radius: {{BORDER_RADIUS_CARD}};
+}
+
+/* Selected card */
+QFrame#card_basic[selected="true"],
+QFrame#card_advanced[selected="true"] {
+  border: 2px solid {{COLOR_LIGHT}};
+}
+
+/* Titles inside cards */
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_basic_title,
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_adv_title {
+  font-size: {{FONT_SIZE_MEDIUM}};
+  font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+  color: {{#222732}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_basic_desc,
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_adv_desc {
+  font-size: {{FONT_SIZE_MEDIUM}};
+  color: {{#222732}};
+}
+
+/* Disabled advanced card (mvp) */
+QLabel#lbl_adv_title:disabled,
+QLabel#lbl_adv_desc:disabled {
+  color: {{BACKGROUND_BUTTON_DISABLED}};
+}

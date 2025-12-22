@@ -2,27 +2,45 @@ import os
 from typing import Dict, List, Optional, Tuple, TYPE_CHECKING
 
 from qgis.PyQt import uic, QtWidgets
-from frontend.config.paths import UI_DIR
+from frontend.config.paths import UI_DIR, ICONS_DIR
 
 from frontend.controllers.wizards.wizard_state import WizardState
 from frontend.helpers.nodes_loader import NodesLoader
 from frontend.config.wizard_flow import WIZARD_BLUEPRINT
 from frontend.controllers.wizards.flow_factory import FlowFactory
 from frontend.controllers.wizards.progress_calc import ProgressCalc
+from frontend.bootstrap.style_bootstrap import StyleBootstrap
+from qgis.PyQt.QtGui import QIcon
+from core.i18n.translate import translate
 
 if TYPE_CHECKING:
     from frontend.controllers.pages.base_page import BasePage
 
-FORM_CLASS, _ = uic.loadUiType(os.path.join(UI_DIR, "main_dialog.ui"))
+# FORM_CLASS, _ = uic.loadUiType(os.path.join(UI_DIR, "main_dialog.ui"))
 
 
-class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
+# class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
+class GeoTimeLapseDialog(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setupUi(self)
 
-        self._ensure_contract()
+        # Change in the future, with a .env, mode dev and mode production
+        # self.setupUi(self)
+        ui_path = os.path.join(UI_DIR, "main_dialog.ui")
+        uic.loadUi(ui_path, self)
 
+        # Load QSS
+        StyleBootstrap.apply(self)
+
+        # Header refs
+        self._hdr_title = self.findChild(QtWidgets.QLabel, "dlg_lbl_header_title")
+        self._hdr_subtitle = self.findChild(QtWidgets.QLabel, "dlg_lbl_header_subtitle")
+        self._hdr_icon = self.findChild(QtWidgets.QLabel, "dlg_lbl_icon_plugin")
+
+        # Icon fijo del plugin (una sola vez)
+        self._apply_header_icon()
+
+        # Load Wizard state and wizards
         self.state = WizardState()
         self.flow = FlowFactory(WIZARD_BLUEPRINT).build()
         self.progress = ProgressCalc(WIZARD_BLUEPRINT)
@@ -38,10 +56,17 @@ class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
         self._wire_footer()
         self._go_to(self.flow.start, push_history=False)
 
-    def _ensure_contract(self) -> None:
-        for attr in ("stacked_pages", "btn_previous", "btn_next"):
-            if not hasattr(self, attr):
-                raise RuntimeError(f"main_dialog.ui: falta {attr} (objectName)")
+    def _apply_header_icon(self) -> None:
+        if not self._hdr_icon:
+            return
+        icon_png = str(ICONS_DIR / "icon.png")
+        self._hdr_icon.setPixmap(QIcon(icon_png).pixmap(50, 50))
+
+    def _apply_header(self, page: "BasePage") -> None:
+        if self._hdr_title:
+            self._hdr_title.setText(page.title_tr or "")
+        if self._hdr_subtitle:
+            self._hdr_subtitle.setText(page.description_tr or "")
 
     def _wire_footer(self) -> None:
         self.btn_previous.clicked.connect(self._on_left)
@@ -91,6 +116,9 @@ class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
         elif not self._history:
             self._history.append(node_id)
 
+        # Header changes
+        self._apply_header(page)
+        
         page.on_enter()
         self._apply_footer_state(page.is_valid())
         self._apply_progress()
@@ -102,8 +130,8 @@ class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
 
         _, page = self._nodes[self._current]
 
-        self.btn_previous.setText("Cancelar" if page.left_mode == "cancel" else "Anterior")
-        self.btn_next.setText("Terminar" if page.right_mode == "finish" else "Siguiente")
+        self.btn_previous.setText(translate("Cancelar") if page.left_mode == "cancel" else translate("Anterior"))
+        self.btn_next.setText(translate("Terminar") if page.right_mode == "finish" else translate("Siguiente"))
         self.btn_previous.setEnabled(len(self._history) > 1 or page.left_mode == "cancel")
         self.btn_next.setEnabled(is_valid)
 
