@@ -7,14 +7,15 @@ from frontend.config.wizard_flow import ENABLE_ADVANCED_MODE
 from frontend.config.paths import ICONS_DIR
 
 class ModePage(BasePage):
-    title = "Seleccionar configuración"
-    description = "¿Qué tipo de configuración deseas seleccionar?"
-
     left_mode = "previous"
     right_mode = "next"
 
     def __init__(self, widget: QtWidgets.QWidget, state):
         super().__init__(widget, state)
+
+        self.title = self.tr("Seleccionar configuración")
+        self.description = self.tr("¿Qué tipo de configuración deseas seleccionar?")
+
         self.widget = widget
 
         self.card_basic: QtWidgets.QFrame = widget.findChild(QtWidgets.QFrame, "card_basic")
@@ -56,19 +57,28 @@ class ModePage(BasePage):
         return super().eventFilter(obj, event)
 
     def _select(self, mode: str) -> None:
+        if self.state.mode == mode:
+            return
         self.state.mode = mode
         self._apply_selected_styles()
         self.validityChanged.emit(self.is_valid())
         self.stateChanged.emit()
 
     def _apply_selected_styles(self) -> None:
-        self.card_basic.setProperty("selected", self.state.mode == "basic")
-        self.card_advanced.setProperty("selected", self.state.mode == "advanced")
+        desired = {
+            self.card_basic: self.state.mode == "basic",
+            self.card_advanced: self.state.mode == "advanced",
+        }
 
-        # Clear styles for cache, remove in the future for production
-        for w in (self.card_basic, self.card_advanced):
-            w.style().unpolish(w)
-            w.style().polish(w)
+        for w, selected in desired.items():
+            if w.property("selected") == selected:
+                continue
+
+            w.setProperty("selected", selected)
+
+            st = w.style()
+            st.unpolish(w)
+            st.polish(w)
             w.update()
 
     def is_valid(self) -> bool:
@@ -77,13 +87,28 @@ class ModePage(BasePage):
         return self.state.mode == "basic"
 
     def __apply_static_assets(self) -> None:
-        basic_png = str(ICONS_DIR / "basic.png")
-        advanced_png = str(ICONS_DIR / ("advanced.png" if ENABLE_ADVANCED_MODE else "construction.png"))
+        assets = { #Dynamic content
+            True: {
+                "icon": "advanced.png",
+                "text": self.tr("Para usuarios con conocimientos en GIS."),
+            },
+            False: {
+                "icon": "construction.png",
+                "text": self.tr("En construcción"),
+            },
+        }
 
-        img_basic = self.widget.findChild(QtWidgets.QLabel, "img_basic")
-        if img_basic:
+        basic_png = str(ICONS_DIR / "basic.png")
+        adv_cfg = assets[bool(ENABLE_ADVANCED_MODE)]
+
+        # Basic icon
+        if img_basic := self.widget.findChild(QtWidgets.QLabel, "img_basic"):
             img_basic.setPixmap(QIcon(basic_png).pixmap(90, 90))
 
-        img_adv = self.widget.findChild(QtWidgets.QLabel, "img_advanced")
-        if img_adv:
-            img_adv.setPixmap(QIcon(advanced_png).pixmap(90, 90))
+        # Advanced icon
+        if img_adv := self.widget.findChild(QtWidgets.QLabel, "img_advanced"):
+            img_adv.setPixmap(QIcon(str(ICONS_DIR / adv_cfg["icon"])).pixmap(90, 90))
+
+        # Advanced description
+        if lbl_adv_desc := self.widget.findChild(QtWidgets.QLabel, "lbl_adv_desc"):
+            lbl_adv_desc.setText(adv_cfg["text"])

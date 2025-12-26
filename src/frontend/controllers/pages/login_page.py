@@ -3,17 +3,16 @@ from frontend.controllers.pages.base_page import BasePage
 from qgis.PyQt import QtCore
 from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
-from core.i18n.translate import translate
 
 class LoginPage(BasePage):
-    title = "Conéctate a Google Earth Engine"
-    description = "Por favor ingresa tus credenciales para iniciar sesión."
-
     left_mode = "cancel"
     right_mode = "next"
 
     def __init__(self, widget: QtWidgets.QWidget, state):
         super().__init__(widget, state)
+
+        self.title = self.tr("Conéctate a Google Earth Engine")
+        self.description = self.tr("Por favor ingresa tus credenciales para iniciar sesión.")
 
         self.inp_project_id: QtWidgets.QLineEdit = widget.findChild(QtWidgets.QLineEdit, "inp_project_id")
         self.btn_sign_in: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_sign_in")
@@ -49,11 +48,11 @@ class LoginPage(BasePage):
 
     def _render(self) -> None:
         if getattr(self.state, "verified", False):
-            self.lbl_auth_status.setText(translate("✅ Verificado"))
+            self.lbl_auth_status.setText(self.tr("✅ Verificado"))
         elif self.state.authenticated:
-            self.lbl_auth_status.setText(translate("🔓 Autenticado (falta verificar)"))
+            self.lbl_auth_status.setText(self.tr("🔓 Autenticado (falta verificar)"))
         else:
-            self.lbl_auth_status.setText(translate("🔒 No autenticado"))
+            self.lbl_auth_status.setText(self.tr("🔒 No autenticado"))
 
         self.validityChanged.emit(self.is_valid())
         self.stateChanged.emit()

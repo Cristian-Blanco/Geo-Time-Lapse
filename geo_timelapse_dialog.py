@@ -11,7 +11,6 @@ from frontend.controllers.wizards.flow_factory import FlowFactory
 from frontend.controllers.wizards.progress_calc import ProgressCalc
 from frontend.bootstrap.style_bootstrap import StyleBootstrap
 from qgis.PyQt.QtGui import QIcon
-from core.i18n.translate import translate
 
 if TYPE_CHECKING:
     from frontend.controllers.pages.base_page import BasePage
@@ -64,9 +63,9 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
 
     def _apply_header(self, page: "BasePage") -> None:
         if self._hdr_title:
-            self._hdr_title.setText(page.title_tr or "")
+            self._hdr_title.setText(page.title or "")
         if self._hdr_subtitle:
-            self._hdr_subtitle.setText(page.description_tr or "")
+            self._hdr_subtitle.setText(page.description or "")
 
     def _wire_footer(self) -> None:
         self.btn_previous.clicked.connect(self._on_left)
@@ -130,8 +129,8 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
 
         _, page = self._nodes[self._current]
 
-        self.btn_previous.setText(translate("Cancelar") if page.left_mode == "cancel" else translate("Anterior"))
-        self.btn_next.setText(translate("Terminar") if page.right_mode == "finish" else translate("Siguiente"))
+        self.btn_previous.setText(self.tr("Cancelar") if page.left_mode == "cancel" else self.tr("Anterior"))
+        self.btn_next.setText(self.tr("Terminar") if page.right_mode == "finish" else self.tr("Siguiente"))
         self.btn_previous.setEnabled(len(self._history) > 1 or page.left_mode == "cancel")
         self.btn_next.setEnabled(is_valid)
 
