@@ -1,0 +1,38 @@
+[tool.ruff]
+line-length = 120
+show-fixes = true
+
+exclude = [
+  ".venv",
+  "venv",
+  "build",
+  "dist",
+  "__pycache__",
+  "i18n",
+  "src/frontend/ui",
+  "resources.py",
+  "resources_rc.py",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+  "F",     # Pyflakes
+  "E",     # pycodestyle errors
+  "W",     # pycodestyle warnings
+  "I",     # isort
+  "UP",    # pyupgrade
+  "PL",    # pylint rules (subset)
+  "T201",  # print statements
+]
+ignore = [
+  "E501",
+  "I001",
+]
+
+[tool.ruff.lint.pylint]
+max-args = 7
+max-branches = 15
+max-statements = 60
