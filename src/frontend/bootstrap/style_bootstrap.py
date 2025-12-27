@@ -4,6 +4,7 @@ from frontend.helpers.load_qss import load_qss
 from frontend.config.paths import STYLES_DIR
 from frontend.resources.styles.tokens.theme_light import THEME
 
+
 class StyleBootstrap:
     _cached_qss: str | None = None
 
@@ -24,7 +25,8 @@ class StyleBootstrap:
             STYLES_DIR / "base.qss",
             STYLES_DIR / "sign_in.qss",
             STYLES_DIR / "mode.qss",
-            variables=THEME
+            STYLES_DIR / "basic_points_map.qss",
+            variables={k.value: v for k, v in THEME.items()},
         )
 
         # Clean and reload styles

@@ -36,3 +36,28 @@ ignore = [
 max-args = 7
 max-branches = 15
 max-statements = 60
+
+[tool.mypy]
+strict = true
+
+mypy_path = ["src"]
+explicit_package_bases = true
+
+no_implicit_optional = true
+warn_return_any = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+
+disallow_any_expr = false
+
+disable_error_code = ["misc"]
+
+
+
+[[tool.mypy.overrides]]
+module = [
+  "qgis.*",
+  "qgis.PyQt.*",
+  "PyQt5.*",
+]
+ignore_missing_imports = true

@@ -1,0 +1,103 @@
+/* ===== CTA BUTTON ===== */
+QPushButton#btn_select_map:enabled {
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: {{FONT_SIZE_MEDIUM}};
+    font-weight: 500;
+    border: 1px solid {{COLOR_BORDER_PRIMARY}};
+    color: {{COLOR_TEXT_PRIMARY}};
+    background-color: {{COLOR_GREEN_LIGHT_100}};
+}
+
+QPushButton#btn_select_map:hover {
+    background-color: {{COLOR_GREEN_LIGHT_200}};
+}
+
+QPushButton#btn_select_map:pressed {
+    background-color: {{COLOR_GREEN_LIGHT_300}};
+}
+
+/* ===== Accordion header ===== */
+QWidget#WizardBasicPointsMapChild QToolButton#btn_manual_toggle {
+    border: none;
+    background: transparent;
+    padding: 2px 0px;
+    color: #3f3f3f;
+    font-size: {{FONT_SIZE_MEDIUM}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+}
+
+QToolButton#btn_manual_toggle:hover {
+    color: #2b2b2b;
+}
+
+/* Divider line under accordion title */
+QWidget#manual_body QFrame#divider_line {
+    color: {{COLOR_SEPARATOR_LINE}};
+    background: {{COLOR_SEPARATOR_LINE}};
+    border: none;
+    max-height: 1px;
+}
+
+/* km input */
+QLineEdit#txt_km {
+    padding: 4px 8px;
+    min-height: 20px;
+    border: 1px solid rgba(0,0,0,0.14);
+    border-radius: 6px;
+    font-size: {{FONT_SIZE_BASE}}
+}
+
+QLineEdit#txt_km:focus {
+    border: 1px solid #7fa54a;
+}
+
+/* minor label */
+QWidget#WizardBasicPointsMapChild QLabel#lbl_km {
+    font-size: 13px;
+    color: #4f4f4f;
+}
+
+QWidget#WizardBasicPointsMapChild QLabel#lbl_km_hint {
+    font-size: {{FONT_SIZE_SMALL}};
+    color: {{COLOR_TEXT_MUTED}};
+    margin-left: 14px;
+}
+
+
+/* checkbox text */
+QCheckBox#chk_size {
+    font-size: 13px;
+    color: #3f3f3f;
+}
+
+/* checkbox indicator */
+QCheckBox#chk_size::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.16);
+    background: rgba(255,255,255,0.75);
+}
+
+QCheckBox#chk_size::indicator:checked {
+    background: #6f8f3f;
+    border: 1px solid rgba(0,0,0,0.14);
+}
+
+QFrame#frame_points_card QLabel {
+    font-size: {{FONT_SIZE_BASE}};
+    font-weight: 400;
+}
+
+QFrame#frame_points_card QLineEdit {
+    background-color: {{BACKGROUND_WHITE}};
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: {{BORDER_RADIUS_GENERAL}};
+    padding: 4px 8px;
+    font-size: {{FONT_SIZE_BASE}};
+}
+
+QFrame#frame_points_card QLineEdit:focus {
+    border: 1px solid {{COLOR_GREEN_LIGHT_300}};
+}

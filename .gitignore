@@ -5,3 +5,5 @@ venv
 # Files
 *_ui.py
 resources_rc.py
+
+.vscode

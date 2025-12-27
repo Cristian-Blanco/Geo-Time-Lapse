@@ -16,26 +16,33 @@ QLabel#lbl_auth_status {
 }
 
 /* Input group (icon + lineedit inside frame) */
-QFrame#inputBox {
+QFrame#card QFrame#inputBox {
   background-color: {{BACKGROUND_WHITE}};
   border: 1px solid #cfd3d7;
   border-radius: {{BORDER_RADIUS_GENERAL}};
 }
+
 QLabel#lbl_project_icon {
   border-right: 1px solid #e3e6e8;
   padding-left: 10px;
   padding-right: 10px;
 }
-QLineEdit#inp_project_id {
+
+QFrame#card QFrame#inputBox QLineEdit#inp_project_id {
   border: none;
-  padding: 7px 7px 7px 0;
+  padding: 9px 9px 9px 0;
   background-color: transparent;
+}
+
+QFrame#card QFrame#inputBox QLineEdit#inp_project_id:focus {
+    border: 1px solid {{COLOR_GREEN_LIGHT_300}};
+    border-radius: {{BORDER_RADIUS_GENERAL}};
 }
 
 /* Buttons */
 
 QDialog#GeoTimeLapseDialogBase QPushButton#btn_sign_in {
-  background-color: #ffffff;
+  background-color: {{COLOR_TEXT_WHITE}};
   border: 1px solid #2f6bff;
   color: {{COLOR_TEXT_PRIMARY}};
   padding: 8px 16px;
@@ -51,13 +58,18 @@ QDialog#GeoTimeLapseDialogBase QLabel#lbl_auth_status {
 
 
 QDialog#GeoTimeLapseDialogBase QPushButton#btn_verify {
-  background-color: {{COLOR_LIGHT}};
+  background-color: {{COLOR_GREEN_LIGHT_100}};
   border: 1px solid {{COLOR_BORDER_PRIMARY}};
-  color: {{COLOR_TEXT_WHITE}};
+  color: {{COLOR_TEXT_PRIMARY}};
 }
 QDialog#GeoTimeLapseDialogBase QPushButton#btn_verify:hover {
-  background-color: #7f9624;
+  background-color: {{COLOR_GREEN_LIGHT_200}};
 }
+
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_verify:pressed {
+  background-color: {{COLOR_GREEN_LIGHT_300}};
+}
+
 QDialog#GeoTimeLapseDialogBase QPushButton#btn_verify:disabled {
   background-color: {{BACKGROUND_BUTTON_DISABLED}};
   border-color: {{COLOR_BORDER_DISABLED}};

@@ -1,0 +1,324 @@
+<ui version="4.0">
+    <class>WizardBasicPointsMapChild</class>
+    <widget class="QWidget" name="WizardBasicPointsMapChild">
+        <layout class="QVBoxLayout" name="mainLayout">
+            <property name="spacing">
+                <number>12</number>
+            </property>
+            <property name="leftMargin">
+                <number>0</number>
+            </property>
+            <property name="topMargin">
+                <number>20</number>
+            </property>
+            <property name="rightMargin">
+                <number>0</number>
+            </property>
+            <property name="bottomMargin">
+                <number>0</number>
+            </property>
+
+            <!-- CTA -->
+            <item>
+                <widget class="QPushButton" name="btn_select_map">
+                    <property name="minimumHeight">
+                        <number>46</number>
+                    </property>
+                    <property name="text">
+                        <string>Select area on the map</string>
+                    </property>
+                    <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                </widget>
+            </item>
+
+            <!-- Accordion header -->
+            <item>
+                <layout class="QHBoxLayout" name="accordionHeaderLayout">
+                    <property name="spacing">
+                        <number>8</number>
+                    </property>
+                    <property name="leftMargin">
+                        <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                        <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                        <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                        <number>0</number>
+                    </property>
+
+                    <item>
+                        <widget class="QToolButton" name="btn_manual_toggle">
+                            <property name="text">
+                                <string>Enter coordinates manually</string>
+                            </property>
+                            <property name="toolButtonStyle">
+                                <enum>Qt::ToolButtonTextBesideIcon</enum>
+                            </property>
+                            <property name="arrowType">
+                                <enum>Qt::DownArrow</enum>
+                            </property>
+                            <property name="checkable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="checked">
+                                <bool>false</bool>
+                            </property>
+                            <property name="autoRaise">
+                                <bool>true</bool>
+                            </property>
+                            <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                        </widget>
+                    </item>
+
+                    <item>
+                        <spacer name="spacerHeaderRight">
+                            <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                                <size>
+                                    <width>40</width>
+                                    <height>10</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </item>
+                </layout>
+            </item>
+
+            <!-- Accordion body -->
+            <item>
+                <widget class="QWidget" name="manual_body">
+                    <layout class="QVBoxLayout" name="manualBodyLayout">
+                        <property name="spacing">
+                            <number>10</number>
+                        </property>
+                        <property name="leftMargin">
+                            <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                            <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                            <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                            <number>0</number>
+                        </property>
+
+                        <!-- Card panel -->
+                        <item>
+                            <widget class="QFrame" name="frame_points_card">
+                                <property name="frameShape">
+                                    <enum>QFrame::NoFrame</enum>
+                                </property>
+                                <layout class="QVBoxLayout" name="pointsLayout">
+                                    <property name="spacing">
+                                        <number>10</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                        <number>12</number>
+                                    </property>
+                                    <property name="topMargin">
+                                        <number>12</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                        <number>12</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                        <number>12</number>
+                                    </property>
+
+                                    <!-- Punto 1 -->
+                                    <item>
+                                        <layout class="QHBoxLayout">
+                                            <property name="spacing">
+                                                <number>10</number>
+                                            </property>
+
+                                            <item>
+                                                <widget class="QLabel" name="lbl_point_1">
+                                                    <property name="text">
+                                                        <string>Point 1</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+
+                                            <item>
+                                                <widget class="QLineEdit" name="txt_p1_lat">
+                                                    <property name="placeholderText">
+                                                        <string>Latitude</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+
+                                            <item>
+                                                <widget class="QLineEdit" name="txt_p1_lon">
+                                                    <property name="placeholderText">
+                                                        <string>longitude</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                        </layout>
+                                    </item>
+
+                                    <!-- Punto 2 -->
+                                    <item>
+                                        <layout class="QHBoxLayout">
+                                            <property name="spacing">
+                                                <number>10</number>
+                                            </property>
+
+                                            <item>
+                                                <widget class="QLabel" name="lbl_point_2">
+                                                    <property name="text">
+                                                        <string>Point 2</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+
+                                            <item>
+                                                <widget class="QLineEdit" name="txt_p2_lat">
+                                                    <property name="placeholderText">
+                                                        <string>Latitude</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+
+                                            <item>
+                                                <widget class="QLineEdit" name="txt_p2_lon">
+                                                    <property name="placeholderText">
+                                                        <string>longitude</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                        </layout>
+                                    </item>
+
+                                    <!-- Divider line -->
+                                    <item>
+                                        <widget class="QFrame" name="divider_line">
+                                            <property name="frameShape">
+                                                <enum>QFrame::HLine</enum>
+                                            </property>
+                                            <property name="frameShadow">
+                                                <enum>QFrame::Plain</enum>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+
+            <!-- Set size image -->
+            <item>
+                <widget class="QFrame" name="frame_size_card">
+                    <property name="frameShape">
+                        <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="sizeRowLayout">
+                        <property name="spacing">
+                            <number>10</number>
+                        </property>
+                        <property name="leftMargin">
+                            <number>14</number>
+                        </property>
+                        <property name="topMargin">
+                            <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                            <number>14</number>
+                        </property>
+                        <property name="bottomMargin">
+                            <number>5</number>
+                        </property>
+
+                        <item>
+                            <widget class="QCheckBox" name="chk_size">
+                                <property name="text">
+                                    <string>Set the size to</string>
+                                </property>
+                                <property name="checked">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="cursor">
+                                    <cursorShape>PointingHandCursor</cursorShape>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item>
+                            <widget class="QLineEdit" name="txt_km">
+                                <property name="text">
+                                    <string>50</string>
+                                </property>
+                                <property name="fixedWidth">
+                                    <number>64</number>
+                                </property>
+                                <property name="alignment">
+                                    <set>Qt::AlignCenter</set>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item>
+                            <widget class="QLabel" name="lbl_km">
+                                <property name="text">
+                                    <string>km</string>
+                                </property>
+                            </widget>
+                        </item>
+
+                        <item>
+                            <spacer name="spacerSizeRight">
+                                <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                    <size>
+                                        <width>40</width>
+                                        <height>10</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+            <item>
+                <widget class="QLabel" name="lbl_km_hint">
+                    <property name="text">
+                        <string>Maximum allowed: 200 km</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <spacer name="spacerPushUp">
+                    <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                        <size>
+                            <width>20</width>
+                            <height>1</height>
+                        </size>
+                    </property>
+                </spacer>
+            </item>
+
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>
