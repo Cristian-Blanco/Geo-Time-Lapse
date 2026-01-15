@@ -9,7 +9,7 @@ QFrame#card_basic, QFrame#card_advanced {
 /* Selected card */
 QFrame#card_basic[selected="true"],
 QFrame#card_advanced[selected="true"] {
-  border: 2px solid {{COLOR_LIGHT}};
+  border: 2px solid {{COLOR_GREEN_LIGHT_100}};
 }
 
 /* Titles inside cards */

@@ -3,9 +3,9 @@
  <widget class="QWidget" name="WizardMode">
   <layout class="QVBoxLayout" name="pageLayout">
    <property name="leftMargin"><number>12</number></property>
-   <property name="topMargin"><number>12</number></property>
+   <property name="topMargin"><number>100</number></property>
    <property name="rightMargin"><number>12</number></property>
-   <property name="bottomMargin"><number>12</number></property>
+   <property name="bottomMargin"><number>100</number></property>
    <property name="spacing"><number>10</number></property>
 
      <!-- Hidden radios (compat / state) -->

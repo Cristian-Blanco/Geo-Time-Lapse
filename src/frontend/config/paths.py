@@ -1,7 +1,7 @@
+from pathlib import Path
 from app_context import SRC_DIR
 
-UI_DIR: str = SRC_DIR / "frontend" / "ui"
-RESOURCES_DIR: str = SRC_DIR / "frontend" / "resources"
-STYLES_DIR: str = RESOURCES_DIR / "styles"
-ICONS_DIR: str = RESOURCES_DIR / "icons"
-
+UI_DIR: Path = SRC_DIR / "frontend" / "ui"
+RESOURCES_DIR: Path = SRC_DIR / "frontend" / "resources"
+STYLES_DIR: Path = RESOURCES_DIR / "styles"
+ICONS_DIR: Path = RESOURCES_DIR / "icons"

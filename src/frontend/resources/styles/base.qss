@@ -24,7 +24,7 @@ QDialog#GeoTimeLapseDialogBase QProgressBar {
 
 QDialog#GeoTimeLapseDialogBase QProgressBar::chunk {
   border-radius: 3px;
-  background-color: {{COLOR_LIGHT}};
+  background-color: {{COLOR_GREEN_LIGHT_300}};
 }
 
 QDialog#GeoTimeLapseDialogBase QFrame#inputBox:focus-within {
