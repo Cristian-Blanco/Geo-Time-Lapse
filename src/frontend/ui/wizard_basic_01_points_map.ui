@@ -61,7 +61,7 @@
                                 <enum>Qt::ToolButtonTextBesideIcon</enum>
                             </property>
                             <property name="arrowType">
-                                <enum>Qt::DownArrow</enum>
+                                <enum>Qt::RightArrow</enum>
                             </property>
                             <property name="checkable">
                                 <bool>true</bool>
@@ -74,6 +74,9 @@
                             </property>
                             <property name="cursor">
                                 <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="class" stdset="0">
+                                <string>accordion</string>
                             </property>
                         </widget>
                     </item>

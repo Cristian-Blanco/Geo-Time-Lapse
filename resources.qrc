@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/plugins/geo_timelapse" >
         <file>icon.png</file>
+        <file>src/frontend/resources/icons/down_arrow.png</file>
     </qresource>
 </RCC>

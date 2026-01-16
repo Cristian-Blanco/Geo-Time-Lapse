@@ -4,7 +4,7 @@ MODE = Literal["basic", "advanced"]
 
 WIZARD_BLUEPRINT = {
     "start": "login",
-    "total_steps": 5,
+    "total_steps": 6,
     "nodes": {
         "login": {
             "ui": "wizard_01_login.ui",
@@ -26,14 +26,20 @@ WIZARD_BLUEPRINT = {
         "basic_points_map": {
             "ui": "wizard_basic_01_points_map.ui",
             "controller": "frontend.controllers.pages.basic_points_map:BasicPointsMap",
-            "next": {"type": "to", "target": "basic_filter"},
+            "next": {"type": "to", "target": "basic_image_type"},
             "step": 3,
+        },
+        "basic_image_type": {
+            "ui": "wizard_basic_02_image_type.ui",
+            "controller": "frontend.controllers.pages.basic_image_type:BasicImageType",
+            "next": {"type": "to", "target": "basic_filter"},
+            "step": 4,
         },
         "basic_filter": {
             "ui": "wizard_basic_02_filter.ui",
             "controller": "frontend.controllers.pages.basic_filter:BasicFilter",
             "next": {"type": "to", "target": "merge"},
-            "step": 4,
+            "step": 5,
         },
         "advanced_intro": {
             "ui": "wizard_03_advanced.ui",
@@ -45,7 +51,7 @@ WIZARD_BLUEPRINT = {
             "ui": "wizard_04_merge.ui",
             "controller": "frontend.controllers.pages.merge_page:MergePage",
             "next": {"type": "end"},
-            "step": 5,
+            "step": 6,
         },
     },
 }

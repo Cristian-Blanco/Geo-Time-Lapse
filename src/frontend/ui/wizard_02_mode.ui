@@ -3,10 +3,19 @@
  <widget class="QWidget" name="WizardMode">
   <layout class="QVBoxLayout" name="pageLayout">
    <property name="leftMargin"><number>12</number></property>
-   <property name="topMargin"><number>100</number></property>
+   <property name="topMargin"><number>12</number></property>
    <property name="rightMargin"><number>12</number></property>
-   <property name="bottomMargin"><number>100</number></property>
+   <property name="bottomMargin"><number>12</number></property>
    <property name="spacing"><number>10</number></property>
+
+   <item>
+    <spacer name="sp_page_top">
+     <property name="orientation"><enum>Qt::Vertical</enum></property>
+     <property name="sizeHint" stdset="0">
+      <size><width>20</width><height>40</height></size>
+     </property>
+    </spacer>
+   </item>
 
      <!-- Hidden radios (compat / state) -->
     <item>

@@ -23,9 +23,11 @@ class StyleBootstrap:
 
         qss = load_qss(
             STYLES_DIR / "base.qss",
+            STYLES_DIR / "global_controls.qss",
             STYLES_DIR / "sign_in.qss",
             STYLES_DIR / "mode.qss",
             STYLES_DIR / "basic_points_map.qss",
+            STYLES_DIR / "basic_image_type.qss",
             variables={k.value: v for k, v in THEME.items()},
         )
 

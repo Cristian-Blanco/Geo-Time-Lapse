@@ -29,5 +29,6 @@ exclude: |
     ^build/|
     ^dist/|
     ^i18n/.*\.(qm)$|
+    ^resources\.(py)$|
     ^src/.*resources(_rc)?\.py$
   )

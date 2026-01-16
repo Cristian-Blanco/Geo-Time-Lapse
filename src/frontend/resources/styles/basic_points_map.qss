@@ -17,19 +17,6 @@ QPushButton#btn_select_map:pressed {
     background-color: {{COLOR_GREEN_LIGHT_300}};
 }
 
-/* ===== Accordion header ===== */
-QWidget#WizardBasicPointsMapChild QToolButton#btn_manual_toggle {
-    border: none;
-    background: transparent;
-    padding: 2px 0px;
-    color: #3f3f3f;
-    font-size: {{FONT_SIZE_MEDIUM}};
-    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
-}
-
-QToolButton#btn_manual_toggle:hover {
-    color: #2b2b2b;
-}
 
 /* Divider line under accordion title */
 QWidget#manual_body QFrame#divider_line {
