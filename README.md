@@ -21,3 +21,9 @@ $(find src/frontend/ui -name "*.ui") \
 ```bash
 lrelease i18n/GeoTimeLapse_en.ts
 ```
+
+## load image with qrc
+
+```bash
+pyrcc5 resources.qrc -o resources.py
+```

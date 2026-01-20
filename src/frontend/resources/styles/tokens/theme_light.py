@@ -21,9 +21,16 @@ THEME = {
     Token.COLOR_GREEN_LIGHT_100: "#D5E78C",
     Token.COLOR_GREEN_LIGHT_200: "#CCE46D",
     Token.COLOR_GREEN_LIGHT_300: "#C1E045",
+    Token.COLOR_GREEN_LIGHT_100_OPACITY: "rgba(213, 231, 140, 0.1)",
+
+    Token.COLOR_YELLOW_100: "#F0E971",
+    Token.COLOR_YELLOW_200: "#F0E64A",
+    Token.COLOR_YELLOW_100_OPACITY: "rgba(240, 230, 74, 0.1)",
+
     Token.COLOR_ACCENT_ORANGE: "#EE7913",
     Token.COLOR_BORDER_PRIMARY: "#3A6321",
     Token.COLOR_BORDER_DISABLED: "#a7b992",
+
     # ------ Typography --------
     Token.FONT_SIZE_TITLE: "18px",
     Token.FONT_SIZE_MEDIUM: "12px",
@@ -34,4 +41,5 @@ THEME = {
     Token.BORDER_RADIUS_PAGINATION_BUTTON: "8px",
     Token.BORDER_RADIUS_CARD: "10px",
     Token.BORDER_RADIUS_GENERAL: "6px",
+    Token.BORDER_RADIUS_SCROLL: "4px",
 }
