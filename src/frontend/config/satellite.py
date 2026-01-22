@@ -27,7 +27,7 @@ IMAGE_TYPES = [
             "Recommended for areas with persistent cloud cover "
             "or for structural analysis"
         ),
-        "icon": "radar.png",
+        "icon": "radar_filter.png",
     },
 ]
 

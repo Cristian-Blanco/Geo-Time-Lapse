@@ -4,7 +4,7 @@ MODE = Literal["basic", "advanced"]
 
 WIZARD_BLUEPRINT = {
     "start": "login",
-    "total_steps": 6,
+    "total_steps": 7,
     "nodes": {
         "login": {
             "ui": "wizard_01_login.ui",
@@ -32,28 +32,34 @@ WIZARD_BLUEPRINT = {
         "basic_image_type": {
             "ui": "wizard_basic_02_image_type.ui",
             "controller": "frontend.controllers.pages.basic_image_type:BasicImageType",
-            "next": {"type": "to", "target": "basic_filter"},
+            "next": {"type": "to", "target": "basic_time_lapse"},
             "step": 4,
+        },
+        "basic_time_lapse": {
+            "ui": "wizard_basic_03_time_lapse.ui",
+            "controller": "frontend.controllers.pages.basic_time_lapse:BasicTimeLapse",
+            "next": {"type": "to", "target": "basic_filter"},
+            "step": 5,
         },
         "basic_filter": {
             "ui": "wizard_basic_02_filter.ui",
             "controller": "frontend.controllers.pages.basic_filter:BasicFilter",
             "next": {"type": "to", "target": "merge"},
-            "step": 5,
+            "step": 6,
         },
         "advanced_intro": {
             "ui": "wizard_03_advanced.ui",
             "controller": "frontend.controllers.pages.advanced_intro_page:AdvancedIntroPage",
             "next": {"type": "to", "target": "merge"},
-            "step": 3,
+            "step": 5,
         },
         "merge": {
             "ui": "wizard_04_merge.ui",
             "controller": "frontend.controllers.pages.merge_page:MergePage",
             "next": {"type": "end"},
-            "step": 6,
+            "step": 7,
         },
     },
 }
 
-ENABLE_ADVANCED_MODE = True
+ENABLE_ADVANCED_MODE = False

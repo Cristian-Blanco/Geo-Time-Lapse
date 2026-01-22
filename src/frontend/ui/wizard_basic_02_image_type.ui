@@ -9,10 +9,13 @@
                     <property name="widgetResizable">
                         <bool>true</bool>
                     </property>
-                    <widget class="QWidget" name="scrollContent">
-                        <layout class="QVBoxLayout" name="scrollLayout">
+                    <widget class="QWidget">
+                        <layout class="QVBoxLayout">
                             <property name="spacing">
                                 <number>16</number>
+                            </property>
+                            <property name="class" stdset="0">
+                                <string>scroll_content</string>
                             </property>
 
                             <!-- Title -->
@@ -20,9 +23,6 @@
                                 <widget class="QLabel" name="title_label_filter">
                                     <property name="text">
                                         <string>Select filter</string>
-                                    </property>
-                                    <property name="objectName">
-                                        <string>wizardTitle</string>
                                     </property>
                                 </widget>
                             </item>
