@@ -38,20 +38,20 @@ WIZARD_BLUEPRINT = {
         "basic_time_lapse": {
             "ui": "wizard_basic_03_time_lapse.ui",
             "controller": "frontend.controllers.pages.basic_time_lapse:BasicTimeLapse",
-            "next": {"type": "to", "target": "basic_filter"},
+            "next": {"type": "to", "target": "choose_template"},
             "step": 5,
         },
-        "basic_filter": {
-            "ui": "wizard_basic_02_filter.ui",
-            "controller": "frontend.controllers.pages.basic_filter:BasicFilter",
+        "choose_template": {
+            "ui": "wizard_04_choose_template.ui",
+            "controller": "frontend.controllers.pages.choose_template:ChooseTemplate",
             "next": {"type": "to", "target": "merge"},
             "step": 6,
         },
         "advanced_intro": {
             "ui": "wizard_03_advanced.ui",
             "controller": "frontend.controllers.pages.advanced_intro_page:AdvancedIntroPage",
-            "next": {"type": "to", "target": "merge"},
-            "step": 5,
+            "next": {"type": "to", "target": "choose_template"},
+            "step": 4,
         },
         "merge": {
             "ui": "wizard_04_merge.ui",
