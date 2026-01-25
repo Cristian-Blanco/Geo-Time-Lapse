@@ -33,16 +33,9 @@ class BasicImageType(BasePage):
         self.widget.cloud_slider.valueChanged.connect(self._update_cloud_label)
         self._update_cloud_label(self.widget.cloud_slider.value())
 
-        self._setup_scroll()
         self._load_image_types()
         self._load_extras()
         self._setup_accordion()
-
-    # -------------------------
-    # Scroll
-    # -------------------------
-    def _setup_scroll(self) -> None:
-        self.widget.scrollArea.setWidgetResizable(True)
 
     # -------------------------
     # Image cards

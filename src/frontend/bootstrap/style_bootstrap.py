@@ -28,6 +28,7 @@ class StyleBootstrap:
             STYLES_DIR / "mode.qss",
             STYLES_DIR / "basic_points_map.qss",
             STYLES_DIR / "basic_image_type.qss",
+            STYLES_DIR / "basic_time_lapse.qss",
             variables={k.value: v for k, v in THEME.items()},
         )
 

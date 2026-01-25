@@ -1,0 +1,27 @@
+QWidget#VideoTimeLapse QLabel#hint_label {
+    color: {{COLOR_TEXT_SECONDARY}};
+    font-size: {{FONT_SIZE_SMALL}};
+}
+
+QWidget#VideoTimeLapse QFrame[class="summary_card"] {
+    background-color: {{BACKGROUND_WHITE}};
+    border: 1px solid {{COLOR_SEPARATOR_LINE}};
+    border-radius: {{BORDER_RADIUS_CARD}};
+    padding: 12px;
+}
+
+QWidget#VideoTimeLapse QLabel[class="summary_title"] {
+    font-size: {{FONT_SIZE_BASE}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    color: {{COLOR_TEXT_PRIMARY}};
+}
+
+QWidget#VideoTimeLapse QLabel[class="summary_value"] {
+    font-size: {{FONT_SIZE_BASE}};
+    color: {{COLOR_TEXT_SECONDARY}};
+}
+
+QWidget#VideoTimeLapse QToolButton[class="icon_summary"] {
+    border: none;
+    icon-size: 30px;
+}

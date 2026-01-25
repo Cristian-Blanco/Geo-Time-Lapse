@@ -1,48 +1,48 @@
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent {
+QWidget#WizardBasicImageTypeChild {
     color: {{COLOR_TEXT_PRIMARY}}
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent  QLabel#title_label_filter {
+QWidget#WizardBasicImageTypeChild  QLabel#title_label_filter {
     font-size: {{FONT_SIZE_MEDIUM}};
     font-weight: {{FONT_WEIGHT_SEMIBOLD}};
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QFrame#image_type_card {
+QWidget#WizardBasicImageTypeChild QFrame#image_type_card {
     border: 2px solid transparent;
     border-radius: {{BORDER_RADIUS_CARD}};
     background-color: {{BACKGROUND_WHITE}};
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QFrame#image_type_card[selected="true"] {
+QWidget#WizardBasicImageTypeChild QFrame#image_type_card[selected="true"] {
     border-color: {{COLOR_GREEN_LIGHT_200}};
     background-color: {{COLOR_GREEN_LIGHT_100_OPACITY}};
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QLabel#image_type_title {
+QWidget#WizardBasicImageTypeChild QLabel#image_type_title {
     font-weight: {{FONT_WEIGHT_SEMIBOLD}};
     font-size: {{FONT_SIZE_MEDIUM}};
     background-color: transparent;
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QLabel#image_type_description {
+QWidget#WizardBasicImageTypeChild QLabel#image_type_description {
     color: {{COLOR_TEXT_SECONDARY}};
     font-size: {{FONT_SIZE_BASE}};
     background-color: transparent;
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QFrame#when_to_use_panel {
+QWidget#WizardBasicImageTypeChild QFrame#when_to_use_panel {
     border: 2px solid {{COLOR_YELLOW_200}};
     border-radius: {{BORDER_RADIUS_CARD}};
     background-color: {{COLOR_YELLOW_100_OPACITY}};
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QFrame#when_to_use_title {
+QWidget#WizardBasicImageTypeChild QFrame#when_to_use_title {
     font-size: {{FONT_SIZE_MEDIUM}};
     font-weight: {{FONT_WEIGHT_SEMIBOLD}};
     background-color: transparent;
 }
 
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent QFrame#when_to_use_content {
+QWidget#WizardBasicImageTypeChild QFrame#when_to_use_content {
     font-size: {{FONT_SIZE_BASE}};
     font-weight: {{FONT_WEIGHT_NORMAL}};
     background-color: transparent;
@@ -70,10 +70,4 @@ QWidget#WizardBasicImageTypeChild QSlider#cloud_slider::handle:horizontal {
     background: {{COLOR_GREEN_LIGHT_200}};
     border-radius: 8px;
     margin: -4px 0;
-}
-
-/* Scroll */
-QWidget#WizardBasicImageTypeChild QWidget#scrollContent {
-    background-color: transparent;
-    color: {{COLOR_TEXT_PRIMARY}};
 }
