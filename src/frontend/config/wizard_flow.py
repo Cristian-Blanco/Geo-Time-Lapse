@@ -4,7 +4,7 @@ MODE = Literal["basic", "advanced"]
 
 WIZARD_BLUEPRINT = {
     "start": "login",
-    "total_steps": 7,
+    "total_steps": 8,
     "nodes": {
         "login": {
             "ui": "wizard_01_login.ui",
@@ -44,8 +44,14 @@ WIZARD_BLUEPRINT = {
         "choose_template": {
             "ui": "wizard_04_choose_template.ui",
             "controller": "frontend.controllers.pages.choose_template:ChooseTemplate",
-            "next": {"type": "to", "target": "merge"},
+            "next": {"type": "to", "target": "choose_directory"},
             "step": 6,
+        },
+        "choose_directory": {
+            "ui": "wizard_05_choose_directory.ui",
+            "controller": "frontend.controllers.pages.choose_directory:ChooseDirectory",
+            "next": {"type": "to", "target": "merge"},
+            "step": 7,
         },
         "advanced_intro": {
             "ui": "wizard_03_advanced.ui",
@@ -57,7 +63,7 @@ WIZARD_BLUEPRINT = {
             "ui": "wizard_04_merge.ui",
             "controller": "frontend.controllers.pages.merge_page:MergePage",
             "next": {"type": "end"},
-            "step": 7,
+            "step": 8,
         },
     },
 }

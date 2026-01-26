@@ -8,4 +8,6 @@ class WizardState:
     mode: MODE | None = None
     template: str | None = None
 
+    output_dir: str | None = None
+
     verified: bool = False
