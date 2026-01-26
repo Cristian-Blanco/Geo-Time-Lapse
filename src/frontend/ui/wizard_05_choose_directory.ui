@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>ChooseDirectory</class>
+    <widget class="QWidget" name="ChooseDirectory">
+        <layout class="QVBoxLayout">
+            <property name="spacing">
+                <number>16</number>
+            </property>
+
+            <!-- Directory selector -->
+            <item>
+                <layout class="QHBoxLayout">
+                    <property name="spacing">
+                        <number>8</number>
+                    </property>
+
+                    <!-- Path input -->
+                    <item>
+                        <widget class="QLineEdit" name="input_directory">
+                            <property name="placeholderText">
+                                <string>/home/user/Videos</string>
+                            </property>
+                            <property name="readOnly">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+
+                    <!-- Browse button -->
+                    <item>
+                        <widget class="QToolButton" name="btn_browse">
+                            <property name="toolTip">
+                                <string>Select directory</string>
+                            </property>
+                            <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </item>
+
+            <!-- Hint -->
+            <item>
+                <widget class="QLabel" name="lbl_hint">
+                    <property name="text">
+                        <string>The file will be saved in the selected directory.</string>
+                    </property>
+                    <property name="wordWrap">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </item>
+
+            <!-- Spacer -->
+            <item>
+                <spacer name="verticalSpacer">
+                    <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+            </item>
+
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>
