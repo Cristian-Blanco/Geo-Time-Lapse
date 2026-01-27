@@ -44,7 +44,7 @@ class BasicImageType(BasePage):
         for item in IMAGE_TYPES:
             card = self._create_image_card(item)
             self.image_cards[item["id"]] = card
-            self.widget.imageTypeListLayout.addWidget(card)
+            self.widget.image_type_list.addWidget(card)
 
     def _create_image_card(self, item: dict[str, Any]) -> QtWidgets.QFrame:
         card = QtWidgets.QFrame()
@@ -72,10 +72,10 @@ class BasicImageType(BasePage):
         text_layout.setAlignment(QtCore.Qt.AlignTop)
 
         title = QtWidgets.QLabel(item["label"])
-        title.setObjectName("image_type_title")
+        title.setProperty("class", "group_title")
 
         desc = QtWidgets.QLabel(item["description"])
-        desc.setObjectName("image_type_description")
+        desc.setProperty("class", "group_description")
         desc.setWordWrap(True)
 
         text_layout.addWidget(title)
@@ -108,11 +108,11 @@ class BasicImageType(BasePage):
     # Accordion
     # -------------------------
     def _setup_accordion(self) -> None:
-        self.widget.extraContent.setVisible(False)
+        self.widget.extra_content.setVisible(False)
         self.widget.extra_toggle.toggled.connect(self._toggle_extra)
 
     def _toggle_extra(self, checked: bool) -> None:
-        self.widget.extraContent.setVisible(checked)
+        self.widget.extra_content.setVisible(checked)
         self.widget.extra_toggle.setArrowType(
             QtCore.Qt.DownArrow if checked else QtCore.Qt.RightArrow
         )
@@ -122,9 +122,9 @@ class BasicImageType(BasePage):
     # -------------------------
     def _load_extras(self) -> None:
         for g in IMAGE_GALLERIES:
-            self.widget.galleryCombo.addItem(g["label"], g["id"])
+            self.widget.gallery_combo.addItem(g["label"], g["id"])
         for c in IMAGE_COMPOSITIONS:
-            self.widget.compositionCombo.addItem(c["label"], c["id"])
+            self.widget.compositon_combo.addItem(c["label"], c["id"])
 
     def _update_cloud_label(self, value: int) -> None:
-        self.widget.cloudValueLabel.setText(f"{value}%")
+        self.widget.cloud_value_label.setText(f"{value}%")

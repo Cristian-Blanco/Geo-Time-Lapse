@@ -42,13 +42,14 @@
 
             <!-- Hint -->
             <item>
-                <widget class="QLabel" name="lbl_hint">
+                <widget class="QLabel">
                     <property name="text">
                         <string>The file will be saved in the selected directory.</string>
                     </property>
                     <property name="wordWrap">
                         <bool>true</bool>
                     </property>
+                    <property name="class" stdset="0"><string>group_description</string></property>
                 </widget>
             </item>
 

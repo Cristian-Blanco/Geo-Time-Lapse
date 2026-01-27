@@ -1,0 +1,21 @@
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_next {
+  background-color: {{COLOR_PRIMARY}};
+  border: 1px solid {{COLOR_BORDER_PRIMARY}};
+  color: #ffffff;
+}
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_next:hover {
+  background-color: {{BACKGROUND_BUTTON_HOVER}};
+}
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_next:disabled {
+  background-color: {{BACKGROUND_BUTTON_DISABLED}};
+  border-color: {{COLOR_BORDER_DISABLED}};
+  color: {{COLOR_TEXT_DISABLED_WHITE}};
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_previous {
+  background-color: {{BACKGROUND_BUTTON_PREVIOUS}};
+  border: 1px solid #dfdfdf;
+}
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_previous:hover {
+  background-color: {{BACKGROUND_BUTTON_PREVIOUS_HOVER}};
+}

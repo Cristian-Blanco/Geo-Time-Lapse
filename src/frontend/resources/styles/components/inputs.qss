@@ -1,0 +1,128 @@
+/* ------------- Inputs ------------- */
+QDialog#GeoTimeLapseDialogBase QLineEdit {
+    background-color: {{BACKGROUND}};
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: {{BORDER_RADIUS_GENERAL}};
+    padding: 9px 9px 9px 0;
+    font-size: {{FONT_SIZE_BASE}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLineEdit:hover {
+    border: 1px solid {{COLOR_GREEN_LIGHT_200}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLineEdit:focus {
+    border: 1px solid {{COLOR_DARK}};
+}
+
+/* ------------- Selects ------------- */
+
+QComboBox {
+    background-color: {{BACKGROUND}};
+    border: 1px solid {{BACKGROUND_BUTTON_DISABLED}};
+    border-radius: {{BORDER_RADIUS_GENERAL}};
+    min-height: 28px;
+}
+
+QComboBox:hover {
+    border-color: {{COLOR_GREEN_LIGHT_200}};
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid {{BACKGROUND_BUTTON_DISABLED}};
+    selection-background-color: {{COLOR_GREEN_LIGHT_100}};
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 22px;
+
+    background: transparent;
+    border-left: 1px solid #D0D0D0;
+
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+QComboBox::down-arrow {
+    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/down_arrow.png");
+    width: 8px;
+    height: 8px;
+}
+
+QComboBox::drop-down:pressed,
+QComboBox::drop-down:hover {
+    background: transparent;
+}
+
+/* ------------- SpinBox ------------- */
+
+QDialog#GeoTimeLapseDialogBase QSpinBox {
+    background-color: {{BACKGROUND}};
+    border: 1px solid {{BACKGROUND_BUTTON_DISABLED}};
+    border-radius: {{BORDER_RADIUS_GENERAL}};
+    min-height: 28px;
+    padding-right: 24px;
+}
+
+QDialog#GeoTimeLapseDialogBase QSpinBox:hover {
+    border-color: {{COLOR_GREEN_LIGHT_200}};
+}
+
+QDialog#GeoTimeLapseDialogBase QSpinBox::up-button,
+QDialog#GeoTimeLapseDialogBase QSpinBox::down-button {
+    subcontrol-origin: border;
+    width: 16px;
+    border: none;
+    background: transparent;
+}
+
+QDialog#GeoTimeLapseDialogBase QSpinBox::up-arrow {
+    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/up_arrow.png");
+    width: 8px;
+    height: 8px;
+}
+
+QDialog#GeoTimeLapseDialogBase QSpinBox::down-arrow {
+    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/down_arrow.png");
+    width: 8px;
+    height: 8px;
+}
+
+/* ------------- Input Choose directory ------------- */
+QDialog#GeoTimeLapseDialogBase QToolButton {
+    border: 1px solid {{COLOR_SEPARATOR_LINE}};
+    border-radius: {{BORDER_RADIUS_CARD}};
+    padding: 6px 6px 6px 10px;
+    background: {{BACKGROUND}};
+}
+
+QDialog#GeoTimeLapseDialogBase QToolButton:hover {
+    border-color: {{COLOR_DARK}};
+    background: {{COLOR_GREEN_LIGHT_100_OPACITY}}
+}
+
+/* ------------- horizontal slider ------------- */
+QDialog#GeoTimeLapseDialogBase QSlider[class="group_slider"] {
+    min-height: 25px;
+}
+
+QDialog#GeoTimeLapseDialogBase QSlider[class="group_slider"]::groove:horizontal {
+    height: 8px;
+    background: #E0E0E0;
+    border-radius: 4px;
+}
+
+QDialog#GeoTimeLapseDialogBase QSlider[class="group_slider"]::sub-page:horizontal {
+    background: {{COLOR_GREEN_LIGHT_200}};
+    border-radius: 3px;
+}
+
+QDialog#GeoTimeLapseDialogBase QSlider[class="group_slider"]::handle:horizontal {
+    width: 16px;
+    height: 16px;
+    background: {{COLOR_GREEN_LIGHT_200}};
+    border-radius: 8px;
+    margin: -4px 0;
+}

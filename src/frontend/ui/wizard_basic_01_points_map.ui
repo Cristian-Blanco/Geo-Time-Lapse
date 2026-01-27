@@ -1,7 +1,7 @@
 <ui version="4.0">
     <class>WizardBasicPointsMapChild</class>
     <widget class="QWidget" name="WizardBasicPointsMapChild">
-        <layout class="QVBoxLayout" name="mainLayout">
+        <layout class="QVBoxLayout">
             <property name="spacing">
                 <number>12</number>
             </property>
@@ -30,12 +30,13 @@
                     <property name="cursor">
                         <cursorShape>PointingHandCursor</cursorShape>
                     </property>
+                    <property name="class" stdset="0"><string>interaction_buttons</string></property>
                 </widget>
             </item>
 
             <!-- Accordion header -->
             <item>
-                <layout class="QHBoxLayout" name="accordionHeaderLayout">
+                <layout class="QHBoxLayout">
                     <property name="spacing">
                         <number>8</number>
                     </property>
@@ -100,7 +101,7 @@
             <!-- Accordion body -->
             <item>
                 <widget class="QWidget" name="manual_body">
-                    <layout class="QVBoxLayout" name="manualBodyLayout">
+                    <layout class="QVBoxLayout">
                         <property name="spacing">
                             <number>10</number>
                         </property>
@@ -119,11 +120,11 @@
 
                         <!-- Card panel -->
                         <item>
-                            <widget class="QFrame" name="frame_points_card">
+                            <widget class="QFrame">
                                 <property name="frameShape">
                                     <enum>QFrame::NoFrame</enum>
                                 </property>
-                                <layout class="QVBoxLayout" name="pointsLayout">
+                                <layout class="QVBoxLayout">
                                     <property name="spacing">
                                         <number>10</number>
                                     </property>
@@ -148,15 +149,16 @@
                                             </property>
 
                                             <item>
-                                                <widget class="QLabel" name="lbl_point_1">
+                                                <widget class="QLabel">
                                                     <property name="text">
                                                         <string>Point 1</string>
                                                     </property>
+                                                    <property name="class" stdset="0"><string>group_description</string></property>
                                                 </widget>
                                             </item>
 
                                             <item>
-                                                <widget class="QLineEdit" name="txt_p1_lat">
+                                                <widget class="QLineEdit">
                                                     <property name="placeholderText">
                                                         <string>Latitude</string>
                                                     </property>
@@ -164,7 +166,7 @@
                                             </item>
 
                                             <item>
-                                                <widget class="QLineEdit" name="txt_p1_lon">
+                                                <widget class="QLineEdit">
                                                     <property name="placeholderText">
                                                         <string>longitude</string>
                                                     </property>
@@ -181,15 +183,16 @@
                                             </property>
 
                                             <item>
-                                                <widget class="QLabel" name="lbl_point_2">
+                                                <widget class="QLabel">
                                                     <property name="text">
                                                         <string>Point 2</string>
                                                     </property>
+                                                    <property name="class" stdset="0"><string>group_description</string></property>
                                                 </widget>
                                             </item>
 
                                             <item>
-                                                <widget class="QLineEdit" name="txt_p2_lat">
+                                                <widget class="QLineEdit">
                                                     <property name="placeholderText">
                                                         <string>Latitude</string>
                                                     </property>
@@ -197,7 +200,7 @@
                                             </item>
 
                                             <item>
-                                                <widget class="QLineEdit" name="txt_p2_lon">
+                                                <widget class="QLineEdit">
                                                     <property name="placeholderText">
                                                         <string>longitude</string>
                                                     </property>
@@ -208,13 +211,14 @@
 
                                     <!-- Divider line -->
                                     <item>
-                                        <widget class="QFrame" name="divider_line">
+                                        <widget class="QFrame">
                                             <property name="frameShape">
                                                 <enum>QFrame::HLine</enum>
                                             </property>
                                             <property name="frameShadow">
                                                 <enum>QFrame::Plain</enum>
                                             </property>
+                                            <property name="class" stdset="0"><string>divider_line</string></property>
                                         </widget>
                                     </item>
                                 </layout>
@@ -226,11 +230,11 @@
 
             <!-- Set size image -->
             <item>
-                <widget class="QFrame" name="frame_size_card">
+                <widget class="QFrame">
                     <property name="frameShape">
                         <enum>QFrame::NoFrame</enum>
                     </property>
-                    <layout class="QHBoxLayout" name="sizeRowLayout">
+                    <layout class="QHBoxLayout">
                         <property name="spacing">
                             <number>10</number>
                         </property>
@@ -248,7 +252,7 @@
                         </property>
 
                         <item>
-                            <widget class="QCheckBox" name="chk_size">
+                            <widget class="QCheckBox">
                                 <property name="text">
                                     <string>Set the size to</string>
                                 </property>
@@ -258,11 +262,14 @@
                                 <property name="cursor">
                                     <cursorShape>PointingHandCursor</cursorShape>
                                 </property>
+                                <property name="class" stdset="0">
+                                    <string>group_check</string>
+                                </property>
                             </widget>
                         </item>
 
                         <item>
-                            <widget class="QLineEdit" name="txt_km">
+                            <widget class="QLineEdit">
                                 <property name="text">
                                     <string>50</string>
                                 </property>
@@ -276,10 +283,11 @@
                         </item>
 
                         <item>
-                            <widget class="QLabel" name="lbl_km">
+                            <widget class="QLabel">
                                 <property name="text">
                                     <string>km</string>
                                 </property>
+                                <property name="class" stdset="0"><string>group_description</string></property>
                             </widget>
                         </item>
 
@@ -300,10 +308,11 @@
                 </widget>
             </item>
             <item>
-                <widget class="QLabel" name="lbl_km_hint">
+                <widget class="QLabel">
                     <property name="text">
                         <string>Maximum allowed: 200 km</string>
                     </property>
+                    <property name="class" stdset="0"><string>group_help</string></property>
                 </widget>
             </item>
             <item>

@@ -2,7 +2,7 @@ from .types import Token
 
 THEME = {
     # ------ Background colors --------
-    Token.BACKGROUND_WHITE: "#FBF9FC",
+    Token.BACKGROUND: "#FBF9FC",
     Token.BACKGROUND_DISABLED: "rgba(255,255,255, 0.6)",
     Token.BACKGROUND_BUTTON_PREVIOUS: "#E9E8EB",
     Token.BACKGROUND_BUTTON_DISABLED: "#B0B4BA",
@@ -27,17 +27,24 @@ THEME = {
     Token.COLOR_YELLOW_200: "#F0E64A",
     Token.COLOR_YELLOW_100_OPACITY: "rgba(240, 230, 74, 0.1)",
 
-    Token.COLOR_ACCENT_ORANGE: "#EE7913",
+    Token.COLOR_ACCENT_ORANGE_100: "#F18D36",
+    Token.COLOR_ACCENT_ORANGE_200: "#EE7913",
+    Token.COLOR_ACCENT_ORANGE_100_OPACITY: "rgba(241, 141, 54, 0.1)",
+
     Token.COLOR_BORDER_PRIMARY: "#3A6321",
     Token.COLOR_BORDER_DISABLED: "#a7b992",
 
     # ------ Typography --------
+    Token.FONT_FAMILY: '"Segoe UI", "Helvetica Neue", "Arial"',
+
     Token.FONT_SIZE_TITLE: "18px",
     Token.FONT_SIZE_MEDIUM: "12px",
     Token.FONT_SIZE_BASE: "11px",
     Token.FONT_SIZE_SMALL: "10px",
+
     Token.FONT_WEIGHT_SEMIBOLD: "500",
     Token.FONT_WEIGHT_NORMAL: "400",
+
     Token.BORDER_RADIUS_PAGINATION_BUTTON: "8px",
     Token.BORDER_RADIUS_CARD: "10px",
     Token.BORDER_RADIUS_GENERAL: "6px",

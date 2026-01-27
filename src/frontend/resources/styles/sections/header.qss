@@ -1,0 +1,17 @@
+QDialog#GeoTimeLapseDialogBase QLabel#dlg_lbl_header_title {
+  font-size: {{FONT_SIZE_TITLE}};
+  font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#dlg_lbl_header_subtitle {
+  font-size: {{FONT_SIZE_MEDIUM}};
+  color: {{COLOR_TEXT_SECONDARY}};
+}
+
+QDialog#GeoTimeLapseDialogBase QFrame#dlg_line_header_top,
+QDialog#GeoTimeLapseDialogBase QFrame#dlg_line_header_bottom {
+  color: {{COLOR_SEPARATOR_LINE}};
+  background-color: {{COLOR_SEPARATOR_LINE}};
+  border: none;
+  max-height: 1px;
+}

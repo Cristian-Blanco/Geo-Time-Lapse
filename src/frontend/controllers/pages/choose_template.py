@@ -22,6 +22,7 @@ class ChooseTemplate(BasePage):
         card.setObjectName(f"card_{tpl['id']}")
         card.setProperty("template_id", tpl["id"])
         card.setProperty("selected", False)
+        card.setProperty("class", "card_group")
         card.setEnabled(tpl["enabled"])
 
         card.setMinimumWidth(190)
@@ -41,7 +42,7 @@ class ChooseTemplate(BasePage):
         layout.setSpacing(8)
 
         lbl_title = QtWidgets.QLabel(tpl["title"])
-        lbl_title.setProperty("class", "card_title")
+        lbl_title.setProperty("class", "group_title")
         layout.addWidget(lbl_title, alignment=QtCore.Qt.AlignHCenter)
 
         lbl_img = QtWidgets.QLabel()
@@ -53,7 +54,7 @@ class ChooseTemplate(BasePage):
         lbl_desc = QtWidgets.QLabel(tpl["description"])
         lbl_desc.setWordWrap(True)
         lbl_desc.setAlignment(QtCore.Qt.AlignHCenter)
-        lbl_desc.setProperty("class", "card_description")
+        lbl_desc.setProperty("class", "group_description")
         layout.addWidget(lbl_desc)
 
         if tpl["enabled"]:

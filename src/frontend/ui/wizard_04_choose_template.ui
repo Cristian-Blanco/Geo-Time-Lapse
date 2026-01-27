@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
     <class>ChooseTemplate</class>
     <widget class="QWidget" name="ChooseTemplate">
         <layout class="QVBoxLayout">
-
             <!-- Cards container -->
             <item>
                 <widget class="QScrollArea">
@@ -11,10 +9,6 @@
                         <bool>true</bool>
                     </property>
                     <widget class="QWidget">
-                        <property name="objectName">
-                            <string>cards_container</string>
-                        </property>
-
                         <layout class="QGridLayout" name="cards_grid">
                             <property name="spacing">
                                 <number>16</number>

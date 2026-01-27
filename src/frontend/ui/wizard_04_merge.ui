@@ -1,7 +1,7 @@
 <ui version="4.0">
  <class>WizardMerge</class>
  <widget class="QWidget" name="WizardMerge">
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout">
    <property name="leftMargin"><number>12</number></property>
    <property name="topMargin"><number>12</number></property>
    <property name="rightMargin"><number>12</number></property>
