@@ -1,0 +1,30 @@
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_title"] {
+    font-size: {{FONT_SIZE_MEDIUM}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    border: none;
+    background: transparent;
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_subtitle"] {
+    font-size: {{FONT_SIZE_BASE}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    background: transparent;
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_description"] {
+    font-size: {{FONT_SIZE_BASE}};
+    color: {{COLOR_TEXT_SECONDARY}};
+    background: transparent;
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_help"] {
+    font-size: {{FONT_SIZE_SMALL}};
+    color: {{COLOR_TEXT_MUTED}};
+    margin-left: 14px;
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_title"]:disabled,
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_subtitle"]:disabled,
+QDialog#GeoTimeLapseDialogBase QLabel[class="group_description"]:disabled {
+    color: {{BACKGROUND_BUTTON_DISABLED}};
+}

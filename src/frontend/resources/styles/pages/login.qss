@@ -1,0 +1,22 @@
+QDialog#GeoTimeLapseDialogBase QFrame#login_input_box {
+  background-color: {{BACKGROUND}};
+  border: 1px solid #cfd3d7;
+  border-radius: {{BORDER_RADIUS_GENERAL}};
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_sign_in {
+  background-color: {{COLOR_TEXT_WHITE}};
+  border: 1px solid {{COLOR_ACCENT_ORANGE_100}};
+  color: {{COLOR_TEXT_PRIMARY}};
+  padding: 8px 16px;
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton#btn_sign_in:hover {
+  background-color: {{COLOR_ACCENT_ORANGE_100_OPACITY}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_project_icon {
+  border-right: 1px solid #e3e6e8;
+  padding-left: 10px;
+  padding-right: 10px;
+}

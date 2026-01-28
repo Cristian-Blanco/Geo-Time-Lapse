@@ -1,0 +1,44 @@
+QDialog#GeoTimeLapseDialogBase QPushButton {
+  border-radius: {{BORDER_RADIUS_PAGINATION_BUTTON}};
+  padding: 8px 18px;
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton[class="interaction_buttons"] {
+  background-color: {{COLOR_GREEN_LIGHT_100}};
+  border: 1px solid {{COLOR_BORDER_PRIMARY}};
+  color: {{COLOR_TEXT_PRIMARY}};
+  font-weight: {{FONT_WEIGHT_SEMIBOLD}}
+}
+QDialog#GeoTimeLapseDialogBase QPushButton[class="interaction_buttons"]:hover {
+  background-color: {{COLOR_GREEN_LIGHT_200}};
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton[class="interaction_buttons"]:pressed {
+  background-color: {{COLOR_GREEN_LIGHT_300}};
+}
+
+QDialog#GeoTimeLapseDialogBase QPushButton[class="interaction_buttons"]:disabled {
+  background-color: {{BACKGROUND_BUTTON_DISABLED}};
+  border-color: {{COLOR_BORDER_DISABLED}};
+  color: {{COLOR_TEXT_DISABLED_WHITE}};
+}
+
+/* ------------- Checkbox ------------- */
+
+QDialog#GeoTimeLapseDialogBase QCheckBox[class="group_check"] {
+    font-size: {{FONT_SIZE_BASE}};
+    color: {{COLOR_TEXT_SECONDARY}};
+}
+
+QDialog#GeoTimeLapseDialogBase QCheckBox[class="group_check"]::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: {{BORDER_RADIUS_GENERAL}};
+    border: 1px solid {{COLOR_GREEN_LIGHT_300}};
+    background: {{COLOR_GREEN_LIGHT_100_OPACITY}};
+}
+
+QDialog#GeoTimeLapseDialogBase QCheckBox[class="group_check"]::indicator:checked {
+    background: {{COLOR_GREEN_LIGHT_100}};
+    border: 1px solid {{COLOR_DARK}};
+}

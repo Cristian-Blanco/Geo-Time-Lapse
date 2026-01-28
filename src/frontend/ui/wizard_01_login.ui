@@ -1,7 +1,7 @@
 <ui version="4.0">
  <class>WizardLogin</class>
  <widget class="QWidget" name="WizardLogin">
-  <layout class="QVBoxLayout" name="pageLayout">
+  <layout class="QVBoxLayout">
    <property name="leftMargin"><number>12</number></property>
    <property name="topMargin"><number>12</number></property>
    <property name="rightMargin"><number>12</number></property>
@@ -9,15 +9,15 @@
    <property name="spacing"><number>10</number></property>
 
    <item>
-    <widget class="QFrame" name="card">
+    <widget class="QFrame">
      <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
      <property name="frameShadow"><enum>QFrame::Plain</enum></property>
 
-     <layout class="QVBoxLayout" name="cardLayout">
+     <layout class="QVBoxLayout">
 
       <!-- ================== Centered sign-in button ================== -->
       <item>
-       <layout class="QHBoxLayout" name="signInRow">
+       <layout class="QHBoxLayout">
         <item>
          <spacer name="sp_left">
           <property name="orientation"><enum>Qt::Horizontal</enum></property>
@@ -42,8 +42,8 @@
 
       <!-- Project section -->
       <item>
-            <widget class="QWidget" name="project_section">
-                <layout class="QVBoxLayout" name="projectSectionLayout">
+            <widget class="QWidget">
+                <layout class="QVBoxLayout">
                 <property name="leftMargin"><number>0</number></property>
                 <property name="topMargin"><number>10</number></property>
                 <property name="rightMargin"><number>0</number></property>
@@ -51,17 +51,18 @@
                 <property name="spacing"><number>2</number></property>
 
                 <item>
-                    <widget class="QLabel" name="lbl_project_title">
+                    <widget class="QLabel">
                     <property name="text"><string>ID de Project:</string></property>
+                    <property name="class" stdset="0"><string>group_subtitle</string></property>
                     </widget>
                 </item>
 
                 <item>
-                    <widget class="QLabel" name="lbl_project_help">
+                    <widget class="QLabel">
                     <property name="text">
                         <string>Nombre único del project en Google Cloud:</string>
                     </property>
-                    <property name="wordWrap"><bool>true</bool></property>
+                    <property name="class" stdset="0"><string>group_description</string></property>
                     </widget>
                 </item>
 
@@ -71,12 +72,12 @@
 
       <!-- Input + Verify -->
       <item>
-       <layout class="QHBoxLayout" name="projectRow">
+       <layout class="QHBoxLayout">
         <property name="spacing"><number>10</number></property>
 
         <item>
-         <widget class="QFrame" name="inputBox">
-          <layout class="QHBoxLayout" name="inputBoxLayout">
+         <widget class="QFrame" name="login_input_box">
+          <layout class="QHBoxLayout">
            <property name="leftMargin"><number>0</number></property>
            <property name="topMargin"><number>0</number></property>
            <property name="rightMargin"><number>0</number></property>
@@ -100,13 +101,14 @@
 
           </layout>
          </widget>
-        </item>
+        </item>lbl_project_icon
 
         <item>
          <widget class="QPushButton" name="btn_verify">
           <property name="text"><string>Verificar</string></property>
           <property name="minimumSize"><size><width>110</width><height>34</height></size></property>
           <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+          <property name="class" stdset="0"><string>interaction_buttons</string></property>
          </widget>
         </item>
 
@@ -117,6 +119,7 @@
       <item>
        <widget class="QLabel" name="lbl_auth_status">
         <property name="text"><string>🔒 No verificado</string></property>
+        <property name="class" stdset="0"><string>group_description</string></property>
         <property name="wordWrap"><bool>true</bool></property>
        </widget>
       </item>

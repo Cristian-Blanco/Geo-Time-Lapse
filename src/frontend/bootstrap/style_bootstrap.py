@@ -22,15 +22,26 @@ class StyleBootstrap:
         # root.style().polish(root)
 
         qss = load_qss(
-            STYLES_DIR / "base.qss",
-            STYLES_DIR / "global_controls.qss",
-            STYLES_DIR / "sign_in.qss",
-            STYLES_DIR / "mode.qss",
-            STYLES_DIR / "basic_points_map.qss",
-            STYLES_DIR / "basic_image_type.qss",
-            STYLES_DIR / "basic_time_lapse.qss",
-            STYLES_DIR / "choose_template.qss",
-            STYLES_DIR / "choose_directory.qss",
+            STYLES_DIR / "base" / "base.qss",
+            STYLES_DIR / "base" / "typography.qss",
+
+            # Components
+            STYLES_DIR / "components" / "progress.qss",
+            STYLES_DIR / "components" / "buttons.qss",
+            STYLES_DIR / "components" / "date.qss",
+            STYLES_DIR / "components" / "inputs.qss",
+            STYLES_DIR / "components" / "cards.qss",
+            STYLES_DIR / "components" / "scroll.qss",
+
+            # Sections
+            STYLES_DIR / "sections" / "header.qss",
+            STYLES_DIR / "sections" / "footer.qss",
+
+            # Pages
+            STYLES_DIR / "pages" / "login.qss",
+            STYLES_DIR / "pages" / "basic_image_type.qss",
+            STYLES_DIR  / "pages" / "basic_time_lapse.qss",
+
             variables={k.value: v for k, v in THEME.items()},
         )
 

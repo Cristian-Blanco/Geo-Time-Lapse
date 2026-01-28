@@ -5,7 +5,7 @@
 
             <!-- Scroll area -->
             <item>
-                <widget class="QScrollArea" name="scrollArea">
+                <widget class="QScrollArea">
                     <property name="widgetResizable">
                         <bool>true</bool>
                     </property>
@@ -20,24 +20,26 @@
 
                             <!-- Title -->
                             <item>
-                                <widget class="QLabel" name="title_label_filter">
+                                <widget class="QLabel">
                                     <property name="text">
                                         <string>Select filter</string>
+                                    </property>
+                                    <property name="class" stdset="0">
+                                        <string>group_title</string>
                                     </property>
                                 </widget>
                             </item>
 
                             <!-- Content -->
                             <item>
-                                <layout class="QHBoxLayout" name="contentLayout">
+                                <layout class="QHBoxLayout">
                                     <property name="alignment">
                                         <set>Qt::AlignTop</set>
                                     </property>
                                     <item>
-                                        <layout class="QVBoxLayout" name="leftLayout">
+                                        <layout class="QVBoxLayout">
                                             <item>
-                                                <layout class="QVBoxLayout"
-                                                    name="imageTypeListLayout" />
+                                                <layout class="QVBoxLayout" name="image_type_list" />
                                             </item>
                                         </layout>
                                     </item>
@@ -65,9 +67,12 @@
                                                 </property>
 
                                                 <item>
-                                                    <widget class="QLabel" name="when_to_use_title">
+                                                    <widget class="QLabel">
                                                         <property name="text">
                                                             <string>When to use this</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_title</string>
                                                         </property>
                                                     </widget>
                                                 </item>
@@ -81,6 +86,9 @@
                                                         </property>
                                                         <property name="text">
                                                             <string>Select an image type</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_description</string>
                                                         </property>
                                                     </widget>
                                                 </item>
@@ -134,7 +142,7 @@
                             </item>
 
                             <item>
-                                <widget class="QWidget" name="extraContent">
+                                <widget class="QWidget" name="extra_content">
                                     <layout class="QGridLayout">
                                         <property name="horizontalSpacing">
                                             <number>16</number>
@@ -152,7 +160,7 @@
                                             </widget>
                                         </item>
                                         <item row="1" column="0">
-                                            <widget class="QComboBox" name="galleryCombo">
+                                            <widget class="QComboBox" name="gallery_combo">
                                                 <property name="cursor">
                                                     <cursorShape>PointingHandCursor</cursorShape>
                                                 </property>
@@ -167,7 +175,7 @@
                                             </widget>
                                         </item>
                                         <item row="1" column="1">
-                                            <widget class="QComboBox" name="compositionCombo">
+                                            <widget class="QComboBox" name="compositon_combo">
                                                 <property name="cursor">
                                                     <cursorShape>PointingHandCursor</cursorShape>
                                                 </property>
@@ -199,8 +207,7 @@
                                                         </property>
 
                                                         <item>
-                                                            <widget class="QSlider"
-                                                                name="cloud_slider">
+                                                            <widget class="QSlider" name="cloud_slider">
                                                                 <property name="orientation">
                                                                     <enum>Qt::Horizontal</enum>
                                                                 </property>
@@ -216,12 +223,14 @@
                                                                 <property name="cursor">
                                                                     <cursorShape>PointingHandCursor</cursorShape>
                                                                 </property>
+                                                                <property name="class" stdset="0">
+                                                                    <string>group_slider</string>
+                                                                </property>
                                                             </widget>
                                                         </item>
 
                                                         <item>
-                                                            <widget class="QLabel"
-                                                                name="cloudValueLabel">
+                                                            <widget class="QLabel" name="cloud_value_label">
                                                                 <property name="text">
                                                                     <string>30%</string>
                                                                 </property>

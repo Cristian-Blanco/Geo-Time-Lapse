@@ -11,7 +11,7 @@
    <string>GeoTimeLapse</string>
   </property>
 
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout">
    <property name="leftMargin"><number>16</number></property>
    <property name="topMargin"><number>16</number></property>
    <property name="rightMargin"><number>16</number></property>
@@ -20,9 +20,9 @@
 
     <!-- Header -->
   <item>
-    <widget class="QFrame" name="dlg_header_card">
+    <widget class="QFrame">
       <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
-      <layout class="QVBoxLayout" name="dlgHeaderLayout">
+      <layout class="QVBoxLayout">
         <property name="leftMargin"><number>14</number></property>
         <property name="topMargin"><number>14</number></property>
         <property name="rightMargin"><number>14</number></property>
@@ -30,7 +30,7 @@
         <property name="spacing"><number>8</number></property>
 
         <item>
-          <layout class="QHBoxLayout" name="dlgHeaderRow">
+          <layout class="QHBoxLayout">
             <property name="spacing"><number>10</number></property>
 
             <item>
@@ -42,7 +42,7 @@
             </item>
 
             <item>
-              <layout class="QVBoxLayout" name="dlgHeaderTexts">
+              <layout class="QVBoxLayout">
                 <property name="spacing"><number>2</number></property>
 
                 <item>
@@ -90,15 +90,13 @@
     </widget>
    </item>
 
-   <!-- FOOTER: PROGRESO + BOTONES -->
+   <!-- FOOTER: Progress + bottons -->
    <item>
-    <layout class="QVBoxLayout" name="footerLayout">
+    <layout class="QVBoxLayout">
      <property name="spacing"><number>8</number></property>
 
-    <!-- NAV  -->
-
      <item>
-      <layout class="QHBoxLayout" name="navLayout">
+      <layout class="QHBoxLayout">
        <property name="spacing"><number>8</number></property>
 
        <item>
