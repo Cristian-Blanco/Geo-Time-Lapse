@@ -6,7 +6,7 @@ The `frontend/bootstrap/wizard_blueprint.py` file defines in one place:
 
 - Which UI loads each page (`ui`)
 
-- Which controller handles that UI (`controller`)
+- Which view handles that UI (`view`)
 
 - How to navigate to the next node (`next`)
 
@@ -75,7 +75,7 @@ Each node defines how the wizard decides the next node through the next field.
     "next": {
         "type": "switch",
         "cases": {
-            "basic": "basic_intro", 
+            "basic": "basic_intro",
             "advanced": "advanced_intro"
         },
         "default": "basic_intro",

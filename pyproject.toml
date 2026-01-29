@@ -9,7 +9,6 @@ exclude = [
   "dist",
   "__pycache__",
   "i18n",
-  "src/frontend/ui",
   "resources.py",
   "resources_rc.py",
 ]

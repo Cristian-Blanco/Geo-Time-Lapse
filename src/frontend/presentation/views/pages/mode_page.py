@@ -1,16 +1,18 @@
 from qgis.PyQt import QtCore, QtWidgets
 from qgis.PyQt.QtGui import QIcon
 
-from frontend.controllers.pages.base_page import BasePage
+from frontend.presentation.views.base_page import BasePage
 
-from frontend.config.wizard_flow import ENABLE_ADVANCED_MODE
+from frontend.config.app import ENABLE_ADVANCED_MODE
 from frontend.config.paths import ICONS_DIR
+from frontend.store.wizard_context import WizardContext
+from frontend.domain.wizard.types import Mode
 
 class ModePage(BasePage):
     left_mode = "previous"
     right_mode = "next"
 
-    def __init__(self, widget: QtWidgets.QWidget, state):
+    def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__(widget, state)
 
         self.title = self.tr("Seleccionar configuración")
@@ -46,7 +48,7 @@ class ModePage(BasePage):
         self.validityChanged.emit(self.is_valid())
         self.stateChanged.emit()
 
-    def eventFilter(self, obj, event):
+    def eventFilter(self, obj: QtCore.QObject, event: QtCore.QEvent) -> bool:
         if event.type() == QtCore.QEvent.MouseButtonRelease and event.button() == QtCore.Qt.LeftButton:
             if obj is self.card_basic:
                 self._select("basic")
@@ -54,9 +56,9 @@ class ModePage(BasePage):
             if obj is self.card_advanced and ENABLE_ADVANCED_MODE:
                 self._select("advanced")
                 return True
-        return super().eventFilter(obj, event)
+        return bool(super().eventFilter(obj, event))
 
-    def _select(self, mode: str) -> None:
+    def _select(self, mode: Mode) -> None:
         if self.state.mode == mode:
             return
         self.state.mode = mode

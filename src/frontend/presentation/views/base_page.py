@@ -1,6 +1,6 @@
 from __future__ import annotations
 from qgis.PyQt import QtCore, QtWidgets
-from frontend.controllers.wizards.wizard_state import WizardState
+from frontend.store.wizard_context import WizardContext
 
 class BasePage(QtCore.QObject):
     validityChanged = QtCore.pyqtSignal(bool)
@@ -12,7 +12,7 @@ class BasePage(QtCore.QObject):
     title: str = ""
     description: str = ""
 
-    def __init__(self, widget: QtWidgets.QWidget, state: WizardState):
+    def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__()
         self.widget = widget
         self.state = state

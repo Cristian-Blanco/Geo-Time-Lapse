@@ -1,4 +1,6 @@
-IMAGE_TYPES = [
+from frontend.domain.imagery.types import ImageComposition, ImageGallery, ImageType
+
+IMAGE_TYPES: ImageType = [
     {
         "id": "natural",
         "label": "Natural color",
@@ -31,12 +33,12 @@ IMAGE_TYPES = [
     },
 ]
 
-IMAGE_GALLERIES = [
+IMAGE_GALLERIES: ImageGallery = [
     {"id": "sentinel", "label": "Sentinel"},
     {"id": "landsat", "label": "Landsat"},
 ]
 
-IMAGE_COMPOSITIONS = [
+IMAGE_COMPOSITIONS: ImageComposition = [
     {"id": "mosaic", "label": "Image mosaic"},
     {"id": "single", "label": "Single image"},
 ]

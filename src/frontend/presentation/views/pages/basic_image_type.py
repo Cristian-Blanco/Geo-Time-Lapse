@@ -1,19 +1,19 @@
 from qgis.PyQt import QtWidgets, QtCore, QtGui
-from frontend.controllers.pages.base_page import BasePage
-from frontend.controllers.wizards.wizard_state import WizardState
-from frontend.config.satellite import (
+from frontend.presentation.views.base_page import BasePage
+from frontend.store.wizard_context import WizardContext
+from frontend.presentation.data.satellite import (
     IMAGE_TYPES,
     IMAGE_GALLERIES,
     IMAGE_COMPOSITIONS,
 )
 from frontend.config.paths import ICONS_DIR
-from typing import Any
+from frontend.domain.imagery.types import ImageTypeItem
 
 class BasicImageType(BasePage):
     left_mode = "previous"
     right_mode = "next"
 
-    def __init__(self, widget: QtWidgets.QWidget, state: WizardState) -> None:
+    def __init__(self, widget: QtWidgets.QWidget, state: WizardContext) -> None:
         super().__init__(widget, state)
 
         self.title: str = self.tr("Image type")
@@ -46,7 +46,7 @@ class BasicImageType(BasePage):
             self.image_cards[item["id"]] = card
             self.widget.image_type_list.addWidget(card)
 
-    def _create_image_card(self, item: dict[str, Any]) -> QtWidgets.QFrame:
+    def _create_image_card(self, item: ImageTypeItem) -> QtWidgets.QFrame:
         card = QtWidgets.QFrame()
         card.setObjectName("image_type_card")
         card.setProperty("selected", False)

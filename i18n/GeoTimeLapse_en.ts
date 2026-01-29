@@ -55,27 +55,27 @@
 <context>
     <name>LoginPage</name>
     <message>
-        <location filename="../src/frontend/controllers/pages/login_page.py" line="51"/>
+        <location filename="../src/frontend/views/pages/login_page.py" line="51"/>
         <source>✅ Verificado</source>
         <translation>✅ Verified</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/login_page.py" line="53"/>
+        <location filename="../src/frontend/views/pages/login_page.py" line="53"/>
         <source>🔓 Autenticado (falta verificar)</source>
         <translation>🔓 Authenticated (pending verification)</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/login_page.py" line="55"/>
+        <location filename="../src/frontend/views/pages/login_page.py" line="55"/>
         <source>🔒 No autenticado</source>
         <translation>🔒 Not authenticated</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/login_page.py" line="14"/>
+        <location filename="../src/frontend/views/pages/login_page.py" line="14"/>
         <source>Conéctate a Google Earth Engine</source>
         <translation>Connect to Google Earth Engine</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/login_page.py" line="15"/>
+        <location filename="../src/frontend/views/pages/login_page.py" line="15"/>
         <source>Por favor ingresa tus credenciales para iniciar sesión.</source>
         <translation>Please enter your credentials to log in.</translation>
     </message>
@@ -83,22 +83,22 @@
 <context>
     <name>ModePage</name>
     <message>
-        <location filename="../src/frontend/controllers/pages/mode_page.py" line="84"/>
+        <location filename="../src/frontend/views/pages/mode_page.py" line="84"/>
         <source>Para usuarios con conocimientos en GIS.</source>
         <translation>For users with GIS knowledge.</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/mode_page.py" line="88"/>
+        <location filename="../src/frontend/views/pages/mode_page.py" line="88"/>
         <source>En construcción</source>
         <translation>Under construction</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/mode_page.py" line="16"/>
+        <location filename="../src/frontend/views/pages/mode_page.py" line="16"/>
         <source>Seleccionar configuración</source>
         <translation>Select settings</translation>
     </message>
     <message>
-        <location filename="../src/frontend/controllers/pages/mode_page.py" line="17"/>
+        <location filename="../src/frontend/views/pages/mode_page.py" line="17"/>
         <source>¿Qué tipo de configuración deseas seleccionar?</source>
         <translation>What type of configuration would you like to select?</translation>
     </message>
