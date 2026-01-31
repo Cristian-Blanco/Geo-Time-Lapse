@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-from frontend.config.wizard_flow import MODE
+from frontend.domain.wizard.types import Mode, WizardState
 
 @dataclass
-class WizardState:
+class WizardContext(WizardState):
     project_id: str = ""
     authenticated: bool = False
-    mode: MODE | None = None
+    mode: Mode | None = None
     template: str | None = None
 
     output_dir: str | None = None

@@ -1,20 +1,18 @@
-from typing import Literal
+from frontend.domain.wizard.types import WizardBlueprint
 
-MODE = Literal["basic", "advanced"]
-
-WIZARD_BLUEPRINT = {
+WIZARD_BLUEPRINT: WizardBlueprint = {
     "start": "login",
     "total_steps": 8,
     "nodes": {
         "login": {
             "ui": "wizard_01_login.ui",
-            "controller": "frontend.controllers.pages.login_page:LoginPage",
+            "view": "frontend.presentation.views.pages.login_page:LoginPage",
             "next": {"type": "to", "target": "mode"},
             "step": 1,
         },
         "mode": {
             "ui": "wizard_02_mode.ui",
-            "controller": "frontend.controllers.pages.mode_page:ModePage",
+            "view": "frontend.presentation.views.pages.mode_page:ModePage",
             "next": {
                 "type": "switch",
                 "cases": {"basic": "basic_points_map", "advanced": "advanced_intro"},
@@ -25,47 +23,45 @@ WIZARD_BLUEPRINT = {
         },
         "basic_points_map": {
             "ui": "wizard_basic_01_points_map.ui",
-            "controller": "frontend.controllers.pages.basic_points_map:BasicPointsMap",
+            "view": "frontend.presentation.views.pages.basic_points_map:BasicPointsMap",
             "next": {"type": "to", "target": "basic_image_type"},
             "step": 3,
         },
         "basic_image_type": {
             "ui": "wizard_basic_02_image_type.ui",
-            "controller": "frontend.controllers.pages.basic_image_type:BasicImageType",
+            "view": "frontend.presentation.views.pages.basic_image_type:BasicImageType",
             "next": {"type": "to", "target": "basic_time_lapse"},
             "step": 4,
         },
         "basic_time_lapse": {
             "ui": "wizard_basic_03_time_lapse.ui",
-            "controller": "frontend.controllers.pages.basic_time_lapse:BasicTimeLapse",
+            "view": "frontend.presentation.views.pages.basic_time_lapse:BasicTimeLapse",
             "next": {"type": "to", "target": "choose_template"},
             "step": 5,
         },
         "choose_template": {
             "ui": "wizard_04_choose_template.ui",
-            "controller": "frontend.controllers.pages.choose_template:ChooseTemplate",
+            "view": "frontend.presentation.views.pages.choose_template:ChooseTemplate",
             "next": {"type": "to", "target": "choose_directory"},
             "step": 6,
         },
         "choose_directory": {
             "ui": "wizard_05_choose_directory.ui",
-            "controller": "frontend.controllers.pages.choose_directory:ChooseDirectory",
+            "view": "frontend.presentation.views.pages.choose_directory:ChooseDirectory",
             "next": {"type": "to", "target": "merge"},
             "step": 7,
         },
         "advanced_intro": {
             "ui": "wizard_03_advanced.ui",
-            "controller": "frontend.controllers.pages.advanced_intro_page:AdvancedIntroPage",
+            "view": "frontend.presentation.views.pages.advanced_intro_page:AdvancedIntroPage",
             "next": {"type": "to", "target": "choose_template"},
             "step": 4,
         },
         "merge": {
             "ui": "wizard_04_merge.ui",
-            "controller": "frontend.controllers.pages.merge_page:MergePage",
+            "view": "frontend.presentation.views.pages.merge_page:MergePage",
             "next": {"type": "end"},
             "step": 8,
         },
     },
 }
-
-ENABLE_ADVANCED_MODE = False

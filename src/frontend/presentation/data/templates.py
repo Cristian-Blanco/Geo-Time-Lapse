@@ -1,6 +1,7 @@
-from .paths import ICONS_DIR
+from frontend.config.paths import ICONS_DIR
+from frontend.domain.templates.types import TemplateDef
 
-TEMPLATES = [
+TEMPLATES: TemplateDef = [
     {
         "id": "template_1",
         "title": "Template 1",

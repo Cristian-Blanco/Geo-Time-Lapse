@@ -1,26 +1,26 @@
 import os
-from typing import Dict, List, Optional, Tuple, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from qgis.PyQt import uic, QtWidgets
 from frontend.config.paths import UI_DIR, ICONS_DIR
 
-from frontend.controllers.wizards.wizard_state import WizardState
-from frontend.helpers.nodes_loader import NodesLoader
-from frontend.config.wizard_flow import WIZARD_BLUEPRINT
-from frontend.controllers.wizards.flow_factory import FlowFactory
-from frontend.controllers.wizards.progress_calc import ProgressCalc
+from frontend.store.wizard_context import WizardContext
+from frontend.bootstrap.nodes_loader import NodesLoader
+from frontend.presentation.structure.wizard_blueprint import WIZARD_BLUEPRINT
+from frontend.domain.wizard.flow_factory import FlowFactory
+from frontend.domain.wizard.progress_calc import ProgressCalc
 from frontend.bootstrap.style_bootstrap import StyleBootstrap
 from qgis.PyQt.QtGui import QIcon
 
 if TYPE_CHECKING:
-    from frontend.controllers.pages.base_page import BasePage
+    from frontend.presentation.views.base_page import BasePage
 
 # FORM_CLASS, _ = uic.loadUiType(os.path.join(UI_DIR, "main_dialog.ui"))
 
 
 # class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
 class GeoTimeLapseDialog(QtWidgets.QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent: QtWidgets.QWidget | None = None) -> None:
         super().__init__(parent)
 
         # Change in the future, with a .env, mode dev and mode production
@@ -40,14 +40,15 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
         self._apply_header_icon()
 
         # Load Wizard state and wizards
-        self.state = WizardState()
+        self.state = WizardContext()
         self.flow = FlowFactory(WIZARD_BLUEPRINT).build()
         self.progress = ProgressCalc(WIZARD_BLUEPRINT)
 
-        # node_id in dict is iqual to (widget, controller)
-        self._nodes: Dict[str, Tuple[QtWidgets.QWidget, "BasePage"]] = {}
-        self._history: List[str] = []
-        self._current: Optional[str] = None
+        # node_id in dict is iqual to (widget, view)
+        self._nodes: dict[str, tuple[QtWidgets.QWidget, BasePage]] = {}
+        self.min_history_to_go_back = 2
+        self._history: list[str] = []
+        self._current: str | None = None
 
         loader = NodesLoader(UI_DIR, self.stacked_pages, self.state, WIZARD_BLUEPRINT)
         self._nodes = loader.load(self._apply_footer_state, self._on_state_changed)
@@ -81,7 +82,7 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
             self.reject()
             return
 
-        if len(self._history) >= 2:
+        if len(self._history) >= self.min_history_to_go_back:
             self._history.pop()
             prev_id = self._history[-1]
             self._go_to(prev_id, push_history=False)
@@ -117,7 +118,7 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
 
         # Header changes
         self._apply_header(page)
-        
+
         page.on_enter()
         self._apply_footer_state(page.is_valid())
         self._apply_progress()

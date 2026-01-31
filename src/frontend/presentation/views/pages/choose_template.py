@@ -1,15 +1,15 @@
-from typing import Any
-from frontend.controllers.pages.base_page import BasePage
-from frontend.controllers.wizards.wizard_state import WizardState
+from frontend.presentation.views.base_page import BasePage
+from frontend.store.wizard_context import WizardContext
 from qgis.PyQt import QtWidgets, QtCore
 from qgis.PyQt.QtGui import QIcon
-from frontend.config.templates import TEMPLATES
+from frontend.presentation.data.templates import TEMPLATES
+from frontend.domain.templates.types import TemplateDefItem
 
 class ChooseTemplate(BasePage):
     left_mode = "previous"
     right_mode = "next"
 
-    def __init__(self, widget: QtWidgets.QWidget, state: WizardState) -> None:
+    def __init__(self, widget: QtWidgets.QWidget, state: WizardContext) -> None:
         super().__init__(widget, state)
 
         self.title = self.tr("Choose Template")
@@ -17,7 +17,7 @@ class ChooseTemplate(BasePage):
 
         self._load_templates()
 
-    def __create_template_card(self, tpl: dict[str, Any]) -> QtWidgets.QFrame:
+    def __create_template_card(self, tpl: TemplateDefItem) -> QtWidgets.QFrame:
         card = QtWidgets.QFrame()
         card.setObjectName(f"card_{tpl['id']}")
         card.setProperty("template_id", tpl["id"])

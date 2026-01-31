@@ -1,14 +1,15 @@
 from qgis.PyQt import QtWidgets
-from frontend.controllers.pages.base_page import BasePage
+from frontend.presentation.views.base_page import BasePage
 from qgis.PyQt import QtCore
 from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
+from frontend.store.wizard_context import WizardContext
 
 class LoginPage(BasePage):
     left_mode = "cancel"
     right_mode = "next"
 
-    def __init__(self, widget: QtWidgets.QWidget, state):
+    def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__(widget, state)
 
         self.title = self.tr("Conéctate a Google Earth Engine")

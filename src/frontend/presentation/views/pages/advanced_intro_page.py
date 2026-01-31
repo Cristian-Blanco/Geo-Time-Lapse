@@ -1,4 +1,4 @@
-from frontend.controllers.pages.base_page import BasePage
+from frontend.presentation.views.base_page import BasePage
 
 class AdvancedIntroPage(BasePage):
     title = "Avanzado"
