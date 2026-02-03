@@ -4,6 +4,7 @@ from qgis.PyQt import QtCore
 from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
 from frontend.store.wizard_context import WizardContext
+from frontend.presentation.workers.gee import Authentication, VerifyAuth
 
 class LoginPage(BasePage):
     left_mode = "cancel"
@@ -16,6 +17,13 @@ class LoginPage(BasePage):
         self.description = self.tr("Por favor ingresa tus credenciales para iniciar sesión.")
 
         self.inp_project_id: QtWidgets.QLineEdit = widget.findChild(QtWidgets.QLineEdit, "inp_project_id")
+        self.settings = QtCore.QSettings()
+        saved_project = self.settings.value("geo_timelapse/gee_project_id", "", type=str)
+
+        if saved_project:
+            self.inp_project_id.setText(saved_project)
+            self.state.project_id = saved_project
+
         self.btn_sign_in: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_sign_in")
         self.btn_verify: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_verify")
         self.lbl_auth_status: QtWidgets.QLabel = widget.findChild(QtWidgets.QLabel, "lbl_auth_status")
@@ -34,19 +42,70 @@ class LoginPage(BasePage):
 
         self._render()
 
-    def _on_project_id_changed(self, txt: str) -> None:
-        self.state.project_id = (txt or "").strip()
-        self._render()
+    # ------------------------------------------------------------
+    # -------------- AUTH with Google Earth Engine ---------------
+    # ------------------------------------------------------------
 
     def _on_sign_in_clicked(self) -> None:
-        # MVP: simulación
+        self.lbl_auth_status.setText("🔄 Authenticating...")
+        self.btn_sign_in.setEnabled(False)
+
+        self.auth_worker = Authentication(False)
+
+        self.auth_worker.success.connect(self._on_auth_success)
+        self.auth_worker.error.connect(self._on_auth_error)
+
+        self.auth_worker.start()
+
+    def _on_auth_success(self) -> None:
         self.state.authenticated = True
+        self.btn_sign_in.setEnabled(True)
         self._render()
+
+    def _on_auth_error(self, msg: str) -> None:
+        self.state.authenticated = False
+        self.btn_sign_in.setEnabled(True)
+        self.lbl_auth_status.setText(f"❌ Error: {msg}")
+
+    # ------------------------------------------------------------
+    # --------------------- Verify project -----------------------
+    # ------------------------------------------------------------
 
     def _on_verify_clicked(self) -> None:
-        self.state.verified = bool(self.state.project_id) and bool(self.state.authenticated)
+        if not self.state.project_id:
+            self.lbl_auth_status.setText("Alert: Enter a Project ID")
+            return
+
+        if not self.state.authenticated:
+            self.lbl_auth_status.setText("Alert: Sign in with Google first")
+            return
+
+        self.lbl_auth_status.setText("🔄 Verifying project...")
+        self.btn_verify.setEnabled(False)
+
+        self.verify_worker = VerifyAuth(self.state.project_id)
+
+        self.verify_worker.success.connect(self._on_verify_success)
+        self.verify_worker.error.connect(self._on_verify_error)
+
+        self.verify_worker.start()
+
+    def _on_verify_success(self) -> None:
+        self.state.verified = True
+        self.btn_verify.setEnabled(True)
+
+        self.settings.setValue("geo_timelapse/gee_project_id", self.state.project_id)
+
         self._render()
 
+    def _on_verify_error(self, msg: str) -> None:
+        self.state.verified = False
+        self.btn_verify.setEnabled(True)
+        self.lbl_auth_status.setText(f"❌ {msg}")
+
+    # ------------------------------------------------------------
+    # ------------------------ On change -------------------------
+    # ------------------------------------------------------------
     def _render(self) -> None:
         if getattr(self.state, "verified", False):
             self.lbl_auth_status.setText(self.tr("✅ Verificado"))
@@ -55,8 +114,14 @@ class LoginPage(BasePage):
         else:
             self.lbl_auth_status.setText(self.tr("🔒 No autenticado"))
 
+        self.btn_verify.setEnabled(bool(self.state.project_id))
         self.validityChanged.emit(self.is_valid())
         self.stateChanged.emit()
+
+    def _on_project_id_changed(self, txt: str) -> None:
+        self.state.project_id = (txt or "").strip()
+        self.state.verified = False
+        self._render()
 
     def is_valid(self) -> bool:
         return bool(self.state.project_id) and bool(getattr(self.state, "verified", False))
