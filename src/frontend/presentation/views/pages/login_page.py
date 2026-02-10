@@ -23,6 +23,7 @@ class LoginPage(BasePage):
         if saved_project:
             self.inp_project_id.setText(saved_project)
             self.state.project_id = saved_project
+            self.state.authenticated = True
 
         self.btn_sign_in: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_sign_in")
         self.btn_verify: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_verify")
@@ -47,10 +48,10 @@ class LoginPage(BasePage):
     # ------------------------------------------------------------
 
     def _on_sign_in_clicked(self) -> None:
-        self.lbl_auth_status.setText("🔄 Authenticating...")
+        self.lbl_auth_status.setText(self.tr("🔄 Authenticating..."))
         self.btn_sign_in.setEnabled(False)
 
-        self.auth_worker = Authentication(False)
+        self.auth_worker = Authentication(True)
 
         self.auth_worker.success.connect(self._on_auth_success)
         self.auth_worker.error.connect(self._on_auth_error)
@@ -65,7 +66,7 @@ class LoginPage(BasePage):
     def _on_auth_error(self, msg: str) -> None:
         self.state.authenticated = False
         self.btn_sign_in.setEnabled(True)
-        self.lbl_auth_status.setText(f"❌ Error: {msg}")
+        self.lbl_auth_status.setText(f"🔴 Error: {msg}")
 
     # ------------------------------------------------------------
     # --------------------- Verify project -----------------------
@@ -73,14 +74,10 @@ class LoginPage(BasePage):
 
     def _on_verify_clicked(self) -> None:
         if not self.state.project_id:
-            self.lbl_auth_status.setText("Alert: Enter a Project ID")
+            self.lbl_auth_status.setText(self.tr("Alert: Enter a Project ID"))
             return
 
-        if not self.state.authenticated:
-            self.lbl_auth_status.setText("Alert: Sign in with Google first")
-            return
-
-        self.lbl_auth_status.setText("🔄 Verifying project...")
+        self.lbl_auth_status.setText(self.tr("🔄 Verifying project..."))
         self.btn_verify.setEnabled(False)
 
         self.verify_worker = VerifyAuth(self.state.project_id)
@@ -101,18 +98,23 @@ class LoginPage(BasePage):
     def _on_verify_error(self, msg: str) -> None:
         self.state.verified = False
         self.btn_verify.setEnabled(True)
-        self.lbl_auth_status.setText(f"❌ {msg}")
+
+        message_lower = msg.lower()
+        if "authenticate" in message_lower or "credentials" in message_lower:
+            self.lbl_auth_status.setText(self.tr("🔴 Sign in with Google to continue"))
+        else:
+            self.lbl_auth_status.setText(f"🔴 {msg}")
 
     # ------------------------------------------------------------
     # ------------------------ On change -------------------------
     # ------------------------------------------------------------
     def _render(self) -> None:
         if getattr(self.state, "verified", False):
-            self.lbl_auth_status.setText(self.tr("✅ Verificado"))
+            self.lbl_auth_status.setText(self.tr("🟢 Verificado"))
         elif self.state.authenticated:
-            self.lbl_auth_status.setText(self.tr("🔓 Autenticado (falta verificar)"))
+            self.lbl_auth_status.setText(self.tr("🟠 Autenticado (falta verificar)"))
         else:
-            self.lbl_auth_status.setText(self.tr("🔒 No autenticado"))
+            self.lbl_auth_status.setText(self.tr("🟠 No autenticado"))
 
         self.btn_verify.setEnabled(bool(self.state.project_id))
         self.validityChanged.emit(self.is_valid())
