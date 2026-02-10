@@ -15,10 +15,6 @@ from qgis.PyQt.QtGui import QIcon
 if TYPE_CHECKING:
     from frontend.presentation.views.base_page import BasePage
 
-# FORM_CLASS, _ = uic.loadUiType(os.path.join(UI_DIR, "main_dialog.ui"))
-
-
-# class GeoTimeLapseDialog(QtWidgets.QDialog, FORM_CLASS):
 class GeoTimeLapseDialog(QtWidgets.QDialog):
     def __init__(self, parent: QtWidgets.QWidget | None = None) -> None:
         super().__init__(parent)

@@ -56,18 +56,18 @@
     <name>LoginPage</name>
     <message>
         <location filename="../src/frontend/views/pages/login_page.py" line="51"/>
-        <source>✅ Verificado</source>
-        <translation>✅ Verified</translation>
+        <source>🟢 Verificado</source>
+        <translation>🟢 Verified</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/login_page.py" line="53"/>
-        <source>🔓 Autenticado (falta verificar)</source>
-        <translation>🔓 Authenticated (pending verification)</translation>
+        <source>🟠 Autenticado (falta verificar)</source>
+        <translation>🟠 Authenticated (pending verification)</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/login_page.py" line="55"/>
-        <source>🔒 No autenticado</source>
-        <translation>🔒 Not authenticated</translation>
+        <source>🟠 No autenticado</source>
+        <translation>🟠 Not authenticated</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/login_page.py" line="14"/>
@@ -115,8 +115,8 @@
     <name>WizardBasic</name>
     <message>
         <location filename="../src/frontend/ui/wizard_03_basic.ui" line="21"/>
-        <source>Esto es básico ✅</source>
-        <translation>This is basic ✅</translation>
+        <source>Esto es básico 🟢</source>
+        <translation>This is basic 🟢</translation>
     </message>
 </context>
 <context>
