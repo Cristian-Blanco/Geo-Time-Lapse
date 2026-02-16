@@ -1,6 +1,5 @@
 from qgis.PyQt.QtCore import QThread, pyqtSignal
 from frontend.infrastructure.integration_hub import IntegrationHub
-from qgis.core import QgsMessageLog, Qgis
 
 class VerifyAuth(QThread):
     success = pyqtSignal()
@@ -16,7 +15,6 @@ class VerifyAuth(QThread):
                 "gee.ee_verify_project",
                 {"project_id": self.project_id},
             )
-            QgsMessageLog.logMessage(f"[VerifyAuth] this is result ='{result}'", "GeoTimeLapse", Qgis.Info)
 
             if getattr(result, "ok", False):
                 self.success.emit()

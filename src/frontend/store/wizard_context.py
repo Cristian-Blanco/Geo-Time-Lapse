@@ -16,3 +16,6 @@ class WizardContext(WizardState):
     composition: str | None = None
     cloud_percentage: int | None = None
     max_area_km2: int | None = None
+
+    # ------ Coordinates -------
+    coordinates: list[float] | None = None
