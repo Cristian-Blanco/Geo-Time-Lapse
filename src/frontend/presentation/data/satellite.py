@@ -10,6 +10,8 @@ IMAGE_TYPES: ImageType = [
             "and for general visual comparison"
         ),
         "icon": "natural_color.png",
+        "supports_cloud_filter": True,
+        "supported_galleries": ["sentinel", "landsat"], # The name in support_galleries must be equal to the id in IMAGE_GALLERIES
     },
     {
         "id": "infrared",
@@ -20,6 +22,8 @@ IMAGE_TYPES: ImageType = [
             "and soil changes"
         ),
         "icon": "false_color.png",
+        "supports_cloud_filter": True,
+        "supported_galleries": ["sentinel", "landsat"],
     },
     {
         "id": "radar",
@@ -30,12 +34,22 @@ IMAGE_TYPES: ImageType = [
             "or for structural analysis"
         ),
         "icon": "radar_filter.png",
+        "supports_cloud_filter": False,
+        "supported_galleries": ["sentinel"],
     },
 ]
 
 IMAGE_GALLERIES: ImageGallery = [
-    {"id": "sentinel", "label": "Sentinel"},
-    {"id": "landsat", "label": "Landsat"},
+    {
+        "id": "sentinel",
+        "label": "Sentinel",
+        "max_area_km2": 100,
+    },
+    {
+        "id": "landsat",
+        "label": "Landsat",
+        "max_area_km2": 200
+    },
 ]
 
 IMAGE_COMPOSITIONS: ImageComposition = [

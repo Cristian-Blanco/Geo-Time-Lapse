@@ -15,21 +15,21 @@ WIZARD_BLUEPRINT: WizardBlueprint = {
             "view": "frontend.presentation.views.pages.mode_page:ModePage",
             "next": {
                 "type": "switch",
-                "cases": {"basic": "basic_points_map", "advanced": "advanced_intro"},
+                "cases": {"basic": "basic_image_type", "advanced": "advanced_intro"},
                 "default": "basic_points_map",
                 "switch_on": "mode",
             },
             "step": 2,
         },
-        "basic_points_map": {
-            "ui": "wizard_basic_01_points_map.ui",
-            "view": "frontend.presentation.views.pages.basic_points_map:BasicPointsMap",
-            "next": {"type": "to", "target": "basic_image_type"},
-            "step": 3,
-        },
         "basic_image_type": {
             "ui": "wizard_basic_02_image_type.ui",
             "view": "frontend.presentation.views.pages.basic_image_type:BasicImageType",
+            "next": {"type": "to", "target": "basic_points_map"},
+            "step": 3,
+        },
+        "basic_points_map": {
+            "ui": "wizard_basic_01_points_map.ui",
+            "view": "frontend.presentation.views.pages.basic_points_map:BasicPointsMap",
             "next": {"type": "to", "target": "basic_time_lapse"},
             "step": 4,
         },
