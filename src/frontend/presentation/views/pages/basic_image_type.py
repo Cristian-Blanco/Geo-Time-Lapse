@@ -1,7 +1,7 @@
 from qgis.PyQt import QtWidgets, QtCore, QtGui
 from frontend.presentation.views.base_page import BasePage
 from frontend.store.wizard_context import WizardContext
-from frontend.presentation.data.satellite import (
+from frontend.domain.imagery.satellite import (
     IMAGE_TYPES,
     IMAGE_GALLERIES,
     IMAGE_COMPOSITIONS,

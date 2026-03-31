@@ -1,4 +1,6 @@
-from frontend.domain.imagery.types import ImageComposition, ImageGallery, ImageType
+from frontend.domain.imagery.types import (
+    ImageComposition, ImageGallery, ImageType, TemporalConfiguration
+    )
 
 IMAGE_TYPES: ImageType = [
     {
@@ -44,15 +46,25 @@ IMAGE_GALLERIES: ImageGallery = [
         "id": "sentinel",
         "label": "Sentinel",
         "max_area_km2": 100,
+        "start_date": "2014-10-03",
     },
     {
         "id": "landsat",
         "label": "Landsat",
-        "max_area_km2": 200
+        "max_area_km2": 200,
+        "start_date": "2013-03-18",
     },
 ]
 
 IMAGE_COMPOSITIONS: ImageComposition = [
     {"id": "mosaic", "label": "Image mosaic"},
     {"id": "single", "label": "Single image"},
+]
+
+TEMPORAL_CONFIGURATIONS: TemporalConfiguration = [
+    {"id": "3m", "label": "3 months", "months": 3},
+    {"id": "6m", "label": "6 months", "months": 6},
+    {"id": "1y", "label": "1 year (Recommended)", "months": 12, "recommended": True},
+    {"id": "5y", "label": "5 years", "months": 60},
+    {"id": "10y", "label": "10 years", "months": 120},
 ]

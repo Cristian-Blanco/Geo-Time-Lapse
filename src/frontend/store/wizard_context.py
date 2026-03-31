@@ -19,3 +19,10 @@ class WizardContext(WizardState):
 
     # ------ Coordinates -------
     coordinates: list[float] | None = None
+
+    # -- Temporal configuration --
+    temporal_interval_months: int | None = None
+    start_date: str | None = None
+    end_date: str | None = None
+    frame_duration_seconds: int | None = None
+    generated_images: int | None = None
