@@ -1,0 +1,21 @@
+QDialog#GeoTimeLapseDialogBase QFrame#loader_circle {
+    background-color: transparent;
+    border: none;
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_percentage {
+    font-size: {{FONT_SIZE_TITLE}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    color: {{COLOR_TEXT_PRIMARY}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_status {
+    font-size: {{FONT_SIZE_BASE}};
+    color: {{COLOR_TEXT_MUTED}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel#lbl_success_title {
+    font-size: {{FONT_SIZE_MEDIUM}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    color: {{COLOR_TEXT_PRIMARY}};
+}

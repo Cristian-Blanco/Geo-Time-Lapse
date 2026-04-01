@@ -20,4 +20,5 @@ WIZARD_QSS = [
     STYLES_DIR / "pages" / "login.qss",
     STYLES_DIR / "pages" / "basic_image_type.qss",
     STYLES_DIR  / "pages" / "basic_time_lapse.qss",
+    STYLES_DIR / "pages" / "loader.qss",
 ]

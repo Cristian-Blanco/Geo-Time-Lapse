@@ -75,6 +75,7 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
 
         _, page = self._nodes[self._current]
         if page.left_mode == "cancel":
+            page.on_leave()
             self.reject()
             return
 
@@ -103,6 +104,10 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
         self._go_to(nxt, push_history=True)
 
     def _go_to(self, node_id: str, push_history: bool) -> None:
+        if self._current is not None:
+            _, current_page = self._nodes[self._current]
+            current_page.on_leave()
+
         self._current = node_id
         w, page = self._nodes[node_id]
         self.stacked_pages.setCurrentWidget(w)
@@ -126,10 +131,25 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
 
         _, page = self._nodes[self._current]
 
-        self.btn_previous.setText(self.tr("Cancelar") if page.left_mode == "cancel" else self.tr("Anterior"))
-        self.btn_next.setText(self.tr("Terminar") if page.right_mode == "finish" else self.tr("Siguiente"))
-        self.btn_previous.setEnabled(len(self._history) > 1 or page.left_mode == "cancel")
-        self.btn_next.setEnabled(is_valid)
+        if page.left_mode == "cancel":
+            self.btn_previous.setText(self.tr("Cancel"))
+            self.btn_previous.setEnabled(True)
+        elif page.left_mode == "disabled":
+            self.btn_previous.setText(self.tr("Previous"))
+            self.btn_previous.setEnabled(False)
+        else:
+            self.btn_previous.setText(self.tr("Previous"))
+            self.btn_previous.setEnabled(len(self._history) > 1)
+
+        if page.right_mode == "finish":
+            self.btn_next.setText(self.tr("Finish"))
+            self.btn_next.setEnabled(is_valid)
+        elif page.right_mode == "disabled":
+            self.btn_next.setText(self.tr("Next"))
+            self.btn_next.setEnabled(False)
+        else:
+            self.btn_next.setText(self.tr("Next"))
+            self.btn_next.setEnabled(is_valid)
 
     def _apply_progress(self) -> None:
         if hasattr(self, "progress_bar"):

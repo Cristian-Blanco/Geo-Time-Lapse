@@ -1,0 +1,135 @@
+<ui version="4.0">
+    <class>WizardLoading</class>
+    <widget class="QWidget" name="WizardLoading">
+        <layout class="QVBoxLayout">
+            <property name="leftMargin">
+                <number>12</number>
+            </property>
+            <property name="topMargin">
+                <number>12</number>
+            </property>
+            <property name="rightMargin">
+                <number>12</number>
+            </property>
+            <property name="bottomMargin">
+                <number>12</number>
+            </property>
+
+            <item>
+                <spacer name="verticalSpacerTop">
+                    <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+            </item>
+
+            <item>
+                <widget class="QWidget" name="loader_container">
+                    <layout class="QVBoxLayout" name="loader_container_layout">
+                        <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="spacing">
+                            <number>16</number>
+                        </property>
+
+                        <item>
+                            <widget class="QFrame" name="loader_circle">
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>200</width>
+                                        <height>200</height>
+                                    </size>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>200</width>
+                                        <height>200</height>
+                                    </size>
+                                </property>
+                                <layout class="QVBoxLayout" name="loader_circle_layout">
+                                    <property name="alignment">
+                                        <set>Qt::AlignCenter</set>
+                                    </property>
+                                    <property name="spacing">
+                                        <number>2</number>
+                                    </property>
+
+                                    <item>
+                                        <widget class="QLabel" name="lbl_percentage">
+                                            <property name="text">
+                                                <string>0%</string>
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+
+                                    <item>
+                                        <widget class="QLabel" name="lbl_status">
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                            <property name="wordWrap">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </widget>
+                        </item>
+
+                        <item>
+                            <widget class="QFrame" name="success_card">
+                                <property name="visible">
+                                    <bool>false</bool>
+                                </property>
+                                <layout class="QVBoxLayout" name="success_card_layout">
+                                    <property name="spacing">
+                                        <number>8</number>
+                                    </property>
+
+                                    <item>
+                                        <widget class="QLabel" name="lbl_success_title">
+                                            <property name="text">
+                                                <string>The export completed successfully.</string>
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </widget>
+                        </item>
+
+                    </layout>
+                </widget>
+            </item>
+
+            <item>
+                <spacer name="verticalSpacerBottom">
+                    <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+            </item>
+
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>
