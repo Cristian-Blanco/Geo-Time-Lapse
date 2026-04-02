@@ -29,13 +29,13 @@
 
                 <item>
                     <widget class="QRadioButton">
-                        <property name="text"><string>Básico</string></property>
+                        <property name="text"><string>Basic</string></property>
                     </widget>
                 </item>
 
                 <item>
                     <widget class="QRadioButton">
-                        <property name="text"><string>Avanzado</string></property>
+                        <property name="text"><string>Advanced</string></property>
                     </widget>
                 </item>
 
@@ -67,7 +67,7 @@
           <item>
            <widget class="QLabel">
             <property name="class" stdset="0"><string>group_title</string></property>
-            <property name="text"><string>Básico</string></property>
+            <property name="text"><string>Basic</string></property>
            </widget>
           </item>
 
@@ -107,7 +107,7 @@
                 <widget class="QLabel">
                     <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignTop</set></property>
                     <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>Ideal para usuarios principiantes en GIS.</string></property>
+                    <property name="text"><string>Ideal for beginner GIS users.</string></property>
                     <property name="class" stdset="0"><string>group_description</string></property>
                 </widget>
                 </item>
@@ -145,7 +145,7 @@
 
           <item>
            <widget class="QLabel">
-            <property name="text"><string>Avanzado</string></property>
+            <property name="text"><string>Advanced</string></property>
             <property name="class" stdset="0"><string>group_title</string></property>
 
            </widget>
@@ -187,7 +187,7 @@
                 <widget class="QLabel">
                     <property name="alignment"><set>Qt::AlignHCenter|Qt::AlignTop</set></property>
                     <property name="wordWrap"><bool>true</bool></property>
-                    <property name="text"><string>En construcción</string></property>
+                    <property name="text"><string>Under construction</string></property>
                     <property name="class" stdset="0"><string>group_description</string></property>
                 </widget>
                 </item>

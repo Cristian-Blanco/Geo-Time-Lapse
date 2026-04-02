@@ -27,7 +27,7 @@
         <item>
          <widget class="QPushButton" name="btn_sign_in">
           <property name="minimumSize"><size><width>250</width><height>44</height></size></property>
-          <property name="text"><string>Iniciar sesión con Google</string></property>
+          <property name="text"><string>Sign in with Google</string></property>
           <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
          </widget>
         </item>
@@ -52,7 +52,7 @@
 
                 <item>
                     <widget class="QLabel">
-                    <property name="text"><string>ID de Project:</string></property>
+                    <property name="text"><string>Project ID:</string></property>
                     <property name="class" stdset="0"><string>group_subtitle</string></property>
                     </widget>
                 </item>
@@ -60,7 +60,7 @@
                 <item>
                     <widget class="QLabel">
                     <property name="text">
-                        <string>Nombre único del project en Google Cloud:</string>
+                        <string>Unique project name in Google Cloud:</string>
                     </property>
                     <property name="class" stdset="0"><string>group_description</string></property>
                     </widget>
@@ -105,7 +105,7 @@
 
         <item>
          <widget class="QPushButton" name="btn_verify">
-          <property name="text"><string>Verificar</string></property>
+          <property name="text"><string>Verify</string></property>
           <property name="minimumSize"><size><width>110</width><height>34</height></size></property>
           <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
           <property name="class" stdset="0"><string>interaction_buttons</string></property>
@@ -118,7 +118,7 @@
       <!-- Status (small/muted like design) -->
       <item>
        <widget class="QLabel" name="lbl_auth_status">
-        <property name="text"><string>🔒 No verificado</string></property>
+        <property name="text"><string>🔴 Not verified</string></property>
         <property name="class" stdset="0"><string>group_description</string></property>
         <property name="wordWrap"><bool>true</bool></property>
        </widget>

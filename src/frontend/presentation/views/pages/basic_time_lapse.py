@@ -91,7 +91,7 @@ class BasicTimeLapse(BasePage):
         self.cmb_temporal_configuration.clear()
 
         for item in TEMPORAL_CONFIGURATIONS:
-            self.cmb_temporal_configuration.addItem(item["label"], item["months"])
+            self.cmb_temporal_configuration.addItem(self.tr(item["label"]), item["months"])
 
         recommended_item = Catalog.get_recommended_temporal_configuration()
         recommended_index = self.cmb_temporal_configuration.findData(recommended_item["months"])
@@ -204,9 +204,16 @@ class BasicTimeLapse(BasePage):
         image_count = self._calculate_generated_images()
         self.state.generated_images = image_count
 
-        self.lbl_generated_images.setText(
-            f"{'🟢' if image_count > 0 else '🔴'} This configuration will generate at least: {image_count} images"
+        status_icon = "🟢" if image_count > 0 else "🔴"
+
+        text = self.tr(
+            "{icon} This configuration will generate at least: {count} images"
+        ).format(
+            icon=status_icon,
+            count=image_count
         )
+
+        self.lbl_generated_images.setText(text)
 
         self._update_video_duration()
 
@@ -252,5 +259,7 @@ class BasicTimeLapse(BasePage):
         self.state.frame_duration_seconds = frame_duration
 
         self.lbl_video_duration.setText(
-            f"This configuration will last for: {total_seconds} seconds"
+            self.tr("This configuration will last for: {seconds} seconds").format(
+                seconds=total_seconds
+            )
         )

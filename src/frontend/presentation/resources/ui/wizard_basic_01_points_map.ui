@@ -162,7 +162,7 @@
                                             <item>
                                                 <widget class="QLineEdit" name="long_p1">
                                                     <property name="placeholderText">
-                                                        <string>longitude</string>
+                                                        <string>Longitude</string>
                                                     </property>
                                                 </widget>
                                             </item>
@@ -196,7 +196,7 @@
                                             <item>
                                                 <widget class="QLineEdit" name="lon_p2">
                                                     <property name="placeholderText">
-                                                        <string>longitude</string>
+                                                        <string>Longitude</string>
                                                     </property>
                                                 </widget>
                                             </item>
@@ -225,7 +225,7 @@
             <item>
                 <widget class="QLabel" name="points_map_status">
                     <property name="text">
-                        <string>Please select the button or set manually coordinates</string>
+                        <string>Select the button or set manually coordinates</string>
                     </property>
                     <property name="indent">
                         <number>14</number>

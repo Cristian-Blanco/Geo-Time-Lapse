@@ -41,7 +41,7 @@ class ChooseTemplate(BasePage):
         layout = QtWidgets.QVBoxLayout(card)
         layout.setSpacing(8)
 
-        lbl_title = QtWidgets.QLabel(tpl["title"])
+        lbl_title = QtWidgets.QLabel(self.tr(tpl["title"]))
         lbl_title.setProperty("class", "group_title")
         layout.addWidget(lbl_title, alignment=QtCore.Qt.AlignHCenter)
 
@@ -51,7 +51,7 @@ class ChooseTemplate(BasePage):
         lbl_img.setProperty("class", "card_image")
         layout.addWidget(lbl_img)
 
-        lbl_desc = QtWidgets.QLabel(tpl["description"])
+        lbl_desc = QtWidgets.QLabel(self.tr(tpl["description"]))
         lbl_desc.setWordWrap(True)
         lbl_desc.setAlignment(QtCore.Qt.AlignHCenter)
         lbl_desc.setProperty("class", "group_description")
