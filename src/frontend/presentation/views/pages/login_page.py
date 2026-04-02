@@ -13,8 +13,8 @@ class LoginPage(BasePage):
     def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__(widget, state)
 
-        self.title = self.tr("Conéctate a Google Earth Engine")
-        self.description = self.tr("Por favor ingresa tus credenciales para iniciar sesión.")
+        self.title = self.tr("Connect to Google Earth Engine")
+        self.description = self.tr("Enter your credentials to sign in.")
 
         self.inp_project_id: QtWidgets.QLineEdit = widget.findChild(QtWidgets.QLineEdit, "inp_project_id")
         self.settings = QtCore.QSettings()
@@ -77,7 +77,7 @@ class LoginPage(BasePage):
             self.lbl_auth_status.setText(self.tr("Alert: Enter a Project ID"))
             return
 
-        self.lbl_auth_status.setText(self.tr("🔄 Verifying project..."))
+        self.lbl_auth_status.setText(self.tr("Verifying project..."))
         self.btn_verify.setEnabled(False)
 
         self.verify_worker = VerifyAuth(self.state.project_id)
@@ -110,11 +110,11 @@ class LoginPage(BasePage):
     # ------------------------------------------------------------
     def _render(self) -> None:
         if getattr(self.state, "verified", False):
-            self.lbl_auth_status.setText(self.tr("🟢 Verificado"))
+            self.lbl_auth_status.setText(self.tr("🟢 Verified"))
         elif self.state.authenticated:
-            self.lbl_auth_status.setText(self.tr("🟠 Autenticado (falta verificar)"))
+            self.lbl_auth_status.setText(self.tr("🟠 Authenticated (verification pending)"))
         else:
-            self.lbl_auth_status.setText(self.tr("🟠 No autenticado"))
+            self.lbl_auth_status.setText(self.tr("🟠 Not authenticated"))
 
         self.btn_verify.setEnabled(bool(self.state.project_id))
         self.validityChanged.emit(self.is_valid())

@@ -13,7 +13,7 @@ class ProcessingPage(BasePage):
         super().__init__(widget, state)
 
         self.title = self.tr("Processing")
-        self.description = self.tr("Sending data to backend...")
+        self.description = self.tr("Generating animation")
 
         self.process_completed = False
         self.worker: ProcessWizard | None = None
@@ -30,7 +30,7 @@ class ProcessingPage(BasePage):
 
     def _on_progress(self, percent: int, message: str) -> None:
         self.lbl_percentage.setText(f"{percent}%")
-        self.lbl_status.setText(message)
+        self.lbl_status.setText(self.tr(message))
 
     def on_enter(self) -> None:
         self._reset_loading_state()
@@ -46,7 +46,7 @@ class ProcessingPage(BasePage):
         self.process_completed = False
 
         self.lbl_percentage.setText("0%")
-        self.lbl_status.setText("Loading...")
+        self.lbl_status.setText(self.tr("Loading..."))
 
         self.success_card.hide()
         self.loader_circle.show()
@@ -76,7 +76,7 @@ class ProcessingPage(BasePage):
         self.worker = None
 
     def _on_error(self, message: str) -> None:
-        self.lbl_status.setText("Error during processing")
+        self.lbl_status.setText(self.tr("Error during processing"))
         if hasattr(self, "orbit"):
             self.orbit.hide()
 

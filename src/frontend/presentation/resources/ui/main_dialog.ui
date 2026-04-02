@@ -110,14 +110,14 @@
 
        <item>
         <widget class="QPushButton" name="btn_previous">
-         <property name="text"><string>Anterior</string></property>
+         <property name="text"><string>Previous</string></property>
          <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
         </widget>
        </item>
 
        <item>
         <widget class="QPushButton" name="btn_next">
-         <property name="text"><string>Siguiente</string></property>
+         <property name="text"><string>Next</string></property>
          <property name="default"><bool>true</bool></property>
          <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
         </widget>

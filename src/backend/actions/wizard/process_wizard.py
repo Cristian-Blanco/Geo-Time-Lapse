@@ -27,7 +27,7 @@ class ProcessWizardAction(Action[AnimationPayload, dict[str, Any]]):
 
         for percent, message in steps:
             if is_cancelled and is_cancelled():
-                return Result.success({"ok": False, "cancelled": True})
+                return Result.fail("It's cancelled")
 
             if progress:
                 progress(percent, message)

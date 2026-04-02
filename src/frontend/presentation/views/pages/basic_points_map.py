@@ -115,18 +115,23 @@ class BasicPointsMap(BasePage):
         max_area = self.state.max_area_km2 or 200  # fallback
 
         # mensaje base
-        text_area = f"Area: {area_km2:.2f} km²"
+        text_area = self.tr("Area: {area} km²").format(area=f"{area_km2:.2f}")
         text_selected = "🟢 Selected coordinates"
 
         # alerta dinámica
         if max_area is not None and area_km2 > max_area:
-            text_area += f" (Large area detected. Recommended ≤ {max_area} km²)"
+            text_area = self.tr(
+                    "Area: {area} km² (Large area detected. Recommended ≤ {max_area} km²)"
+                ).format(
+                    area=f"{area_km2:.2f}",
+                    max_area=max_area
+                )
             text_selected = "🟡 Selected coordinates"
 
         # actualizar UI
         if self.lbl_area_info:
             self.points_map_status.setText(self.tr(text_selected))
-            self.lbl_area_info.setText(self.tr(text_area))
+            self.lbl_area_info.setText(text_area)
 
     def _connect_manual_inputs(self) -> None:
         for field in [self.lat_p1, self.lon_p1, self.lat_p2, self.lon_p2]:
@@ -142,7 +147,7 @@ class BasicPointsMap(BasePage):
         )
 
         if bbox is None:
-            self.points_map_status.setText(self.tr("🔴 Please enter valid WGS84 coordinates"))
+            self.points_map_status.setText(self.tr("🔴 Enter valid WGS84 coordinates"))
             if self.lbl_area_info:
                 self.lbl_area_info.setText("")
 
@@ -157,15 +162,20 @@ class BasicPointsMap(BasePage):
         self.state.coordinates = [xmin, ymin, xmax, ymax]
 
         text_selected = "🟢 Selected coordinates"
-        text_area = f"Area: {area_km2:.2f} km²"
+        text_area = self.tr("Area: {area} km²").format(area=f"{area_km2:.2f}")
 
         if max_area is not None and area_km2 > max_area:
             text_selected = "🟡 Selected coordinates"
-            text_area += f" (Large area detected. Recommended ≤ {max_area} km²)"
+            text_area = self.tr(
+                    "Area: {area} km² (Large area detected. Recommended ≤ {max_area} km²)"
+                ).format(
+                    area=f"{area_km2:.2f}",
+                    max_area=max_area
+                )
 
         self.points_map_status.setText(self.tr(text_selected))
         if self.lbl_area_info:
-            self.lbl_area_info.setText(self.tr(text_area))
+            self.lbl_area_info.setText(text_area)
 
         self.change_wizard = True
         self.validityChanged.emit(self.is_valid())

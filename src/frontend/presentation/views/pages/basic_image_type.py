@@ -73,10 +73,10 @@ class BasicImageType(BasePage):
         text_layout.setSpacing(2)
         text_layout.setAlignment(QtCore.Qt.AlignTop)
 
-        title = QtWidgets.QLabel(item["label"])
+        title = QtWidgets.QLabel(self.tr(item["label"]))
         title.setProperty("class", "group_title")
 
-        desc = QtWidgets.QLabel(item["description"])
+        desc = QtWidgets.QLabel(self.tr(item["description"]))
         desc.setProperty("class", "group_description")
         desc.setWordWrap(True)
 
@@ -105,11 +105,11 @@ class BasicImageType(BasePage):
 
     def _update_when_to_use(self) -> None:
         if not self.state.image_type:
-            self.widget.when_to_use_content.setText("Selecciona un tipo de imagen")
+            self.widget.when_to_use_content.setText(self.tr("Select an image type"))
             return
 
         item = next(i for i in IMAGE_TYPES if i["id"] == self.state.image_type)
-        self.widget.when_to_use_content.setText(item["when_to_use"])
+        self.widget.when_to_use_content.setText(self.tr(item["when_to_use"]))
 
     def _update_cloud_visibility(self) -> None:
         if not self.state.image_type:
@@ -133,7 +133,7 @@ class BasicImageType(BasePage):
 
         for g in IMAGE_GALLERIES:
             if g["id"] in supported:
-                self.widget.gallery_combo.addItem(g["label"], g["id"])
+                self.widget.gallery_combo.addItem(self.tr(g["label"]), g["id"])
 
     # --------------------------------
     # Save selections in StateContext
@@ -177,9 +177,9 @@ class BasicImageType(BasePage):
     # -------------------------
     def _load_extras(self) -> None:
         for g in IMAGE_GALLERIES:
-            self.widget.gallery_combo.addItem(g["label"], g["id"])
+            self.widget.gallery_combo.addItem(self.tr(g["label"]), g["id"])
         for c in IMAGE_COMPOSITIONS:
-            self.widget.compositon_combo.addItem(c["label"], c["id"])
+            self.widget.compositon_combo.addItem(self.tr(c["label"]), c["id"])
 
     def _update_cloud_label(self, value: int) -> None:
         self.widget.cloud_value_label.setText(f"{value}%")

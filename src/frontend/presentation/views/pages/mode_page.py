@@ -15,8 +15,8 @@ class ModePage(BasePage):
     def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__(widget, state)
 
-        self.title = self.tr("Seleccionar configuración")
-        self.description = self.tr("¿Qué tipo de configuración deseas seleccionar?")
+        self.title = self.tr("Select configuration")
+        self.description = self.tr("What type of configuration would you like to select?")
 
         self.widget = widget
 
@@ -92,11 +92,11 @@ class ModePage(BasePage):
         assets = { #Dynamic content
             True: {
                 "icon": "advanced.png",
-                "text": self.tr("Para usuarios con conocimientos en GIS."),
+                "text": self.tr("For users with GIS experience."),
             },
             False: {
                 "icon": "construction.png",
-                "text": self.tr("En construcción"),
+                "text": self.tr("Under construction"),
             },
         }
 
