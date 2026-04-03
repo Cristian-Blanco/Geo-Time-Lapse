@@ -3,7 +3,7 @@ from frontend.domain.templates.types import TemplateDef
 
 TEMPLATES: TemplateDef = [
     {
-        "id": "template_1",
+        "id": "simple",
         "title": "Basic Timelapse",
         "description": "Recommended for general timelapse use.",
         "icon": str(ICONS_DIR / "template_1.png"),
@@ -16,11 +16,4 @@ TEMPLATES: TemplateDef = [
         "icon": str(ICONS_DIR / "template_2.png"),
         "enabled": False,
     },
-    # {
-    #     "id": "template_3",
-    #     "title": "Template 3",
-    #     "description": "Is simply dummy text of the printing and typesetting industry.",
-    #     "icon": str(ICONS_DIR / "template_2.png"),
-    #     "enabled": False,
-    # },
 ]

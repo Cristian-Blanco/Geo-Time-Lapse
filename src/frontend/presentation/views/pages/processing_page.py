@@ -7,7 +7,7 @@ from qgis.PyQt import QtWidgets
 class ProcessingPage(BasePage):
 
     left_mode = "cancel"
-    right_mode = "next"
+    right_mode = "finish"
 
     def __init__(self, widget: QtWidgets.QWidget, state: WizardContext) -> None:
         super().__init__(widget, state)

@@ -18,8 +18,24 @@ class ProcessWizard(QThread):
             result = IntegrationHub().facade.execute(
                 "wizard.process",
                 {
-                    "mode": self.context.mode,
+                    "project_id": self.context.project_id,
+                    "template": self.context.template,
                     "output_dir": self.context.output_dir,
+
+                    "gallery_id": self.context.gallery_id,
+                    "image_type": self.context.image_type,
+                    "composition": self.context.composition,
+                    "cloud_percentage": self.context.cloud_percentage,
+
+                    "coordinates": self.context.coordinates,
+
+                    "temporal_interval_months": self.context.temporal_interval_months,
+
+                    "start_date": self.context.start_date,
+                    "end_date": self.context.end_date,
+
+                    "frame_duration_seconds": self.context.frame_duration_seconds,
+
                     "progress_callback": self._report_progress,
                     "is_cancelled": self.isInterruptionRequested,
                 }

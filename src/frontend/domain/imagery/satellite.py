@@ -13,7 +13,7 @@ IMAGE_TYPES: ImageType = [
         ),
         "icon": "natural_color.png",
         "supports_cloud_filter": True,
-        "supported_galleries": ["sentinel", "landsat"], # The name in support_galleries must be equal to the id in IMAGE_GALLERIES
+        "supported_galleries": ["sentinel_2"], # The name in support_galleries must be equal to the id in IMAGE_GALLERIES
     },
     {
         "id": "infrared",
@@ -25,7 +25,7 @@ IMAGE_TYPES: ImageType = [
         ),
         "icon": "false_color.png",
         "supports_cloud_filter": True,
-        "supported_galleries": ["sentinel", "landsat"],
+        "supported_galleries": ["sentinel_2"],
     },
     {
         "id": "radar",
@@ -37,34 +37,40 @@ IMAGE_TYPES: ImageType = [
         ),
         "icon": "radar_filter.png",
         "supports_cloud_filter": False,
-        "supported_galleries": ["sentinel"],
+        "supported_galleries": ["sentinel_1"],
     },
 ]
 
 IMAGE_GALLERIES: ImageGallery = [
     {
-        "id": "sentinel",
-        "label": "Sentinel",
+        "id": "sentinel_1",
+        "label": "Sentinel 1",
         "max_area_km2": 100,
         "start_date": "2014-10-03",
     },
     {
-        "id": "landsat",
-        "label": "Landsat",
-        "max_area_km2": 200,
-        "start_date": "2013-03-18",
+        "id": "sentinel_2",
+        "label": "Sentinel 2",
+        "max_area_km2": 100,
+        "start_date": "2017-03-28",
     },
+    # {
+    #     "id": "landsat",
+    #     "label": "Landsat",
+    #     "max_area_km2": 200,
+    #     "start_date": "2013-03-18",
+    # },
 ]
 
 IMAGE_COMPOSITIONS: ImageComposition = [
     {"id": "mosaic", "label": "Image mosaic"},
     {"id": "single", "label": "Single image"},
+    {"id": "median", "label": "Median image"},
 ]
 
 TEMPORAL_CONFIGURATIONS: TemporalConfiguration = [
     {"id": "3m", "label": "3 months", "months": 3},
     {"id": "6m", "label": "6 months", "months": 6},
     {"id": "1y", "label": "1 year (Recommended)", "months": 12, "recommended": True},
-    {"id": "5y", "label": "5 years", "months": 60},
-    {"id": "10y", "label": "10 years", "months": 120},
+    {"id": "2y", "label": "2 years", "months": 24},
 ]
