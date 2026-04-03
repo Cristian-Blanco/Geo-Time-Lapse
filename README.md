@@ -27,3 +27,16 @@ lrelease i18n/GeoTimeLapse_en.ts
 ```bash
 pyrcc5 resources.qrc -o resources.py
 ```
+
+# Install pillow package
+
+sudo pacman -S python-pillow
+sudo pacman -S python-moviepy
+
+# Install in ubuntu
+apt install python3-pillow
+apt install python3-moviepy
+
+# install in windows
+python -m pip install pillow
+python -m pip install moviepy

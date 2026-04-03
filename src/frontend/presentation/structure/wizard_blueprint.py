@@ -2,7 +2,7 @@ from frontend.domain.wizard.types import WizardBlueprint
 
 WIZARD_BLUEPRINT: WizardBlueprint = {
     "start": "login",
-    "total_steps": 9,
+    "total_steps": 8,
     "nodes": {
         "login": {
             "ui": "wizard_01_login.ui",
@@ -60,14 +60,8 @@ WIZARD_BLUEPRINT: WizardBlueprint = {
         "processing": {
             "ui": "wizard_loading.ui",
             "view": "frontend.presentation.views.pages.processing_page:ProcessingPage",
-            "next": {"type": "to", "target": "merge"},
-            "step": 8
-        },
-        "merge": {
-            "ui": "wizard_04_merge.ui",
-            "view": "frontend.presentation.views.pages.merge_page:MergePage",
             "next": {"type": "end"},
-            "step": 9,
-        },
+            "step": 8
+        }
     },
 }
