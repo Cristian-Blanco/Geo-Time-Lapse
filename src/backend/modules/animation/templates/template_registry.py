@@ -1,7 +1,5 @@
-# registry.py
-
 from .frame_template import FrameTemplate
-from .simple_label_template import SimpleLabelTemplate
+from .implementations.simple_label_template import SimpleLabelTemplate
 
 class TemplateRegistry:
 

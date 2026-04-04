@@ -515,14 +515,6 @@
     </message>
 </context>
 <context>
-    <name>WizardLoading</name>
-    <message>
-        <location filename="../src/frontend/pressentation/resources/ui/wizard_loading.ui" />
-        <source>The export completed successfully.</source>
-        <translation>La exportación se completó correctamente.</translation>
-    </message>
-</context>
-<context>
     <name>ProcessingPage</name>
     <message>
         <location filename="../src/frontend/pressentation/resources/ui/wizard_loading.ui" />
@@ -546,38 +538,58 @@
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Preparing export...</source>
-        <translation>Preparando exportación...</translation>
+        <source>Preparing export</source>
+        <translation>Preparando exportación</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Requesting Google imagery...</source>
-        <translation>Solicitando imágenes de Google...</translation>
+        <source>Creating image</source>
+        <translation>Creando region de imagen</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Downloading JPG frames...</source>
-        <translation>Descargando fotogramas JPG...</translation>
+        <source>Requesting Google imagery</source>
+        <translation>Solicitando imágenes de Google</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Download complete...</source>
-        <translation>Descarga completa...</translation>
+        <source>Building time windows</source>
+         <translation>Construyendo ventanas de tiempo</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Building animation...</source>
-        <translation>Construyendo animación...</translation>
+        <source>Downloading JPG frames</source>
+        <translation>Descargando fotogramas JPG</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Finalizing output...</source>
-        <translation>Finalizando salida...</translation>
+        <source>Downloading frames...</source>
+        <translation>Descargando fotogramas...</translation>
+    </message>
+    <message>
+        <location filename="../src/backend/actions/wizard/process_wizard.py" />
+        <source>Creating template</source>
+        <translation>Creando plantilla</translation>
+    </message>
+    <message>
+        <location filename="../src/backend/actions/wizard/process_wizard.py" />
+        <source>Building video</source>
+        <translation>Construyendo video</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
         <source>Completed</source>
         <translation>Completado</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Export completed successfully.</source>
+        <translation>La exportación se completó correctamente.</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Saved at:</source>
+        <translation>Archivo guardado en:</translation>
     </message>
 </context>
 </TS>

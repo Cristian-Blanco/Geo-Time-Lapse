@@ -1,5 +1,3 @@
-# template_applier.py
-
 from pathlib import Path
 from PIL import Image
 
@@ -26,9 +24,9 @@ class CreateTemplate:
 
             try:
                 with Image.open(frame_path) as image:
-                    image = image.convert("RGB")
+                    image_rgb = image.convert("RGB")
 
-                    templated = template_cls.apply(image, window)
+                    templated = template_cls.apply(image_rgb, window)
 
                     output_path = output_dir / frame_path.name
                     templated.save(output_path)

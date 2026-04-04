@@ -4,8 +4,8 @@ from qgis.PyQt.QtCore import QThread, pyqtSignal
 from frontend.infrastructure.integration_hub import IntegrationHub
 from frontend.store.wizard_context import WizardContext
 
-class ProcessWizard(QThread):
-    success = pyqtSignal()
+class GenerateTimelapse(QThread):
+    success = pyqtSignal(str)
     error = pyqtSignal(str)
     progress = pyqtSignal(int, str)
 
@@ -16,7 +16,7 @@ class ProcessWizard(QThread):
     def run(self) -> None:
         try:
             result = IntegrationHub().facade.execute(
-                "wizard.process",
+                "generate.basic.timelapse",
                 {
                     "project_id": self.context.project_id,
                     "template": self.context.template,
@@ -44,10 +44,10 @@ class ProcessWizard(QThread):
             if self.isInterruptionRequested():
                 return
 
-            if getattr(result, "ok", False):
-                self.success.emit()
+            if result.ok and result.data is not None:
+                self.success.emit(result.data["video_path"])
             else:
-                self.error.emit(str(getattr(result, "error", "Unknown error")))
+                self.error.emit(result.error or "Unknown error")
 
         except Exception as e:
             self.error.emit(str(e))
