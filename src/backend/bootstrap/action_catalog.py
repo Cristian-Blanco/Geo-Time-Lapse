@@ -10,7 +10,7 @@ class ActionCatalog:
     def register_actions(self) -> None:
         self._registry.register("gee.ee_authentication", EEAuthentication())
         self._registry.register("gee.ee_verify_project", EEVerifyProject())
-        self._registry.register("wizard.process", GenerateBasicTimelapse())
+        self._registry.register("generate.basic.timelapse", GenerateBasicTimelapse())
 
     def build_facade(self) -> Facade:
         self.register_actions()

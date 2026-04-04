@@ -1,8 +1,5 @@
-# base_template.py
-
 from PIL import Image
 from backend.domain.types.time_window import TimeWindow
-
 
 class FrameTemplate:
 

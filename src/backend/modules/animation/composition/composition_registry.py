@@ -1,8 +1,7 @@
 from .image_composition import ImageComposition
-from .mosaic_composition import MosaicComposition
-from .single_composition import SingleComposition
-from .median_composition import MedianComposition
-
+from .implementations import (
+    MedianComposition, MosaicComposition, SingleComposition
+)
 
 class CompositionRegistry:
     _compositions: dict[str, type[ImageComposition]] = {

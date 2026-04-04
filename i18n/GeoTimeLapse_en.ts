@@ -515,14 +515,6 @@
     </message>
 </context>
 <context>
-    <name>WizardLoading</name>
-    <message>
-        <location filename="../src/frontend/pressentation/resources/ui/wizard_loading.ui" />
-        <source>The export completed successfully.</source>
-        <translation>The export completed successfully.</translation>
-    </message>
-</context>
-<context>
     <name>ProcessingPage</name>
     <message>
         <location filename="../src/frontend/pressentation/resources/ui/wizard_loading.ui" />
@@ -546,38 +538,58 @@
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Preparing export...</source>
-        <translation>Preparing export...</translation>
+        <source>Preparing export</source>
+        <translation>Preparing export</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Requesting Google imagery...</source>
-        <translation>Requesting Google imagery...</translation>
+        <source>Creating image</source>
+        <translation>Creating image</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Downloading JPG frames...</source>
-        <translation>Downloading JPG frames...</translation>
+        <source>Requesting Google imagery</source>
+        <translation>Requesting Google imagery</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Download complete...</source>
-        <translation>Download complete...</translation>
+        <source>Building time windows</source>
+         <translation>Building time windows</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Building animation...</source>
-        <translation>Building animation...</translation>
+        <source>Downloading JPG frames</source>
+        <translation>Downloading JPG frames</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
-        <source>Finalizing output...</source>
-        <translation>Finalizing output...</translation>
+        <source>Downloading frames...</source>
+        <translation>Descargando fotogramas...</translation>
+    </message>
+    <message>
+        <location filename="../src/backend/actions/wizard/process_wizard.py" />
+        <source>Creating template</source>
+        <translation>Creating template</translation>
+    </message>
+    <message>
+        <location filename="../src/backend/actions/wizard/process_wizard.py" />
+        <source>Building video</source>
+        <translation>Building video</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
         <source>Completed</source>
         <translation>Completed</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Export completed successfully.</source>
+        <translation>Export completed successfully.</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Saved at:</source>
+        <translation>Saved at:</translation>
     </message>
 </context>
 </TS>

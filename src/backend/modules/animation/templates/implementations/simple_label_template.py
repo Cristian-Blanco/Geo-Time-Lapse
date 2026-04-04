@@ -1,10 +1,6 @@
-# simple_template.py
-
-from PIL import ImageDraw, ImageFont
-from .frame_template import FrameTemplate
+from PIL import ImageDraw, ImageFont, Image
 from backend.domain.types.time_window import TimeWindow
-from PIL import Image
-
+from ..frame_template import FrameTemplate
 
 class SimpleLabelTemplate(FrameTemplate):
 
@@ -16,7 +12,7 @@ class SimpleLabelTemplate(FrameTemplate):
 
         try:
             font = ImageFont.truetype("arial.ttf", 40)
-        except:
+        except OSError:
             font = ImageFont.load_default()
 
         bbox = draw.textbbox((0, 0), text, font=font)

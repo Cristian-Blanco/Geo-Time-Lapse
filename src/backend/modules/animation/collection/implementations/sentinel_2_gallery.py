@@ -1,4 +1,4 @@
-from .gallery import Gallery
+from ..gallery import Gallery
 
 class Sentinel2Gallery(Gallery):
     collection_id = "COPERNICUS/S2_SR_HARMONIZED"
