@@ -6,7 +6,7 @@
 name=GeoTimeLapse
 qgisMinimumVersion=3.0
 description=creates multitemporal (timelapse) videos from satellite images for a point or area
-version=0.1
+version=1.0.0-beta1
 author=Cristian Javier Martinez Blanco
 email=cristianjmb10@gmail.com
 
@@ -44,4 +44,3 @@ Category of the plugin: Raster, Vector, Database or Web
 
 # If the plugin can run on QGIS Server.
 server=False
-
