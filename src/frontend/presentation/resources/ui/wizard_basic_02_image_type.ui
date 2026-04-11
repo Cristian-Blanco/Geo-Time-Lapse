@@ -182,62 +182,123 @@
                                             </widget>
                                         </item>
 
-                                        <!-- percent horizontal -->
+                                        <!-- Filters group -->
                                         <item row="2" column="0" colspan="2">
-                                            <widget class="QWidget" name="cloud_container">
-                                                <layout class="QVBoxLayout">
-                                                    <property name="spacing">
-                                                        <number>6</number>
-                                                    </property>
+                                            <widget class="QFrame" name="frm_filters_group">
+                                                <layout class="QGridLayout">
 
-                                                    <item>
-                                                        <widget class="QLabel">
-                                                            <property name="text">
-                                                                <string>Percentage of cloud cover</string>
-                                                            </property>
-                                                            <property name="margin">
-                                                                <number>6</number>
-                                                            </property>
+                                                    <!-- Improve contrast -->
+                                                    <item row="0" column="0">
+                                                        <widget class="QWidget">
+                                                            <layout class="QHBoxLayout">
+                                                                <property name="spacing">
+                                                                    <number>6</number>
+                                                                </property>
+
+                                                                <item>
+                                                                    <widget class="QCheckBox" name="chk_normalize_images">
+                                                                        <property name="text">
+                                                                            <string></string>
+                                                                        </property>
+                                                                        <property name="checked">
+                                                                            <bool>true</bool>
+                                                                        </property>
+                                                                        <property name="class" stdset="0">
+                                                                            <string>group_check</string>
+                                                                        </property>
+                                                                        <property name="cursor">
+                                                                            <cursorShape>PointingHandCursor</cursorShape>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+
+                                                                <item>
+                                                                    <widget class="QLabel">
+                                                                        <property name="text">
+                                                                            <string>Improve image contrast</string>
+                                                                        </property>
+                                                                        <property name="class" stdset="0">
+                                                                            <string>group_description</string>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
+
+                                                                <item>
+                                                                    <spacer name="normalizeSpacer">
+                                                                        <property name="orientation">
+                                                                            <enum>Qt::Horizontal</enum>
+                                                                        </property>
+                                                                        <property name="sizeHint" stdset="0">
+                                                                            <size>
+                                                                                <width>40</width>
+                                                                                <height>20</height>
+                                                                            </size>
+                                                                        </property>
+                                                                    </spacer>
+                                                                </item>
+                                                            </layout>
                                                         </widget>
                                                     </item>
 
-                                                    <item>
-                                                        <layout class="QHBoxLayout">
-                                                            <property name="spacing">
-                                                                <number>8</number>
-                                                            </property>
+                                                    <!-- Cloud percentage -->
+                                                    <item row="0" column="1">
+                                                        <widget class="QWidget" name="cloud_container">
+                                                            <layout class="QVBoxLayout">
+                                                                <property name="spacing">
+                                                                    <number>6</number>
+                                                                </property>
 
-                                                            <item>
-                                                                <widget class="QSlider" name="cloud_slider">
-                                                                    <property name="orientation">
-                                                                        <enum>Qt::Horizontal</enum>
-                                                                    </property>
-                                                                    <property name="minimum">
-                                                                        <number>0</number>
-                                                                    </property>
-                                                                    <property name="maximum">
-                                                                        <number>100</number>
-                                                                    </property>
-                                                                    <property name="value">
-                                                                        <number>30</number>
-                                                                    </property>
-                                                                    <property name="cursor">
-                                                                        <cursorShape>PointingHandCursor</cursorShape>
-                                                                    </property>
-                                                                    <property name="class" stdset="0">
-                                                                        <string>group_slider</string>
-                                                                    </property>
-                                                                </widget>
-                                                            </item>
+                                                                <item>
+                                                                    <widget class="QLabel">
+                                                                        <property name="text">
+                                                                            <string>Percentage of cloud cover</string>
+                                                                        </property>
+                                                                        <property name="margin">
+                                                                            <number>6</number>
+                                                                        </property>
+                                                                    </widget>
+                                                                </item>
 
-                                                            <item>
-                                                                <widget class="QLabel" name="cloud_value_label">
-                                                                    <property name="text">
-                                                                        <string>30%</string>
-                                                                    </property>
-                                                                </widget>
-                                                            </item>
-                                                        </layout>
+                                                                <item>
+                                                                    <layout class="QHBoxLayout">
+                                                                        <property name="spacing">
+                                                                            <number>8</number>
+                                                                        </property>
+
+                                                                        <item>
+                                                                            <widget class="QSlider" name="cloud_slider">
+                                                                                <property name="orientation">
+                                                                                    <enum>Qt::Horizontal</enum>
+                                                                                </property>
+                                                                                <property name="minimum">
+                                                                                    <number>0</number>
+                                                                                </property>
+                                                                                <property name="maximum">
+                                                                                    <number>100</number>
+                                                                                </property>
+                                                                                <property name="value">
+                                                                                    <number>30</number>
+                                                                                </property>
+                                                                                <property name="cursor">
+                                                                                    <cursorShape>PointingHandCursor</cursorShape>
+                                                                                </property>
+                                                                                <property name="class" stdset="0">
+                                                                                    <string>group_slider</string>
+                                                                                </property>
+                                                                            </widget>
+                                                                        </item>
+
+                                                                        <item>
+                                                                            <widget class="QLabel" name="cloud_value_label">
+                                                                                <property name="text">
+                                                                                    <string>30%</string>
+                                                                                </property>
+                                                                            </widget>
+                                                                        </item>
+                                                                    </layout>
+                                                                </item>
+                                                            </layout>
+                                                        </widget>
                                                     </item>
                                                 </layout>
                                             </widget>

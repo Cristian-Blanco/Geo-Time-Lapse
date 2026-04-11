@@ -26,6 +26,7 @@ class GenerateTimelapse(QThread):
                     "image_type": self.context.image_type,
                     "composition": self.context.composition,
                     "cloud_percentage": self.context.cloud_percentage,
+                    "check_normalize_images": self.context.check_normalize_images,
 
                     "coordinates": self.context.coordinates,
 

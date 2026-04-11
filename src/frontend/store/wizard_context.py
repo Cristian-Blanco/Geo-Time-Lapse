@@ -15,6 +15,7 @@ class WizardContext(WizardState):
     gallery_id: str | None = None
     composition: str | None = None
     cloud_percentage: int | None = None
+    check_normalize_images: bool = True
     max_area_km2: int | None = None
 
     # ------ Coordinates -------

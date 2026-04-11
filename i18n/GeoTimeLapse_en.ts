@@ -201,6 +201,11 @@
     </message>
     <message>
         <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <source>Improve image contrast</source>
+        <translation>Improve image contrast</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
         <source>Percentage of cloud cover</source>
         <translation>Percentage of cloud cover</translation>
     </message>
@@ -555,6 +560,11 @@
         <location filename="../src/backend/actions/wizard/process_wizard.py" />
         <source>Building time windows</source>
          <translation>Building time windows</translation>
+    </message>
+    <message>
+        <location filename="../src/backend/actions/wizard/process_wizard.py" />
+        <source>Configuring bands</source>
+        <translation>Configuring bands</translation>
     </message>
     <message>
         <location filename="../src/backend/actions/wizard/process_wizard.py" />

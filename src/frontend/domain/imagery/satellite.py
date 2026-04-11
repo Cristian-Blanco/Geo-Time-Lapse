@@ -12,7 +12,7 @@ IMAGE_TYPES: ImageType = [
             "and for general visual comparison"
         ),
         "icon": "natural_color.png",
-        "supports_cloud_filter": True,
+        "is_optical": True,
         "supported_galleries": ["sentinel_2"], # The name in support_galleries must be equal to the id in IMAGE_GALLERIES
     },
     {
@@ -24,7 +24,7 @@ IMAGE_TYPES: ImageType = [
             "and soil changes"
         ),
         "icon": "false_color.png",
-        "supports_cloud_filter": True,
+        "is_optical": True,
         "supported_galleries": ["sentinel_2"],
     },
     {
@@ -36,7 +36,7 @@ IMAGE_TYPES: ImageType = [
             "or for structural analysis"
         ),
         "icon": "radar_filter.png",
-        "supports_cloud_filter": False,
+        "is_optical": False,
         "supported_galleries": ["sentinel_1"],
     },
 ]
