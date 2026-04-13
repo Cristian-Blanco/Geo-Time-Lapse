@@ -9,7 +9,10 @@ class AnimationPayload(TypedDict):
     gallery_id: str
     image_type: str
     composition: str
+
+    # for optical images only
     cloud_percentage: int | None
+    check_normalize_images: bool
 
     coordinates: list[float]
 

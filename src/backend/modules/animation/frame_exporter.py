@@ -1,11 +1,11 @@
 from pathlib import Path
 from backend.domain.types.time_window import TimeWindow
+from backend.domain.types.image_type_config import ImageTypeDefinition
 from collections.abc import Callable
 
-from backend.domain.config.image_type import IMAGE_TYPES
 from .composition import CompositionRegistry
 
-import requests # type: ignore
+import requests # type: ignore[import, unused-ignore]
 import ee
 
 class FrameExporter:
@@ -13,15 +13,13 @@ class FrameExporter:
     def __init__(
         self,
         composition_id: str,
-        gallery_id: str,
-        image_type: str,
+        vis_params: ImageTypeDefinition,
         output_dir: Path,
         dimensions: int = 1920,
     ) -> None:
-        self.image_type_config = IMAGE_TYPES[gallery_id][image_type]
         self.composition = CompositionRegistry.get(composition_id)
         self.output_dir = output_dir
-
+        self.vis_params = vis_params
         self.dimensions = dimensions
 
 
@@ -49,9 +47,9 @@ class FrameExporter:
             image = self.composition.build(filtered_collection, region)
 
             vis = {
-                "bands": self.image_type_config["bands"],
-                "min": self.image_type_config["vis_min"],
-                "max": self.image_type_config["vis_max"],
+                "bands": self.vis_params["bands"],
+                "min": self.vis_params["vis_min"],
+                "max": self.vis_params["vis_max"],
                 "dimensions": self.dimensions,
                 "region": region,
                 "format": "jpg",

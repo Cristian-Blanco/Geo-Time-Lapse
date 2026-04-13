@@ -32,6 +32,7 @@ class BasicImageType(BasePage):
         self.widget.gallery_combo.currentIndexChanged.connect(self._on_gallery_changed)
         self.widget.compositon_combo.currentIndexChanged.connect(self._on_composition_changed)
         self.widget.cloud_slider.valueChanged.connect(self._on_cloud_changed)
+        self.widget.chk_normalize_images.toggled.connect(self._on_normalize_changed)
 
         self._update_cloud_label(self.widget.cloud_slider.value())
 
@@ -98,7 +99,7 @@ class BasicImageType(BasePage):
         self.state.image_type = image_id
 
         self._update_when_to_use()
-        self._update_cloud_visibility()
+        self._update_filter_group_visibility()
         self._filter_galleries()
 
         self.validityChanged.emit(self.is_valid())
@@ -111,16 +112,23 @@ class BasicImageType(BasePage):
         item = next(i for i in IMAGE_TYPES if i["id"] == self.state.image_type)
         self.widget.when_to_use_content.setText(self.tr(item["when_to_use"]))
 
-    def _update_cloud_visibility(self) -> None:
+    def _update_filter_group_visibility(self) -> None:
         if not self.state.image_type:
             return
 
         item = next(i for i in IMAGE_TYPES if i["id"] == self.state.image_type)
-        enabled_cloud_filter = item.get("supports_cloud_filter", False)
+        enabled_filters = item.get("is_optical", False)
 
-        self.state.cloud_percentage = self.widget.cloud_slider.value() if enabled_cloud_filter else None
+        self.widget.frm_filters_group.setVisible(enabled_filters)
 
-        self.widget.cloud_container.setVisible(enabled_cloud_filter)
+        if enabled_filters:
+            self.widget.chk_normalize_images.setChecked(True)
+            self.state.check_normalize_images = True
+            self.state.cloud_percentage = self.widget.cloud_slider.value()
+        else:
+            self.widget.chk_normalize_images.setChecked(False)
+            self.state.check_normalize_images = False
+            self.state.cloud_percentage = None
 
     def _filter_galleries(self) -> None:
         if not self.state.image_type:
@@ -150,6 +158,9 @@ class BasicImageType(BasePage):
 
     def _on_composition_changed(self) -> None:
         self.state.composition = self.widget.compositon_combo.currentData()
+
+    def _on_normalize_changed(self, checked: bool) -> None:
+        self.state.check_normalize_images = checked
 
     def _on_cloud_changed(self, value: int) -> None:
         self._update_cloud_label(value)

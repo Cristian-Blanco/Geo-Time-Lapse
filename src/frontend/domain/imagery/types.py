@@ -6,7 +6,7 @@ class ImageTypeItem(TypedDict):
     description: str
     when_to_use: str
     icon: str
-    supports_cloud_filter: bool
+    is_optical: bool
     supported_galleries: list[str]
 
 

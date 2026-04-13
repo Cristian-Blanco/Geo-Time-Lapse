@@ -6,6 +6,10 @@ class Gallery:
     sensor_type: str
     cloud_property: str | None
 
+    @property
+    def is_optical(self) -> bool:
+        return self.sensor_type == "optical"
+
     def build_collection(
         self,
         start_date: str,
@@ -20,7 +24,7 @@ class Gallery:
             .filterBounds(region)
         )
 
-        if self.cloud_property and cloud_percentage:
+        if self.cloud_property is not None and cloud_percentage is not None:
             collection = collection.filter(
                 ee.Filter.lt(self.cloud_property, cloud_percentage)
             )
