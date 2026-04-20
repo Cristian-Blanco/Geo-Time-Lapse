@@ -35,7 +35,7 @@ class LoginPage(BasePage):
             )
 
         # Load assets
-        self.__apply_static_assets()
+        self._apply_static_assets()
 
         self.inp_project_id.textChanged.connect(self._on_project_id_changed)
         self.btn_sign_in.clicked.connect(self._on_sign_in_clicked)
@@ -128,7 +128,7 @@ class LoginPage(BasePage):
     def is_valid(self) -> bool:
         return bool(self.state.project_id) and bool(getattr(self.state, "verified", False))
 
-    def __apply_static_assets(self) -> None:
+    def _apply_static_assets(self) -> None:
         # Load assets without qrc
         google_png = str(ICONS_DIR / "google_logo.png")
         form_png = str(ICONS_DIR / "exam.png")
