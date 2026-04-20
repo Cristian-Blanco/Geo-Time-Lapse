@@ -106,3 +106,6 @@ class ChooseTemplate(BasePage):
 
         self.validityChanged.emit(True)
         self.stateChanged.emit()
+
+    def is_valid(self) -> bool:
+        return self.state.template is not None
