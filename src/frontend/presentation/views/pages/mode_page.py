@@ -43,7 +43,7 @@ class ModePage(BasePage):
         if self.state.mode not in ("basic", "advanced"):
             self.state.mode = "basic"
 
-        self.__apply_static_assets()
+        self._apply_static_assets()
         self._apply_selected_styles()
         self.validityChanged.emit(self.is_valid())
         self.stateChanged.emit()
@@ -88,7 +88,7 @@ class ModePage(BasePage):
             return self.state.mode in ("basic", "advanced")
         return self.state.mode == "basic"
 
-    def __apply_static_assets(self) -> None:
+    def _apply_static_assets(self) -> None:
         assets = { #Dynamic content
             True: {
                 "icon": "advanced.png",

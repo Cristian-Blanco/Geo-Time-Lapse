@@ -17,7 +17,7 @@ class ChooseTemplate(BasePage):
 
         self._load_templates()
 
-    def __create_template_card(self, tpl: TemplateDefItem) -> QtWidgets.QFrame:
+    def _create_template_card(self, tpl: TemplateDefItem) -> QtWidgets.QFrame:
         card = QtWidgets.QFrame()
         card.setObjectName(f"card_{tpl['id']}")
         card.setProperty("template_id", tpl["id"])
@@ -70,7 +70,7 @@ class ChooseTemplate(BasePage):
         for i, tpl in enumerate(TEMPLATES):
             row = i // 3
             col = i % 3
-            card = self.__create_template_card(tpl)
+            card = self._create_template_card(tpl)
             grid.addWidget(card, row, col)
 
         grid.setAlignment(QtCore.Qt.AlignTop | QtCore.Qt.AlignLeft)

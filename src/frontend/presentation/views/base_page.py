@@ -3,7 +3,9 @@ from qgis.PyQt import QtCore, QtWidgets
 from frontend.store.wizard_context import WizardContext
 
 class BasePage(QtCore.QObject):
+    # Emitted when page validity changes (enables/disables navigation)
     validityChanged = QtCore.pyqtSignal(bool)
+    # Emitted when shared state changes
     stateChanged = QtCore.pyqtSignal()
 
     left_mode: str = "previous"
@@ -21,6 +23,7 @@ class BasePage(QtCore.QObject):
 
     # ---------- Lifecycle ----------
     def on_enter(self) -> None:
+
         self.validityChanged.emit(self.is_valid())
 
     def on_leave(self) -> None:
