@@ -1,0 +1,2 @@
+class ProcessCancelledError(Exception):
+    pass

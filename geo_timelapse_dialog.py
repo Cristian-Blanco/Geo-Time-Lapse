@@ -11,6 +11,7 @@ from frontend.domain.wizard.flow_factory import FlowFactory
 from frontend.domain.wizard.progress_calc import ProgressCalc
 from frontend.bootstrap.style_bootstrap import StyleBootstrap
 from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtCore import QTimer
 
 if TYPE_CHECKING:
     from frontend.presentation.views.base_page import BasePage
@@ -76,7 +77,11 @@ class GeoTimeLapseDialog(QtWidgets.QDialog):
         _, page = self._nodes[self._current]
         if page.left_mode == "cancel":
             page.on_leave()
-            self.reject()
+
+            if page.cancel_delay_ms > 0:
+                QTimer.singleShot(page.cancel_delay_ms, self.reject)
+            else:
+                self.reject()
             return
 
         if len(self._history) >= self.min_history_to_go_back:

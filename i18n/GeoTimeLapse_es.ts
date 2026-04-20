@@ -601,5 +601,15 @@
         <source>Saved at:</source>
         <translation>Archivo guardado en:</translation>
     </message>
+        <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Process cancelled</source>
+        <translation>Proceso cancelado</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <source>Cancelling...</source>
+        <translation>Cancelando...</translation>
+    </message>
 </context>
 </TS>
