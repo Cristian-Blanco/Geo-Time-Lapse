@@ -1,6 +1,7 @@
 from pathlib import Path
 from backend.domain.types.time_window import TimeWindow
 from backend.domain.types.image_type_config import ImageTypeDefinition
+from backend.shared.cancellation import raise_process_cancelled
 from collections.abc import Callable
 
 from .composition import CompositionRegistry
@@ -28,7 +29,8 @@ class FrameExporter:
         collection: ee.ImageCollection,
         windows: list[TimeWindow],
         region: ee.Geometry,
-        progress_callback: Callable[[int, str], None] | None = None
+        progress_callback: Callable[[int, str], None] | None = None,
+        is_cancelled: Callable[[], bool] | None = None
     ) -> list[Path]:
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -38,6 +40,8 @@ class FrameExporter:
         total = len(windows)
 
         for index, window in enumerate(windows):
+            raise_process_cancelled(is_cancelled)
+
             percent = int((index + 1) / total * 30) + 50  # 50% to 80%
 
             if progress_callback is not None:

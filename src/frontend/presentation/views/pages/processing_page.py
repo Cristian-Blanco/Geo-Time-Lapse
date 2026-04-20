@@ -8,6 +8,7 @@ class ProcessingPage(BasePage):
 
     left_mode = "cancel"
     right_mode = "finish"
+    cancel_delay_ms = 3000
 
     def __init__(self, widget: QtWidgets.QWidget, state: WizardContext) -> None:
         super().__init__(widget, state)
@@ -39,6 +40,7 @@ class ProcessingPage(BasePage):
         self.worker = GenerateTimelapse(self.state)
         self.worker.success.connect(self._on_success)
         self.worker.error.connect(self._on_error)
+        self.worker.cancelled.connect(self._on_cancelled)
         self.worker.progress.connect(self._on_progress)
 
         self.worker.start()
@@ -71,15 +73,17 @@ class ProcessingPage(BasePage):
         self.process_completed = True
         self.validityChanged.emit(self.is_valid())
 
+    def _on_cancelled(self) -> None:
+        self.lbl_status.setText(self.tr("Process cancelled"))
+
     def is_valid(self) -> bool:
         return self.process_completed
 
     def on_leave(self) -> None:
+        self.orbit.hide()
         if self.worker and self.worker.isRunning():
+            self.lbl_status.setText(self.tr("Cancelling..."))
             self.worker.requestInterruption()
-            self.worker.wait(3000)
-
-        self.worker = None
 
     def _on_error(self, message: str) -> None:
         self.lbl_status.setText(self.tr("Error during processing"))

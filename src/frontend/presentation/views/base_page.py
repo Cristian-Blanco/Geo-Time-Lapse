@@ -12,6 +12,8 @@ class BasePage(QtCore.QObject):
     title: str = ""
     description: str = ""
 
+    cancel_delay_ms: int = 0
+
     def __init__(self, widget: QtWidgets.QWidget, state: WizardContext):
         super().__init__()
         self.widget = widget

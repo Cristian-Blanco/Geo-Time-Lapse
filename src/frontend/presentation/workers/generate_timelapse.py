@@ -1,5 +1,3 @@
-# frontend/presentation/workers/process_wizard.py
-
 from qgis.PyQt.QtCore import QThread, pyqtSignal
 from frontend.infrastructure.integration_hub import IntegrationHub
 from frontend.store.wizard_context import WizardContext
@@ -7,6 +5,7 @@ from frontend.store.wizard_context import WizardContext
 class GenerateTimelapse(QThread):
     success = pyqtSignal(str)
     error = pyqtSignal(str)
+    cancelled = pyqtSignal()
     progress = pyqtSignal(int, str)
 
     def __init__(self, context: WizardContext):
@@ -42,13 +41,15 @@ class GenerateTimelapse(QThread):
                 }
             )
 
-            if self.isInterruptionRequested():
-                return
-
             if result.ok and result.data is not None:
                 self.success.emit(result.data["video_path"])
-            else:
-                self.error.emit(result.error or "Unknown error")
+                return
+
+            if result.error == "Process cancelled":
+                self.cancelled.emit()
+                return
+
+            self.error.emit(result.error or "Unknown error")
 
         except Exception as e:
             self.error.emit(str(e))
