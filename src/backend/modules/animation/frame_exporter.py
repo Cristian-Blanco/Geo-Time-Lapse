@@ -3,9 +3,12 @@ from backend.domain.types.time_window import TimeWindow
 from backend.domain.types.image_type_config import ImageTypeDefinition
 from backend.shared.cancellation import raise_process_cancelled
 from collections.abc import Callable
+from typing import cast
 
 from .composition import CompositionRegistry
 
+from PIL import Image
+from io import BytesIO
 import requests # type: ignore[import, unused-ignore]
 import ee
 
@@ -31,11 +34,11 @@ class FrameExporter:
         region: ee.Geometry,
         progress_callback: Callable[[int, str], None] | None = None,
         is_cancelled: Callable[[], bool] | None = None
-    ) -> list[Path]:
+    ) -> list[Path | None]:
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        exported_files: list[Path] = []
+        exported_files: list[Path | None] = []
 
         total = len(windows)
 
@@ -60,8 +63,12 @@ class FrameExporter:
             }
 
             url = image.getThumbURL(vis)
-            response = requests.get(url, timeout=60)
+            response = requests.get(url, timeout=180)
             response.raise_for_status()
+
+            if self._is_empty_or_black_image(response.content):
+                exported_files.append(None)
+                continue
 
             filename = self.output_dir / f'frame_{index:03d}_{window["label"]}.jpg'
 
@@ -71,3 +78,13 @@ class FrameExporter:
             exported_files.append(filename)
 
         return exported_files
+
+    def _is_empty_or_black_image(self, content: bytes) -> bool:
+        try:
+            image = Image.open(BytesIO(content)).convert("L")
+            extrema = cast(tuple[int, int], image.getextrema())
+
+            return extrema == (0, 0)
+
+        except Exception:
+            return True
