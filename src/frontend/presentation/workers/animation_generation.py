@@ -2,7 +2,7 @@ from qgis.PyQt.QtCore import QThread, pyqtSignal
 from frontend.infrastructure.integration_hub import IntegrationHub
 from frontend.store.wizard_context import WizardContext
 
-class GenerateTimelapse(QThread):
+class AnimationGeneration(QThread):
     success = pyqtSignal(str)
     error = pyqtSignal(str)
     cancelled = pyqtSignal()

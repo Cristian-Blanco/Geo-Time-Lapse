@@ -1,10 +1,10 @@
 from frontend.presentation.views.base_page import BasePage
 from frontend.store.wizard_context import WizardContext
-from frontend.presentation.workers.generate_timelapse import GenerateTimelapse
+from frontend.presentation.workers.animation_generation import AnimationGeneration
 from frontend.presentation.workers.orbit_loader import OrbitLoader
 from qgis.PyQt import QtWidgets
 
-class ProcessingPage(BasePage):
+class ProcessingProgress(BasePage):
 
     left_mode = "cancel"
     right_mode = "finish"
@@ -17,7 +17,7 @@ class ProcessingPage(BasePage):
         self.description = self.tr("Generating animation")
 
         self.process_completed = False
-        self.worker: GenerateTimelapse | None = None
+        self.worker: AnimationGeneration | None = None
 
         self.lbl_percentage = self.widget.findChild(QtWidgets.QLabel, "lbl_percentage")
         self.lbl_status = self.widget.findChild(QtWidgets.QLabel, "lbl_status")
@@ -37,7 +37,7 @@ class ProcessingPage(BasePage):
     def on_enter(self) -> None:
         self._reset_loading_state()
 
-        self.worker = GenerateTimelapse(self.state)
+        self.worker = AnimationGeneration(self.state)
         self.worker.success.connect(self._on_success)
         self.worker.error.connect(self._on_error)
         self.worker.cancelled.connect(self._on_cancelled)

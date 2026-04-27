@@ -1,6 +1,6 @@
 <ui version="4.0">
-    <class>WizardBasicPointsMapChild</class>
-    <widget class="QWidget" name="WizardBasicPointsMapChild">
+    <class>WizardBasicPointsMap</class>
+    <widget class="QWidget" name="WizardBasicPointsMap">
         <layout class="QVBoxLayout">
             <property name="spacing">
                 <number>12</number>

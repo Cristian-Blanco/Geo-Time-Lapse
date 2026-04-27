@@ -4,7 +4,7 @@ from qgis.PyQt import QtCore
 from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
 from frontend.store.wizard_context import WizardContext
-from frontend.presentation.workers.gee import Authentication, VerifyAuth
+from frontend.presentation.workers.gee import Authentication, AuthVerification
 
 class LoginPage(BasePage):
     left_mode = "cancel"
@@ -28,11 +28,6 @@ class LoginPage(BasePage):
         self.btn_sign_in: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_sign_in")
         self.btn_verify: QtWidgets.QPushButton = widget.findChild(QtWidgets.QPushButton, "btn_verify")
         self.lbl_auth_status: QtWidgets.QLabel = widget.findChild(QtWidgets.QLabel, "lbl_auth_status")
-
-        if not all([self.inp_project_id, self.btn_sign_in, self.btn_verify, self.lbl_auth_status]):
-            raise RuntimeError(
-                "wizard_01_login.ui: missing objectName (inp_project_id, btn_sign_in, btn_verify, lbl_auth_status)"
-            )
 
         # Load assets
         self._apply_static_assets()
@@ -80,7 +75,7 @@ class LoginPage(BasePage):
         self.lbl_auth_status.setText(self.tr("Verifying project..."))
         self.btn_verify.setEnabled(False)
 
-        self.verify_worker = VerifyAuth(self.state.project_id)
+        self.verify_worker = AuthVerification(self.state.project_id)
 
         self.verify_worker.success.connect(self._on_verify_success)
         self.verify_worker.error.connect(self._on_verify_error)

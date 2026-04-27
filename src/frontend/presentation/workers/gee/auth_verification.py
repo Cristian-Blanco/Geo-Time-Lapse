@@ -1,7 +1,7 @@
 from qgis.PyQt.QtCore import QThread, pyqtSignal
 from frontend.infrastructure.integration_hub import IntegrationHub
 
-class VerifyAuth(QThread):
+class AuthVerification(QThread):
     success = pyqtSignal()
     error = pyqtSignal(str)
 

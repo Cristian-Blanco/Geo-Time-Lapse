@@ -23,9 +23,6 @@ class ModePage(BasePage):
         self.card_basic: QtWidgets.QFrame = widget.findChild(QtWidgets.QFrame, "card_basic")
         self.card_advanced: QtWidgets.QFrame = widget.findChild(QtWidgets.QFrame, "card_advanced")
 
-        if not all([self.card_basic, self.card_advanced]):
-            raise RuntimeError("wizard_02_mode.ui: missing objectName (card_basic, card_advanced)")
-
         # MVP: disabled avanced flow
         self.card_advanced.setEnabled(bool(ENABLE_ADVANCED_MODE))
 

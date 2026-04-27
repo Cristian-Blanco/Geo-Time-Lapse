@@ -6,7 +6,7 @@ from typing import Any
 
 from backend.modules.animation.collection import CollectionRegistry, Gallery
 from backend.modules.animation import (
-    CreateTemplate, FrameExporter, RegionBuilder, TimeWindowGenerator, VideoBuilder, VisualRangeResolver
+    TemplateBuilder, FrameExporter, RegionBuilder, TimeWindowGenerator, VideoBuilder, VisualRangeResolver
 )
 from backend.shared.cancellation import raise_process_cancelled
 from backend.shared.exceptions import ProcessCancelledError
@@ -14,7 +14,7 @@ from backend.shared.exceptions import ProcessCancelledError
 import ee
 from pathlib import Path
 
-class GenerateBasicTimelapse(Action[AnimationPayload, dict[str, Any]]):
+class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
     def invoke(self, payload: AnimationPayload) -> Result[dict[str, Any]]:
         try:
 
@@ -74,7 +74,7 @@ class GenerateBasicTimelapse(Action[AnimationPayload, dict[str, Any]]):
                 vis_params=vis_params,
                 output_dir=frames_dir
             )
-            frame_paths: list[Path] = frame_exporter.export(
+            frame_paths: list[Path | None] = frame_exporter.export(
                 collection=collection,
                 windows=windows,
                 region=region,
@@ -84,7 +84,7 @@ class GenerateBasicTimelapse(Action[AnimationPayload, dict[str, Any]]):
             # Apply visual template to each frame (labels, overlays)
             progress(85, "Creating template")
             raise_process_cancelled(is_cancelled)
-            templated_frames: list[Path] = CreateTemplate.apply(
+            templated_frames: list[Path] = TemplateBuilder.apply(
                     frames=frame_paths,
                     windows=windows,
                     template_id=payload["template"],

@@ -4,7 +4,7 @@ from PIL import Image
 from backend.domain.types.time_window import TimeWindow
 from .templates.template_registry import TemplateRegistry
 
-class CreateTemplate:
+class TemplateBuilder:
 
     @staticmethod
     def apply(

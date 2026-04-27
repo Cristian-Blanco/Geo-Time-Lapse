@@ -55,27 +55,27 @@
 <context>
     <name>WizardLogin</name>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_01_login.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_login.ui" />
         <source>Sign in with Google</source>
         <translation>Sign in with Google</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_01_login.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_login.ui" />
         <source>Project ID:</source>
         <translation>Project ID:</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_01_login.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_login.ui" />
         <source>Unique project name in Google Cloud:</source>
         <translation>Unique project name in Google Cloud:</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_01_login.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_login.ui" />
         <source>Verify</source>
         <translation>Verify</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_01_login.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_login.ui" />
         <source>🔴 Not verified</source>
         <translation>🔴 Not verified</translation>
     </message>
@@ -116,22 +116,22 @@
 <context>
     <name>WizardMode</name>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_02_mode.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_mode.ui" />
         <source>Basic</source>
         <translation>Basic</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_02_mode.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_mode.ui" />
         <source>Advanced</source>
         <translation>Advanced</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_02_mode.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_mode.ui" />
         <source>Ideal for beginner GIS users.</source>
         <translation>Ideal for beginner GIS users.</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_02_mode.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_mode.ui" />
         <source>Under construction</source>
         <translation>Under construction</translation>
     </message>
@@ -162,50 +162,50 @@
 <context>
     <name>WizardAdvanced</name>
     <message>
-        <location filename="../src/frontend/ui/wizard_03_advanced.ui" />
+        <location filename="../src/frontend/ui/wizard_advanced.ui" />
         <source>This is advanced 🧠</source>
         <translation>This is advanced 🧠</translation>
     </message>
 </context>
 <context>
-    <name>WizardBasicImageTypeChild</name>
+    <name>WizardBasicImageType</name>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Select filter</source>
         <translation>Select filter</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>When to use this</source>
         <translation>When to use this</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Select an image type</source>
         <translation>Select an image type</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Additional settings</source>
         <translation>Additional settings</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Select the image gallery</source>
         <translation>Select the image gallery</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Image composition</source>
         <translation>Image composition</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Improve image contrast</source>
         <translation>Improve image contrast</translation>
     </message>
     <message>
-        <location filename="../src/frontend/ui/wizard_basic_02_image_type.ui" />
+        <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>Percentage of cloud cover</source>
         <translation>Percentage of cloud cover</translation>
     </message>
@@ -279,39 +279,39 @@
     </message>
 </context>
 <context>
-    <name>WizardBasicPointsMapChild</name>
+    <name>WizardBasicPointsMap</name>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Select area on the map</source>
         <translation>Select area on the map</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Enter coordinates manually (WGS84 / EPSG:4326)</source>
         <translation>Enter coordinates manually (WGS84 / EPSG:4326)</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Point 1</source>
         <translation>Point 1</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Point 2</source>
         <translation>Point 2</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Latitude</source>
         <translation>Latitude</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Longitude</source>
         <translation>Longitude</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_01_points_map.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_points_map.ui" />
         <source>Select the button or set manually coordinates</source>
         <translation>Select the button or set manually coordinates</translation>
     </message>
@@ -360,54 +360,54 @@
     </message>
 </context>
 <context>
-    <name>VideoTimeLapse</name>
+    <name>WizardBasicTimeLapse</name>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Time period</source>
         <translation>Time period</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Start date</source>
         <translation>Start date</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>End date</source>
         <translation>End date</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Time interval</source>
         <translation>Time interval</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Duration per frame</source>
         <translation>Duration per frame</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Seconds</source>
         <translation>Seconds</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Summary</source>
         <translation>Summary</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Image type</source>
         <translation>Image type</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Satellite</source>
         <translation>Satellite</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_basuc_03_time_lapse.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_basic_time_lapse.ui" />
         <source>Maximum cloud cover</source>
         <translation>Maximum cloud cover</translation>
     </message>
@@ -466,7 +466,7 @@
     </message>
 </context>
 <context>
-    <name>ChooseTemplate</name>
+    <name>TemplateSelection</name>
     <message>
         <location filename="../src/frontend/presentation/views/pages/choose_template.py" />
         <source>Choose Template</source>
@@ -499,33 +499,33 @@
     </message>
 </context>
 <context>
-    <name>WizardChooseDirectory</name>
+    <name>WizardDirectorySelection</name>
     <message>
-        <location filename="../src/frontend/presentation/resources/ui/wizard_05_choose_directory.ui" />
+        <location filename="../src/frontend/presentation/resources/ui/wizard_directory_selection.ui" />
         <source>The file will be saved in the selected directory.</source>
         <translation>The file will be saved in the selected directory.</translation>
     </message>
 </context>
 <context>
-    <name>ChooseDirectory</name>
+    <name>DirectorySelection</name>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/choose_directory.py" />
+        <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
         <source>Choose Directory</source>
         <translation>Choose Directory</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/choose_directory.py" />
+        <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
         <source>Select where the output video will be saved</source>
         <translation>Select where the output video will be saved</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/choose_directory.py" />
+        <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
         <source>Select output directory</source>
         <translation>Select output directory</translation>
     </message>
 </context>
 <context>
-    <name>ProcessingPage</name>
+    <name>ProcessingProgress</name>
     <message>
         <location filename="../src/frontend/pressentation/resources/ui/wizard_loading.ui" />
         <source>Processing</source>
@@ -597,22 +597,22 @@
         <translation>Completed</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <location filename="../src/frontend/presentation/views/pages/processing_progress.py" />
         <source>Export completed successfully.</source>
         <translation>Export completed successfully.</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <location filename="../src/frontend/presentation/views/pages/processing_progress.py" />
         <source>Saved at:</source>
         <translation>Saved at:</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <location filename="../src/frontend/presentation/views/pages/processing_progress.py" />
         <source>Process cancelled</source>
         <translation>Process cancelled</translation>
     </message>
     <message>
-        <location filename="../src/frontend/presentation/views/pages/processing_page.py" />
+        <location filename="../src/frontend/presentation/views/pages/processing_progress.py" />
         <source>Cancelling...</source>
         <translation>Cancelling...</translation>
     </message>

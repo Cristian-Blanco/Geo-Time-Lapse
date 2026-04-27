@@ -5,7 +5,7 @@ from qgis.PyQt.QtGui import QIcon
 from frontend.presentation.data.templates import TEMPLATES
 from frontend.domain.templates.types import TemplateDefItem
 
-class ChooseTemplate(BasePage):
+class TemplateSelection(BasePage):
     left_mode = "previous"
     right_mode = "next"
 

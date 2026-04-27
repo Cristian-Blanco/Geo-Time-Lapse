@@ -1,7 +1,7 @@
 from .authentication import Authentication
-from .verify_auth import VerifyAuth
+from .auth_verification import AuthVerification
 
 __all__ = [
     "Authentication",
-    "VerifyAuth"
+    "AuthVerification"
 ]

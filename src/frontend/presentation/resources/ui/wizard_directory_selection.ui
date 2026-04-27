@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>WizardChooseDirectory</class>
-    <widget class="QWidget" name="WizardChooseDirectory">
+    <class>WizardDirectorySelection</class>
+    <widget class="QWidget" name="WizardDirectorySelection">
         <layout class="QVBoxLayout">
             <property name="spacing">
                 <number>16</number>

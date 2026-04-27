@@ -1,6 +1,6 @@
 <ui version="4.0">
-    <class>WizardBasicImageTypeChild</class>
-    <widget class="QWidget" name="WizardBasicImageTypeChild">
+    <class>WizardBasicImageType</class>
+    <widget class="QWidget" name="WizardBasicImageType">
         <layout class="QVBoxLayout" name="mainLayout">
 
             <!-- Scroll area -->

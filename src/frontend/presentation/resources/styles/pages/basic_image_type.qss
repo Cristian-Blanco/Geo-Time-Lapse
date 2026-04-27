@@ -1,15 +1,15 @@
-QWidget#WizardBasicImageTypeChild QFrame#image_type_card {
+QWidget#WizardBasicImageType QFrame#image_type_card {
     border: 2px solid transparent;
     border-radius: {{BORDER_RADIUS_CARD}};
     background-color: {{BACKGROUND}};
 }
 
-QWidget#WizardBasicImageTypeChild QFrame#image_type_card[selected="true"] {
+QWidget#WizardBasicImageType QFrame#image_type_card[selected="true"] {
     border-color: {{COLOR_GREEN_LIGHT_200}};
     background-color: {{COLOR_GREEN_LIGHT_100_OPACITY}};
 }
 
-QWidget#WizardBasicImageTypeChild QFrame#when_to_use_panel {
+QWidget#WizardBasicImageType QFrame#when_to_use_panel {
     border: 2px solid {{COLOR_YELLOW_200}};
     border-radius: {{BORDER_RADIUS_CARD}};
     background-color: {{COLOR_YELLOW_100_OPACITY}};
