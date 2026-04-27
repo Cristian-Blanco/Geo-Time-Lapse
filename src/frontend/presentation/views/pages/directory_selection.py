@@ -5,7 +5,7 @@ from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
 
 
-class ChooseDirectory(BasePage):
+class DirectorySelection(BasePage):
     left_mode = "previous"
     right_mode = "next"
 
@@ -21,9 +21,6 @@ class ChooseDirectory(BasePage):
         self.btn_browse: QtWidgets.QToolButton = widget.findChild(
             QtWidgets.QToolButton, "btn_browse"
         )
-
-        if not self.input_directory or not self.btn_browse:
-            raise RuntimeError("wizard_05_choose_directory.ui: missing widgets")
 
         self.btn_browse.setIcon(QIcon(str(ICONS_DIR / "folder.png")))
         self.btn_browse.setIconSize(QtCore.QSize(20, 20))

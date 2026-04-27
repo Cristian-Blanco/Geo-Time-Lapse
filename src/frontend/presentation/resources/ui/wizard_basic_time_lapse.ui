@@ -1,6 +1,6 @@
 <ui version="4.0">
-    <class>VideoTimeLapse</class>
-    <widget class="QWidget" name="VideoTimeLapse">
+    <class>WizardBasicTimeLapse</class>
+    <widget class="QWidget" name="WizardBasicTimeLapse">
         <layout class="QVBoxLayout">
             <item>
                 <widget class="QScrollArea">

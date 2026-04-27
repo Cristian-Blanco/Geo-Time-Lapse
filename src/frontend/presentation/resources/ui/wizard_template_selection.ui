@@ -1,6 +1,6 @@
 <ui version="4.0">
-    <class>ChooseTemplate</class>
-    <widget class="QWidget" name="ChooseTemplate">
+    <class>WizardTemplateSelection</class>
+    <widget class="QWidget" name="WizardTemplateSelection">
         <layout class="QVBoxLayout">
             <!-- Cards container -->
             <item>

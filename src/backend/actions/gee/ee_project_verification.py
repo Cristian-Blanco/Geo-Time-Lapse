@@ -6,7 +6,7 @@ from backend.shared.result import Result
 class VerifyProjectPayload(TypedDict):
     project_id: str
 
-class EEVerifyProject(Action[VerifyProjectPayload ,None]):
+class EEProjectVerification(Action[VerifyProjectPayload ,None]):
 
     def invoke(self, payload: VerifyProjectPayload) -> Result[None]:
         project_id = (payload.get("project_id") or "").strip()

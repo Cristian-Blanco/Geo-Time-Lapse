@@ -65,9 +65,9 @@ IMAGE_GALLERIES: ImageGallery = [
 ]
 
 IMAGE_COMPOSITIONS: ImageComposition = [
+    {"id": "median", "label": "Median image"},
     {"id": "mosaic", "label": "Image mosaic"},
     {"id": "single", "label": "Single image"},
-    {"id": "median", "label": "Median image"},
 ]
 
 TEMPORAL_CONFIGURATIONS: TemporalConfiguration = [

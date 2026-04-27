@@ -63,8 +63,13 @@ class FrameExporter:
             }
 
             url = image.getThumbURL(vis)
-            response = requests.get(url, timeout=180)
-            response.raise_for_status()
+
+            try:
+                response = requests.get(url, timeout=180)
+                response.raise_for_status()
+            except Exception:
+                exported_files.append(None)
+                continue
 
             if self._is_empty_or_black_image(response.content):
                 exported_files.append(None)
