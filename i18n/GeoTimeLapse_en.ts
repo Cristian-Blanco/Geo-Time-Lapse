@@ -345,13 +345,13 @@
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
-        <source>Area: {area} km²</source>
-        <translation>Area: {area} km²</translation>
+        <source>Area: {area} km² • Resolution: {res} m/px</source>
+        <translation>Area: {area} km² • Resolution: {res} m/px</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
-        <source>Area: {area} km² (Large area detected. Recommended ≤ {max_area} km²)</source>
-        <translation>Area: {area} km² (Large area detected. Recommended ≤ {max_area} km²)</translation>
+        <source>Area: {area} km² • Resolution: {res} m/px (Large area detected. Recommended ≤ {max_area} km²)</source>
+        <translation>Area: {area} km² • Resolution: {res} m/px (Large area detected. Recommended ≤ {max_area} km²)</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
@@ -450,14 +450,19 @@
         <translation>10 years</translation>
     </message>
     <message>
-        <location filename="../src/frontend/domain/imagery/satellite.py" />
+        <location filename="../src/frontend/presentation/views/pages/basic_time_lapse.py" />
         <source>{icon} This configuration will generate at least: {count} images</source>
         <translation>{icon} This configuration will generate at least: {count} images</translation>
     </message>
     <message>
-        <location filename="../src/frontend/domain/imagery/satellite.py" />
+        <location filename="../src/frontend/presentation/views/pages/basic_time_lapse.py" />
         <source>This configuration will last for: {seconds} seconds</source>
         <translation>This configuration will last for: {seconds} seconds</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/views/pages/basic_time_lapse.py" />
+        <source>Available data from: {date}</source>
+        <translation>Available data from: {date}</translation>
     </message>
 </context>
 <context>

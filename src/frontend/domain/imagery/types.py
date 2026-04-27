@@ -15,6 +15,7 @@ class ImageGalleryItem(TypedDict):
     label: str
     max_area_km2: int
     start_date: str
+    resolution_m: int
 
 
 class ImageCompositionItem(TypedDict):
