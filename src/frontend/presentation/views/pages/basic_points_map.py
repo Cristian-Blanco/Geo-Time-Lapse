@@ -113,18 +113,20 @@ class BasicPointsMap(BasePage):
         area_km2 = calculate_area_km2(xmin, ymin, xmax, ymax)
 
         max_area = self.state.max_area_km2 or 200  # fallback
+        resolution = self.state.spatial_resolution_m or 10 # fallback
 
         # mensaje base
-        text_area = self.tr("Area: {area} km²").format(area=f"{area_km2:.2f}")
+        text_area = self.tr("Area: {area} km² • Resolution: {res} m/px").format(area=f"{area_km2:.2f}", res=resolution)
         text_selected = "🟢 Selected coordinates"
 
         # alerta dinámica
         if max_area is not None and area_km2 > max_area:
             text_area = self.tr(
-                    "Area: {area} km² (Large area detected. Recommended ≤ {max_area} km²)"
+                    "Area: {area} km² • Resolution: {res} m/px (Large area detected. Recommended ≤ {max_area} km²)"
                 ).format(
                     area=f"{area_km2:.2f}",
-                    max_area=max_area
+                    max_area=max_area,
+                    res=resolution
                 )
             text_selected = "🟡 Selected coordinates"
 

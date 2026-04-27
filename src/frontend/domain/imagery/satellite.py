@@ -47,12 +47,14 @@ IMAGE_GALLERIES: ImageGallery = [
         "label": "Sentinel 1",
         "max_area_km2": 100,
         "start_date": "2014-10-03",
+        "resolution_m": 10
     },
     {
         "id": "sentinel_2",
         "label": "Sentinel 2",
         "max_area_km2": 100,
         "start_date": "2017-03-28",
+        "resolution_m": 10
     },
     # {
     #     "id": "landsat",

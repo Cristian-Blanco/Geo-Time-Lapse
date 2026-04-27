@@ -17,6 +17,7 @@ class WizardContext(WizardState):
     cloud_percentage: int | None = None
     check_normalize_images: bool = True
     max_area_km2: int | None = None
+    spatial_resolution_m: int | None = None
 
     # ------ Coordinates -------
     coordinates: list[float] | None = None

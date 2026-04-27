@@ -2,6 +2,7 @@ from frontend.presentation.views.base_page import BasePage
 from frontend.store.wizard_context import WizardContext
 from frontend.domain.imagery import Catalog, TEMPORAL_CONFIGURATIONS
 from qgis.PyQt import QtWidgets, QtCore
+from qgis.core import QgsSettings
 from qgis.PyQt.QtGui import QIcon
 from frontend.config.paths import ICONS_DIR
 from math import floor
@@ -18,9 +19,14 @@ class BasicTimeLapse(BasePage):
         self.title = self.tr("Time period")
         self.description = self.tr("Select the range for the timelapse")
 
+        lang = QgsSettings().value("locale/userLocale")
+        self.locale = QtCore.QLocale(lang) if lang else QtCore.QLocale()
+
         # find childs
         self.date_start = self.widget.findChild(QtWidgets.QDateEdit, "date_start")
         self.date_end = self.widget.findChild(QtWidgets.QDateEdit, "date_end")
+        self.lbl_available_date = self.widget.findChild(QtWidgets.QLabel, "lbl_available_date")
+
         self.cmb_temporal_configuration = self.widget.findChild(QtWidgets.QComboBox, "cmb_temporal_configuration")
         self.spn_frame_duration = self.widget.findChild(QtWidgets.QSpinBox, "spn_frame_duration")
         self.lbl_generated_images = self.widget.findChild(QtWidgets.QLabel, "lbl_generated_images")
@@ -81,6 +87,11 @@ class BasicTimeLapse(BasePage):
 
         self.date_start.blockSignals(False)
         self.date_end.blockSignals(False)
+
+        # Set date message available for the first image.
+        formatted = self.locale.toString(default_start_date, "MMMM yyyy")
+        text = self.tr("Available data from: {date}").format(date=formatted)
+        self.lbl_available_date.setText(text)
 
         self._sync_dates_to_state()
 

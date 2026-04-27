@@ -154,7 +154,9 @@ class BasicImageType(BasePage):
         self.state.gallery_id = gallery_id
 
         gallery = next(g for g in IMAGE_GALLERIES if g["id"] == gallery_id)
+
         self.state.max_area_km2 = gallery.get("max_area_km2")
+        self.state.spatial_resolution_m = gallery.get("resolution_m")
 
     def _on_composition_changed(self) -> None:
         self.state.composition = self.widget.compositon_combo.currentData()
