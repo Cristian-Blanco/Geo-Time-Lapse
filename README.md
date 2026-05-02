@@ -244,8 +244,6 @@ Ingeniero de Sistemas
 Ana Fernanda Herrera  
 Ingeniera Geóloga  
 
-Proyecto desarrollado como trabajo de grado.
-Especialización en Sistemas de Información Geográfica (en curso)  
 
 
 
