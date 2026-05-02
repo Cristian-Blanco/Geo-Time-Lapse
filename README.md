@@ -116,21 +116,16 @@ Open OSGeo4W Shell and run:
 
 python -m pip install pillow
 python -m pip install moviepy
-python -m pip install imageio
-python -m pip install imageio-ffmpeg
-python -m imageio_ffmpeg.download
 python -m pip install earthengine-api
 
-
+All dependencies must be installed in the OSGeo4W environment used by QGIS. 
+Do not use the system Python or Anaconda environments.
 
 Español:
 Abrir OSGeo4W Shell y ejecutar:
 
 python -m pip install pillow
 python -m pip install moviepy
-python -m pip install imageio
-python -m pip install imageio-ffmpeg
-python -m imageio_ffmpeg.download
 python -m pip install earthengine-api
 
 ========================
@@ -139,12 +134,15 @@ LINUX:
 English:
 Open terminal and run:
 
-pip install pillow moviepy earthengine-api imageio imageio-ffmpeg
+pip install pillow moviepy earthengine-api 
 
 Español:
 Abrir terminal y ejecutar:
 
-pip install pillow moviepy earthengine-api imageio imageio-ffmpeg
+pip install pillow moviepy earthengine-api 
+
+Todas las dependencias deben instalarse en el entorno OSGeo4W utilizado por QGIS. 
+No usar Python del sistema ni entornos Anaconda.
 
 ## 4. GOOGLE EARTH ENGINE AUTHENTICATION / AUTENTICACIÓN GEE
 
@@ -251,15 +249,5 @@ Especialización en Sistemas de Información Geográfica (en curso)
 
 
 
-```AI DISCLOSURE / DECLARACIÓN DE USO DE IA```
 
-EN:
-This project includes content supported by artificial intelligence tools (ChatGPT, OpenAI),
-used exclusively for documentation writing, structuring, and language translation.
-All technical development and validation were performed by the authors.
-
-ES:
-Este proyecto incluye contenido apoyado por herramientas de inteligencia artificial (ChatGPT, OpenAI),
-utilizadas exclusivamente para la redacción, estructuración y traducción de la documentación. 
-Todo el desarrollo técnico y validación fue realizado por los autores.
 
