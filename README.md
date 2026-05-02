@@ -116,7 +116,11 @@ Open OSGeo4W Shell and run:
 
 python -m pip install pillow
 python -m pip install moviepy
+python -m pip install imageio
+python -m pip install imageio-ffmpeg
+python -m imageio_ffmpeg.download
 python -m pip install earthengine-api
+
 
 
 Español:
@@ -124,6 +128,9 @@ Abrir OSGeo4W Shell y ejecutar:
 
 python -m pip install pillow
 python -m pip install moviepy
+python -m pip install imageio
+python -m pip install imageio-ffmpeg
+python -m imageio_ffmpeg.download
 python -m pip install earthengine-api
 
 ========================
