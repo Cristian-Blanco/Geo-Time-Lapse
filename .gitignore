@@ -1,0 +1,11 @@
+# Directories
+__pycache__
+venv
+.ruff_cache
+.mypy_cache
+
+# Files
+*_ui.py
+resources_rc.py
+
+.vscode

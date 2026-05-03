@@ -1,0 +1,7 @@
+QDialog#GeoTimeLapseDialogBase,
+QDialog#GeoTimeLapseDialogBase QWidget {
+  font-family: {{FONT_FAMILY}};
+  font-size: {{FONT_SIZE_BASE}};
+  color: {{COLOR_TEXT_PRIMARY}};
+  background-color: {{BACKGROUND}};
+}

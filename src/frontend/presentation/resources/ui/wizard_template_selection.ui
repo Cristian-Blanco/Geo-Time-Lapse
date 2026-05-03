@@ -1,0 +1,25 @@
+<ui version="4.0">
+    <class>WizardTemplateSelection</class>
+    <widget class="QWidget" name="WizardTemplateSelection">
+        <layout class="QVBoxLayout">
+            <!-- Cards container -->
+            <item>
+                <widget class="QScrollArea">
+                    <property name="widgetResizable">
+                        <bool>true</bool>
+                    </property>
+                    <widget class="QWidget">
+                        <layout class="QGridLayout" name="cards_grid">
+                            <property name="spacing">
+                                <number>16</number>
+                            </property>
+                        </layout>
+                    </widget>
+                </widget>
+            </item>
+
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>

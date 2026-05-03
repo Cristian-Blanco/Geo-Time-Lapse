@@ -1,0 +1,53 @@
+QDialog#GeoTimeLapseDialogBase QFrame[class="card_group"] {
+    border: 1px solid {{COLOR_SEPARATOR_LINE}};
+    border-radius: {{BORDER_RADIUS_CARD}};
+}
+
+QDialog#GeoTimeLapseDialogBase QFrame[class="card_group"][selected="true"] {
+  border: 2px solid {{COLOR_GREEN_LIGHT_100}};
+}
+
+QDialog#GeoTimeLapseDialogBase QLabel[class="card_image"] {
+    border: none;
+    background: transparent;
+    padding: 0 0 4px 0;
+}
+
+/* ------------- Group box ------------- */
+
+QDialog#GeoTimeLapseDialogBase QGroupBox {
+    border: 1px solid {{COLOR_SEPARATOR_LINE}};
+    border-radius: {{BORDER_RADIUS_CARD}};
+    margin-top: 10px;
+}
+
+QDialog#GeoTimeLapseDialogBase QGroupBox::title {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* ------------- Accordion ------------- */
+
+QDialog#GeoTimeLapseDialogBase QToolButton[class="accordion"] {
+    border: none;
+    background: transparent;
+    padding: 6px 4px;
+    text-align: left;
+    cursor: pointing-hand;
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+    color: {{COLOR_TEXT_SECONDARY}};
+    font-size: {{FONT_SIZE_BASE}};
+    font-weight: {{FONT_WEIGHT_SEMIBOLD}};
+}
+
+QDialog#GeoTimeLapseDialogBase QToolButton[class="accordion"]:hover {
+    color: {{COLOR_TEXT_PRIMARY}};
+}
+
+/* Divider */
+QDialog#GeoTimeLapseDialogBase QFrame[class="divider_line"] {
+    color: {{COLOR_SEPARATOR_LINE}};
+    background: {{COLOR_SEPARATOR_LINE}};
+    border: none;
+    max-height: 1px;
+}

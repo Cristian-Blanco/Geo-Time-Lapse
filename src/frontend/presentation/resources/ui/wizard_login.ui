@@ -1,0 +1,149 @@
+<ui version="4.0">
+ <class>WizardLogin</class>
+ <widget class="QWidget" name="WizardLogin">
+  <layout class="QVBoxLayout">
+   <property name="leftMargin"><number>12</number></property>
+   <property name="topMargin"><number>12</number></property>
+   <property name="rightMargin"><number>12</number></property>
+   <property name="bottomMargin"><number>12</number></property>
+   <property name="spacing"><number>10</number></property>
+
+   <item>
+    <widget class="QFrame">
+     <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+     <property name="frameShadow"><enum>QFrame::Plain</enum></property>
+
+     <layout class="QVBoxLayout">
+
+      <!-- ================== Centered sign-in button ================== -->
+      <item>
+       <layout class="QHBoxLayout">
+        <item>
+         <spacer name="sp_left">
+          <property name="orientation"><enum>Qt::Horizontal</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>24</width><height>24</height></size></property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_sign_in">
+          <property name="minimumSize"><size><width>250</width><height>44</height></size></property>
+          <property name="text"><string>Sign in with Google</string></property>
+          <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="sp_right">
+          <property name="orientation"><enum>Qt::Horizontal</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>24</width><height>24</height></size></property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+
+      <!-- Project section -->
+      <item>
+            <widget class="QWidget">
+                <layout class="QVBoxLayout">
+                <property name="leftMargin"><number>0</number></property>
+                <property name="topMargin"><number>10</number></property>
+                <property name="rightMargin"><number>0</number></property>
+                <property name="bottomMargin"><number>0</number></property>
+                <property name="spacing"><number>2</number></property>
+
+                <item>
+                    <widget class="QLabel">
+                    <property name="text"><string>Project ID:</string></property>
+                    <property name="class" stdset="0"><string>group_subtitle</string></property>
+                    </widget>
+                </item>
+
+                <item>
+                    <widget class="QLabel">
+                    <property name="text">
+                        <string>Unique project name in Google Cloud:</string>
+                    </property>
+                    <property name="class" stdset="0"><string>group_description</string></property>
+                    </widget>
+                </item>
+
+                </layout>
+            </widget>
+        </item>
+
+      <!-- Input + Verify -->
+      <item>
+       <layout class="QHBoxLayout">
+        <property name="spacing"><number>10</number></property>
+
+        <item>
+         <widget class="QFrame" name="login_input_box">
+          <layout class="QHBoxLayout">
+           <property name="leftMargin"><number>0</number></property>
+           <property name="topMargin"><number>0</number></property>
+           <property name="rightMargin"><number>0</number></property>
+           <property name="bottomMargin"><number>0</number></property>
+           <property name="spacing"><number>0</number></property>
+
+           <item>
+            <widget class="QLabel" name="lbl_project_icon">
+                <property name="minimumSize"><size><width>40</width><height>28</height></size></property>
+                <property name="maximumSize"><size><width>40</width><height>28</height></size></property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+                <property name="scaledContents"><bool>false</bool></property>
+            </widget>
+           </item>
+
+           <item>
+            <widget class="QLineEdit" name="inp_project_id">
+             <property name="placeholderText"><string>my-gee-project-123</string></property>
+            </widget>
+           </item>
+
+          </layout>
+         </widget>
+        </item>lbl_project_icon
+
+        <item>
+         <widget class="QPushButton" name="btn_verify">
+          <property name="text"><string>Verify</string></property>
+          <property name="minimumSize"><size><width>110</width><height>34</height></size></property>
+          <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+          <property name="class" stdset="0"><string>interaction_buttons</string></property>
+         </widget>
+        </item>
+
+       </layout>
+      </item>
+
+      <!-- Status (small/muted like design) -->
+      <item>
+       <widget class="QLabel" name="lbl_auth_status">
+        <property name="text"><string>🔴 Not verified</string></property>
+        <property name="class" stdset="0"><string>group_description</string></property>
+        <property name="wordWrap"><bool>true</bool></property>
+       </widget>
+      </item>
+
+      <item>
+       <spacer name="cardSpacer">
+        <property name="orientation"><enum>Qt::Vertical</enum></property>
+        <property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property>
+       </spacer>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <spacer name="pageSpacer">
+     <property name="orientation"><enum>Qt::Vertical</enum></property>
+     <property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property>
+    </spacer>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

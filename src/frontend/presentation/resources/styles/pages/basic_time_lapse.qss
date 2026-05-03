@@ -1,0 +1,11 @@
+QWidget#WizardBasicTimeLapse QFrame[class="summary_card"] {
+    background-color: {{BACKGROUND}};
+    border: 1px solid {{COLOR_SEPARATOR_LINE}};
+    border-radius: {{BORDER_RADIUS_CARD}};
+    padding: 12px;
+}
+
+QWidget#WizardBasicTimeLapse QToolButton[class="icon_summary"] {
+    border: none;
+    icon-size: 30px;
+}

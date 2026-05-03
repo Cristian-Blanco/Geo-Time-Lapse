@@ -1,0 +1,10 @@
+QDialog#GeoTimeLapseDialogBase QProgressBar {
+  border: 0px;
+  background-color: transparent;
+  height: 6px;
+}
+
+QDialog#GeoTimeLapseDialogBase QProgressBar::chunk {
+  border-radius: 3px;
+  background-color: {{COLOR_GREEN_LIGHT_300}};
+}

@@ -1,0 +1,396 @@
+<ui version="4.0">
+    <class>WizardBasicTimeLapse</class>
+    <widget class="QWidget" name="WizardBasicTimeLapse">
+        <layout class="QVBoxLayout">
+            <item>
+                <widget class="QScrollArea">
+                    <property name="widgetResizable">
+                        <bool>true</bool>
+                    </property>
+                    <widget class="QWidget">
+                        <layout class="QVBoxLayout">
+                            <property name="spacing">
+                                <number>16</number>
+                            </property>
+                            <property name="class" stdset="0">
+                                <string>scroll_content</string>
+                            </property>
+
+                            <item>
+                                <widget class="QGroupBox">
+                                    <property name="title">
+                                        <string></string>
+                                    </property>
+                                    <layout class="QGridLayout">
+                                        <item row="0" column="0" colspan="2">
+                                            <widget class="QLabel">
+                                                <property name="text">
+                                                    <string>Time period</string>
+                                                </property>
+                                                <property name="class" stdset="0">
+                                                    <string>group_title</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="0">
+                                            <widget class="QLabel">
+                                                <property name="text">
+                                                    <string>Start date</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel">
+                                                <property name="text">
+                                                    <string>End date</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+
+                                        <item row="2" column="0">
+                                            <widget class="QDateEdit" name="date_start">
+                                                <property name="calendarPopup">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="displayFormat">
+                                                    <string>dd/MM/yyyy</string>
+                                                </property>
+                                                <property name="cursor">
+                                                    <cursorShape>PointingHandCursor</cursorShape>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="1">
+                                            <widget class="QDateEdit" name="date_end">
+                                                <property name="calendarPopup">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="displayFormat">
+                                                    <string>dd/MM/yyyy</string>
+                                                </property>
+                                                <property name="cursor">
+                                                    <cursorShape>PointingHandCursor</cursorShape>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="3" column="0" colspan="2">
+                                            <widget class="QLabel" name="lbl_available_date">
+                                                <property name="text">
+                                                    <string></string>
+                                                </property>
+                                                <property name="class" stdset="0">
+                                                    <string>group_description</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </widget>
+                            </item>
+
+                            <!-- ================= Temporary configuration ================= -->
+                            <item>
+                                <layout class="QHBoxLayout">
+                                    <item>
+                                        <widget class="QGroupBox">
+                                            <property name="title">
+                                                <string></string>
+                                            </property>
+                                            <layout class="QVBoxLayout">
+                                                <item>
+                                                    <widget class="QLabel">
+                                                        <property name="text">
+                                                            <string>Time interval</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_title</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item>
+                                                    <widget class="QComboBox" name="cmb_temporal_configuration">
+                                                        <item>
+                                                            <property name="text">
+                                                                <string>10 years</string>
+                                                            </property>
+                                                        </item>
+                                                    </widget>
+                                                </item>
+                                                <item>
+                                                    <widget class="QLabel" name="lbl_generated_images">
+                                                        <property name="text">
+                                                            <string>This configuration will generate: 12 images</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_description</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </widget>
+                                    </item>
+
+                                    <!-- ================= Duration per frame ================= -->
+                                    <item>
+                                        <widget class="QGroupBox">
+                                            <property name="title">
+                                                <string></string>
+                                            </property>
+
+                                            <layout class="QVBoxLayout">
+                                                <item>
+                                                    <widget class="QLabel">
+                                                        <property name="text">
+                                                            <string>Duration per frame</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_title</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+
+                                                <item>
+                                                    <layout class="QHBoxLayout">
+                                                        <item>
+                                                            <widget class="QSpinBox" name="spn_frame_duration">
+                                                                <property name="minimum">
+                                                                    <number>1</number>
+                                                                </property>
+                                                                <property name="maximum">
+                                                                    <number>10</number>
+                                                                </property>
+                                                                <property name="value">
+                                                                    <number>1</number>
+                                                                </property>
+                                                            </widget>
+                                                        </item>
+                                                        <item>
+                                                            <widget class="QLabel">
+                                                                <property name="text">
+                                                                    <string>Seconds</string>
+                                                                </property>
+                                                            </widget>
+                                                        </item>
+                                                    </layout>
+                                                </item>
+                                                <item>
+                                                    <widget class="QLabel" name="lbl_video_duration">
+                                                        <property name="text">
+                                                            <string>This configuration will last for: 3 seconds</string>
+                                                        </property>
+                                                        <property name="class" stdset="0">
+                                                            <string>group_description</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+
+                                            </layout>
+                                        </widget>
+
+                                    </item>
+                                </layout>
+                            </item>
+
+                            <!-- ================= Summary ================= -->
+                            <item>
+                                <widget class="QGroupBox">
+                                    <property name="title">
+                                        <string></string>
+                                    </property>
+
+                                    <layout class="QVBoxLayout">
+                                        <!-- Title -->
+                                        <item>
+                                            <widget class="QLabel">
+                                                <property name="text">
+                                                    <string>Summary</string>
+                                                </property>
+                                                <property name="class" stdset="0">
+                                                    <string>group_title</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+
+                                        <!-- Cards -->
+                                        <item>
+                                            <layout class="QHBoxLayout">
+                                                <property name="spacing">
+                                                    <number>12</number>
+                                                </property>
+
+                                                <!-- Card 1 -->
+                                                <item>
+                                                    <widget class="QFrame">
+                                                        <property name="class" stdset="0">
+                                                            <string>summary_card</string>
+                                                        </property>
+                                                        <layout class="QVBoxLayout">
+
+                                                            <item>
+                                                                <layout class="QHBoxLayout">
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                    <property name="spacing">
+                                                                        <number>8</number>
+                                                                    </property>
+                                                                    <item>
+                                                                        <widget class="QToolButton" name="icon_filter">
+                                                                            <property name="class" stdset="0">
+                                                                                <string>icon_summary</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                    <item>
+                                                                        <widget class="QLabel">
+                                                                            <property name="text">
+                                                                                <string>Image type</string>
+                                                                            </property>
+                                                                            <property name="class" stdset="0">
+                                                                                <string>group_title</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                </layout>
+                                                            </item>
+
+                                                            <item>
+                                                                <widget class="QLabel" name="lbl_image_type">
+                                                                    <property name="text">
+                                                                        <string>Radar</string>
+                                                                    </property>
+                                                                    <property name="class" stdset="0">
+                                                                        <string>group_description</string>
+                                                                    </property>
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                </widget>
+                                                            </item>
+
+                                                        </layout>
+                                                    </widget>
+                                                </item>
+
+                                                <!-- Card 2 -->
+                                                <item>
+                                                    <widget class="QFrame">
+                                                        <property name="class" stdset="0">
+                                                            <string>summary_card</string>
+                                                        </property>
+                                                        <layout class="QVBoxLayout">
+
+                                                            <item>
+                                                                <layout class="QHBoxLayout">
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                    <property name="spacing">
+                                                                        <number>8</number>
+                                                                    </property>
+                                                                    <item>
+                                                                        <widget class="QToolButton" name="icon_satellite">
+                                                                            <property name="class" stdset="0">
+                                                                                <string>icon_summary</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                    <item>
+                                                                        <widget class="QLabel">
+                                                                            <property name="text">
+                                                                                <string>Satellite</string>
+                                                                            </property>
+                                                                            <property name="class" stdset="0">
+                                                                                <string>group_title</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                </layout>
+                                                            </item>
+
+                                                            <item>
+                                                                <widget class="QLabel" name="lbl_satellite">
+                                                                    <property name="text">
+                                                                        <string>Sentinel-1</string>
+                                                                    </property>
+                                                                    <property name="class" stdset="0">
+                                                                        <string>group_description</string>
+                                                                    </property>
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                </widget>
+                                                            </item>
+
+                                                        </layout>
+                                                    </widget>
+                                                </item>
+
+                                                <!-- Card 3 -->
+                                                <item>
+                                                    <widget class="QFrame" name="fr_cloud_cover">
+                                                        <property name="class" stdset="0">
+                                                            <string>summary_card</string>
+                                                        </property>
+                                                        <layout class="QVBoxLayout">
+
+                                                            <item>
+                                                                <layout class="QHBoxLayout">
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                    <property name="spacing">
+                                                                        <number>8</number>
+                                                                    </property>
+                                                                    <item>
+                                                                        <widget class="QToolButton" name="icon_cloud">
+                                                                            <property name="class" stdset="0">
+                                                                                <string>icon_summary</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                    <item>
+                                                                        <widget class="QLabel">
+                                                                            <property name="text">
+                                                                                <string>Maximum cloud cover</string>
+                                                                            </property>
+                                                                            <property name="class" stdset="0">
+                                                                                <string>group_title</string>
+                                                                            </property>
+                                                                        </widget>
+                                                                    </item>
+                                                                </layout>
+                                                            </item>
+
+                                                            <item>
+                                                                <widget class="QLabel" name="lbl_cloud_percentage">
+                                                                    <property name="text">
+                                                                        <string>20 %</string>
+                                                                    </property>
+                                                                    <property name="class" stdset="0">
+                                                                        <string>group_description</string>
+                                                                    </property>
+                                                                    <property name="alignment">
+                                                                        <set>Qt::AlignHCenter</set>
+                                                                    </property>
+                                                                </widget>
+                                                            </item>
+
+                                                        </layout>
+                                                    </widget>
+                                                </item>
+
+                                            </layout>
+                                        </item>
+
+                                    </layout>
+                                </widget>
+                            </item>
+                        </layout>
+                    </widget>
+                </widget>
+            </item>
+        </layout>
+    </widget>
+    <resources />
+    <connections />
+</ui>
