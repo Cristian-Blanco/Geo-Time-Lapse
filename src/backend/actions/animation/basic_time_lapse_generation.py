@@ -8,6 +8,8 @@ from backend.modules.animation.collection import CollectionRegistry, Gallery
 from backend.modules.animation import (
     TemplateBuilder, FrameExporter, RegionBuilder, TimeWindowGenerator, VideoBuilder, VisualRangeResolver
 )
+from backend.modules.google_earth_engine import EEInitializer
+
 from backend.shared.cancellation import raise_process_cancelled
 from backend.shared.exceptions import ProcessCancelledError
 
@@ -25,7 +27,7 @@ class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
             raise_process_cancelled(is_cancelled)
 
             # Initialize Earth Engine session
-            ee.Initialize(project=payload["project_id"])
+            EEInitializer.initialize(project_id=payload["project_id"])
 
             # Build region of interest from input coordinates
             progress(15, "Creating image")

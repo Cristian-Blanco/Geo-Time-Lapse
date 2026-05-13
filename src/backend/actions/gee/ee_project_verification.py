@@ -2,6 +2,7 @@ import ee
 from typing import TypedDict
 from backend.contracts.action import Action
 from backend.shared.result import Result
+from backend.modules.google_earth_engine import EEInitializer
 
 class VerifyProjectPayload(TypedDict):
     project_id: str
@@ -15,7 +16,8 @@ class EEProjectVerification(Action[VerifyProjectPayload ,None]):
             return Result.fail("Missing project_id")
 
         try:
-            ee.Initialize(project=project_id)
+            EEInitializer.initialize(project_id=project_id)
+
             ee.String("Connection successful").getInfo()
             return Result.success()
         except Exception as e:

@@ -43,9 +43,9 @@ class VideoBuilder:
 
             # Check if the operating system is Windows.
             if os.name == "nt":
-                startupinfo = subprocess.STARTUPINFO()
-                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-                creationflags = subprocess.CREATE_NO_WINDOW
+                startupinfo = subprocess.STARTUPINFO() # type: ignore[attr-defined]
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW # type: ignore[attr-defined]
+                creationflags = subprocess.CREATE_NO_WINDOW # type: ignore[attr-defined]
 
             command = [
                 ffmpeg_exe,
