@@ -65,7 +65,7 @@ QDialog#GeoTimeLapseDialogBase QDateEdit::drop-down{
 }
 
 QDialog#GeoTimeLapseDialogBase QDateEdit::down-arrow {
-    image: url(:/plugins/geo_timelapse/src/frontend/resources/icons/calendar.png);
+    image: url(:/plugins/geo_timelapse/src/frontend/presentation/resources/icons/calendar.png);
     width: 27px;
     height: 27px;
 }

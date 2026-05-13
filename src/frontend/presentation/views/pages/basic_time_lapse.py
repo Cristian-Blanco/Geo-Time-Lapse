@@ -17,7 +17,7 @@ class BasicTimeLapse(BasePage):
         super().__init__(widget, state)
 
         self.title = self.tr("Time period")
-        self.description = self.tr("Select the range for the timelapse")
+        self.description = self.tr("Select the range")
 
         lang = QgsSettings().value("locale/userLocale")
         self.locale = QtCore.QLocale(lang) if lang else QtCore.QLocale()

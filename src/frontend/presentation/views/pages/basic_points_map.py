@@ -17,7 +17,7 @@ class BasicPointsMap(BasePage):
         super().__init__(widget, state)
 
         self.title = self.tr("Video area")
-        self.description = self.tr("Define the geographic area that will be used to generate the timelapse.")
+        self.description = self.tr("Define the geographic area for the time series.")
         self.canvas = iface.mapCanvas()
 
         self.points_map_status = widget.findChild(QtWidgets.QLabel, "points_map_status")

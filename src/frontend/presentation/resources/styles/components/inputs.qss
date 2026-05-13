@@ -46,7 +46,7 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/down_arrow.png");
+    image: url(":/plugins/geo_timelapse/src/frontend/presentation/resources/icons/down_arrow.png");
     width: 8px;
     height: 8px;
 }
@@ -79,13 +79,13 @@ QDialog#GeoTimeLapseDialogBase QSpinBox::down-button {
 }
 
 QDialog#GeoTimeLapseDialogBase QSpinBox::up-arrow {
-    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/up_arrow.png");
+    image: url(":/plugins/geo_timelapse/src/frontend/presentation/resources/icons/up_arrow.png");
     width: 8px;
     height: 8px;
 }
 
 QDialog#GeoTimeLapseDialogBase QSpinBox::down-arrow {
-    image: url(":/plugins/geo_timelapse/src/frontend/resources/icons/down_arrow.png");
+    image: url(":/plugins/geo_timelapse/src/frontend/presentation/resources/icons/down_arrow.png");
     width: 8px;
     height: 8px;
 }
