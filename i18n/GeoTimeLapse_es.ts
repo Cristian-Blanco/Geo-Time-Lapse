@@ -177,7 +177,7 @@
     <message>
         <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
         <source>When to use this</source>
-        <translation>Cuándo usar esto</translation>
+        <translation>Cuándo usar este</translation>
     </message>
     <message>
         <location filename="../src/frontend/ui/wizard_basic_image_type.ui" />
@@ -219,8 +219,8 @@
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_image_type.py" />
-        <source>Select the type of satellite image to be used to generate the timelapse.</source>
-        <translation>Selecciona el tipo de imagen satelital que se utilizará para generar la serie de tiempo.</translation>
+        <source>Select the type of satellite image to generate the timelapse.</source>
+        <translation>Selecciona el tipo de imagen satelital para generar la serie de tiempo.</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -266,6 +266,11 @@
         <location filename="../src/frontend/domain/imagery/satellite.py" />
         <source>Recommended for areas with persistent cloud cover or for structural analysis</source>
         <translation>Recomendado para áreas con cobertura de nubes persistente o para análisis estructural</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/domain/imagery/satellite.py" />
+        <source>Median image</source>
+        <translation>Mediana de imágenes</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -325,8 +330,8 @@
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
-        <source>Define the geographic area that will be used to generate the timelapse.</source>
-        <translation>Define el área geográfica que se utilizará para generar la serie de tiempo.</translation>
+        <source>Define the geographic area for the time series.</source>
+        <translation>Define el área geográfica para realizar la serie de tiempo.</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
@@ -421,8 +426,8 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/basic_time_lapse.py" />
-        <source>Select the range for the timelapse</source>
-        <translation>Selecciona el rango para la serie de tiempo</translation>
+        <source>Select the range</source>
+        <translation>Selecciona el rango</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -474,13 +479,13 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/choose_template.py" />
-        <source>Select how the timelapse will be displayed</source>
-        <translation>Selecciona cómo se mostrará la serie de tiempo</translation>
+        <source>Select how you want it to look</source>
+        <translation>Selecciona cómo quieres que se vea</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />
-        <source>Basic Timelapse</source>
-        <translation>Serie de tiempo básico</translation>
+        <source>Basic template</source>
+        <translation>Básico</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />
@@ -515,8 +520,8 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
-        <source>Select where the output video will be saved</source>
-        <translation>Selecciona dónde se guardará el video de salida</translation>
+        <source>Select where the video will be saved</source>
+        <translation>Selecciona dónde se guardará el video</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />

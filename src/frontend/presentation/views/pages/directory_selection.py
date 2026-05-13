@@ -13,7 +13,7 @@ class DirectorySelection(BasePage):
         super().__init__(widget, state)
 
         self.title = self.tr("Choose Directory")
-        self.description = self.tr("Select where the output video will be saved")
+        self.description = self.tr("Select where the video will be saved")
 
         self.input_directory: QtWidgets.QLineEdit = widget.findChild(
             QtWidgets.QLineEdit, "input_directory"

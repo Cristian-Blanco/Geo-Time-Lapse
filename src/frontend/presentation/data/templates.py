@@ -4,7 +4,7 @@ from frontend.domain.templates.types import TemplateDef
 TEMPLATES: TemplateDef = [
     {
         "id": "simple",
-        "title": "Basic Timelapse",
+        "title": "Basic template",
         "description": "Recommended for general timelapse use.",
         "icon": str(ICONS_DIR / "template_1.png"),
         "enabled": True,

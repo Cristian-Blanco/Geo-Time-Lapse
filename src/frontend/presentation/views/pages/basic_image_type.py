@@ -18,7 +18,7 @@ class BasicImageType(BasePage):
 
         self.title: str = self.tr("Image type")
         self.description: str = self.tr(
-            "Select the type of satellite image to be used to generate the timelapse."
+            "Select the type of satellite image to generate the timelapse."
         )
 
         self.image_cards: dict[str, QtWidgets.QFrame] = {}

@@ -13,7 +13,7 @@ class TemplateSelection(BasePage):
         super().__init__(widget, state)
 
         self.title = self.tr("Choose Template")
-        self.description = self.tr("Select how the timelapse will be displayed")
+        self.description = self.tr("Select how you want it to look")
 
         self._load_templates()
 

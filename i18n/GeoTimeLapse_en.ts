@@ -219,8 +219,8 @@
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_image_type.py" />
-        <source>Select the type of satellite image to be used to generate the timelapse.</source>
-        <translation>Select the type of satellite image to be used to generate the timelapse.</translation>
+        <source>Select the type of satellite image to generate the timelapse.</source>
+        <translation>Select the type of satellite image to generate the timelapse.</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -266,6 +266,11 @@
         <location filename="../src/frontend/domain/imagery/satellite.py" />
         <source>Recommended for areas with persistent cloud cover or for structural analysis</source>
         <translation>Recommended for areas with persistent cloud cover or for structural analysis</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/domain/imagery/satellite.py" />
+        <source>Median image</source>
+        <translation>Median image</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -325,8 +330,8 @@
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
-        <source>Define the geographic area that will be used to generate the timelapse.</source>
-        <translation>Define the geographic area that will be used to generate the timelapse.</translation>
+        <source>Define the geographic area for the time series.</source>
+        <translation>Define the geographic area for the time series.</translation>
     </message>
     <message>
         <location filename="../src/frontend/views/pages/basic_points_map.py" />
@@ -421,8 +426,8 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/basic_time_lapse.py" />
-        <source>Select the range for the timelapse</source>
-        <translation>Select the range for the timelapse</translation>
+        <source>Select the range</source>
+        <translation>Select the range</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -474,13 +479,13 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/choose_template.py" />
-        <source>Select how the timelapse will be displayed</source>
-        <translation>Select how the timelapse will be displayed</translation>
+        <source>Select how you want it to look</source>
+        <translation>Select how you want it to look</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />
-        <source>Basic Timelapse</source>
-        <translation>Basic Timelapse</translation>
+        <source>Basic template</source>
+        <translation>Basic template</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />
@@ -515,8 +520,8 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
-        <source>Select where the output video will be saved</source>
-        <translation>Select where the output video will be saved</translation>
+        <source>Select where the video will be saved</source>
+        <translation>Select where the video will be saved</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/views/pages/directory_selection.py" />
