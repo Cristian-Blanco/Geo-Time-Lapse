@@ -8,8 +8,8 @@ IMAGE_TYPES: ImageType = [
         "label": "Natural color",
         "description": "Best for general visualization",
         "when_to_use": (
-            "Ideal for areas with low cloud cover "
-            "and for general visual comparison"
+            "Ideal for areas with low cloud cover and for general visual comparison. "
+            "Uses a combination of visible bands (Red, Green, Blue)."
         ),
         "icon": "natural_color.png",
         "is_optical": True,
@@ -20,8 +20,8 @@ IMAGE_TYPES: ImageType = [
         "label": "Infrared",
         "description": "Vegetation, soil, and land cover changes",
         "when_to_use": (
-            "Useful for analyzing vegetation vigor, water stress, "
-            "and soil changes"
+            "Useful for analyzing vegetation vigor, water stress, and soil changes. "
+            "Uses a combination of near-infrared, red, and green bands."
         ),
         "icon": "false_color.png",
         "is_optical": True,
@@ -32,8 +32,8 @@ IMAGE_TYPES: ImageType = [
         "label": "Radar",
         "description": "High cloud cover regions",
         "when_to_use": (
-            "Recommended for areas with persistent cloud cover "
-            "or for structural analysis"
+            "Recommended for areas with persistent cloud cover or structural analysis. "
+            "Uses radar bands (Vertical transmit and receive) for surface penetration."
         ),
         "icon": "radar_filter.png",
         "is_optical": False,

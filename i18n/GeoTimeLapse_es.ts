@@ -234,8 +234,8 @@
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
-        <source>Ideal for areas with low cloud cover and for general visual comparison</source>
-        <translation>Ideal para áreas con baja cobertura de nubes y para comparaciones visuales generales</translation>
+        <source>Ideal for areas with low cloud cover and for general visual comparison. Uses a combination of visible bands (Red, Green, Blue).</source>
+        <translation>Ideal para áreas con baja cobertura de nubes y para comparaciones visuales generales. Utiliza una combinación de bandas visibles (Rojo, Verde, Azul).</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -249,8 +249,8 @@
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
-        <source>Useful for analyzing vegetation vigor, water stress, and soil changes</source>
-        <translation>Útil para analizar el vigor de la vegetación, el estrés hídrico y cambios en el suelo</translation>
+        <source>Useful for analyzing vegetation vigor, water stress, and soil changes. Uses a combination of near-infrared, red, and green bands.</source>
+        <translation>Útil para analizar la vitalidad de la vegetación, el estrés hídrico y los cambios en el suelo. Utiliza una combinación de bandas de infrarrojo cercano, rojo y verde.</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
@@ -264,8 +264,8 @@
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
-        <source>Recommended for areas with persistent cloud cover or for structural analysis</source>
-        <translation>Recomendado para áreas con cobertura de nubes persistente o para análisis estructural</translation>
+        <source>Recommended for areas with persistent cloud cover or structural analysis. Uses radar bands (Vertical transmit and receive) for surface penetration.</source>
+        <translation>Recomendado para áreas con cobertura de nubes persistente o para análisis estructurales. Utiliza bandas de radar (transmisión y recepción vertical) para penetración en la superficie.</translation>
     </message>
     <message>
         <location filename="../src/frontend/domain/imagery/satellite.py" />
