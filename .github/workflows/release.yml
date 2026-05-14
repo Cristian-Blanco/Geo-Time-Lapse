@@ -1,0 +1,41 @@
+name: Package QGIS GeoTimeLapse
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package QGIS Plugin
+        run: |
+          mkdir geo_timelapse
+
+          cp -r __init__.py \
+                geo_timelapse_dialog.py \
+                geo_timelapse.py \
+                icon.png \
+                LICENSE \
+                metadata.txt \
+                resources.py \
+                resources.qrc \
+                runtime/ \
+                i18n/ \
+                src/ \
+                geo_timelapse/
+
+          zip -r geo_timelapse.zip geo_timelapse
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: geo_timelapse.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
