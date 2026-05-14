@@ -1,5 +1,4 @@
 pre-commit
 
 earthengine-api
-pillow
-moviepy
+imageio_ffmpeg

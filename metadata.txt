@@ -6,7 +6,7 @@
 name=GeoTimeLapse
 qgisMinimumVersion=3.0
 description=creates multitemporal (timelapse) videos from satellite images for a point or area
-version=1.0.0-beta1
+version=1.0.0-beta3
 author=Cristian Martinez Blanco, Ana Herrera Mariño
 email=cristianjmb10@gmail.com
 
