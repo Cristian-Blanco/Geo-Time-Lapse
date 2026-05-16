@@ -25,4 +25,4 @@ For more details on how to use GeoTimeLapse, please refer to the [full documenta
 
 # Download
 
-[Download GeoTimeLapse latest version](https://github.com/Cristian-Blanco/Geo-Time-Lapse/releases/tag/v1.0.0-beta3)
+[Download GeoTimeLapse latest version](https://github.com/Cristian-Blanco/Geo-Time-Lapse/releases)

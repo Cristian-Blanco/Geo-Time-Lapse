@@ -5,14 +5,14 @@
 [general]
 name=GeoTimeLapse
 qgisMinimumVersion=3.0
-description=creates multitemporal (timelapse) videos from satellite images for a point or area
-version=1.0.0-beta3
+description=Creates multitemporal (timelapse) videos from satellite images for a point or area
+version=1.0.0
 author=Cristian Martinez Blanco, Ana Herrera Mariño
 email=cristianjmb10@gmail.com
 
 about=GeoTimeLapse lets you select an area on the map and generate timelapse videos from Google Earth Engine imagery. The plugin connects to your Google account and provides a simple interface to choose datasets, filters, and multiple dates before exporting videos.
 
-tracker=https://github.com/Cristian-Blanco/Geo-Time-Lapse
+tracker=https://github.com/Cristian-Blanco/Geo-Time-Lapse/issues
 repository=https://github.com/Cristian-Blanco/Geo-Time-Lapse
 # End of mandatory metadata
 
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=timelapse, earth engine, satellite, video, remote sensing
 
-homepage=https://github.com/Cristian-Blanco/Geo-Time-Lapse
+homepage=https://cristian-blanco.github.io/docs-geotimelapse
 icon=icon.png
 # experimental flag
 experimental=False
