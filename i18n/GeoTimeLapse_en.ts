@@ -489,8 +489,18 @@
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />
+        <source>Advanced template</source>
+        <translation>Advanced template</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/data/templates.py" />
         <source>Recommended for general timelapse use.</source>
         <translation>Recommended for general timelapse use.</translation>
+    </message>
+    <message>
+        <location filename="../src/frontend/presentation/data/templates.py" />
+        <source>Recomended for specific use.</source>
+        <translation>Recomended for specific use.</translation>
     </message>
     <message>
         <location filename="../src/frontend/presentation/data/templates.py" />

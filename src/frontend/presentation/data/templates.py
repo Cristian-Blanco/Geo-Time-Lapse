@@ -10,6 +10,13 @@ TEMPLATES: TemplateDef = [
         "enabled": True,
     },
     {
+        "id": "advanced",
+        "title": "Advanced template",
+        "description": "Recomended for specific use.",
+        "icon": str(ICONS_DIR / "advanced_template.png"),
+        "enabled": True,
+    },
+    {
         "id": "template_2",
         "title": "Annotated Date Overlay",
         "description": "Caption, title, and descriptions of the displayed date are added.",

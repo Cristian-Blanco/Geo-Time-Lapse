@@ -53,8 +53,67 @@ class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
                 interval_months=payload["temporal_interval_months"],
             )
 
+            # Dynamic metadata injection (key adjustment)
+
+            # 1. Satellite mapping based on selected gallery
+            satellite_map = {
+                "sentinel_2": "Sentinel-2",
+                "sentinel_1": "Sentinel-1",
+                "landsat_8": "Landsat 8",
+                "landsat_9": "Landsat 9"
+            }
+
+            # 2. Determine satellite name from user selection
+            satellite_name = satellite_map.get(payload["gallery_id"], "Desconocido")
+
+            # 3. Define composition method (e.g., median, mosaic)
+            composition_method = payload.get("composition", "median")
+
+            # 4. Inject metadata into each time window
+            for w in windows:
+                # Default CRS used by Earth Engine
+                w["crs"] = "EPSG:4326"
+
+                # Assign satellite dynamically
+                w["satellite"] = satellite_name
+
+                # Define image identifier based on composition method
+                # Example: median_2024-03_2025-03
+                w["image_id"] = f"{composition_method}_{w['label']}"
+
+
+            # Robust bounding box extraction
+            coords = payload["coordinates"]
+
+            # Case 1: direct bounding box [xmin, ymin, xmax, ymax]
+            if isinstance(coords, list) and len(coords) == 4 and all(isinstance(x, (int, float)) for x in coords):
+                bbox = tuple(coords)
+
+            # Case 2: polygon / GeoJSON structure
+            else:
+                def flatten_coords(c):
+                    while isinstance(c[0], list):
+                        c = c[0]
+                    return c
+
+                coords = flatten_coords(coords)
+
+                if not isinstance(coords[0], (list, tuple)) or len(coords[0]) < 2:
+                    raise ValueError(f"Coordenadas inválidas: {coords}")
+
+                xs = [p[0] for p in coords]
+                ys = [p[1] for p in coords]
+
+                bbox = (min(xs), min(ys), max(xs), max(ys))
+
+            # Assign bounding box to each time window
+            for w in windows:
+                w["bbox"] = bbox
+
+            # Visualization configuration
             progress(40, "Configuring bands")
             raise_process_cancelled(is_cancelled)
+
             vis_params = VisualRangeResolver.resolve(
                 collection=collection,
                 region=region,
@@ -64,18 +123,19 @@ class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
                 is_optical=gallery.is_optical,
             )
 
-            # Prepare output directories
-            progress(50, "Downloading JPG frames")
+            # Frame export
+            progress(50, "Downloading frames")
             raise_process_cancelled(is_cancelled)
+
             output_dir = Path(payload["output_dir"])
             frames_dir = output_dir / "frames"
 
-            # Export frames from collection using selected configuration
             frame_exporter = FrameExporter(
                 composition_id=payload["composition"],
                 vis_params=vis_params,
                 output_dir=frames_dir
             )
+
             frame_paths: list[Path | None] = frame_exporter.export(
                 collection=collection,
                 windows=windows,
@@ -83,19 +143,21 @@ class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
                 progress_callback=progress
             )
 
-            # Apply visual template to each frame (labels, overlays)
-            progress(85, "Creating template")
+            # Template application
+            progress(85, "Applying template")
             raise_process_cancelled(is_cancelled)
-            templated_frames: list[Path] = TemplateBuilder.apply(
-                    frames=frame_paths,
-                    windows=windows,
-                    template_id=payload["template"],
-                    output_dir=frames_dir,
-                )
 
-            # Build final video from processed frames
+            templated_frames: list[Path] = TemplateBuilder.apply(
+                frames=frame_paths,
+                windows=windows,
+                template_id=payload["template"],
+                output_dir=frames_dir,
+            )
+
+            # Video generation
             progress(90, "Building video")
             raise_process_cancelled(is_cancelled)
+
             video_path: Path = VideoBuilder.build(
                 frames=templated_frames,
                 output_path=output_dir / "timelapse.mp4",
@@ -103,6 +165,7 @@ class BasicTimeLapseGeneration(Action[AnimationPayload, dict[str, Any]]):
             )
 
             progress(100, "Completed")
+
             return Result.success({
                 "video_path": str(video_path)
             })
